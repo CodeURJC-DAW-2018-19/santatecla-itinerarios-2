@@ -10,3 +10,7 @@
 
 ## Software Requirements Specification
 **https://docs.google.com/document/d/1_3BBSBSCyIG1S9OcsxMRVN6xiv8tKaH-qONMfgEpAzM/edit?usp=sharing**
+
+## Team Management Tools
+We use Google Drive to share documents related to the project:
+https://drive.google.com/drive/u/0/folders/1MmFjerE-gfGC-ujxLC5gyAOJgtIFpZt-
