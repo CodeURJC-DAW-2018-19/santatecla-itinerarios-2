@@ -9,4 +9,4 @@
 | Igor Teterycz | `i.teterycz.2016@alumnos.urjc.es`| `IgorT142`|
 
 ## Software Requirements Specification
-**https://docs.google.com/document/d/1_3BBSBSCyIG1S9OcsxMRVN6xiv8tKaH-qONMfgEpAzM/edit**
+**https://docs.google.com/document/d/1_3BBSBSCyIG1S9OcsxMRVN6xiv8tKaH-qONMfgEpAzM/edit?usp=sharing**
