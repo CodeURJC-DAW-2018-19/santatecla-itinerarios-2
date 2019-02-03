@@ -1,6 +1,6 @@
 #loginButton {
-    position:absolute;
+    position: absolute;
     transition: .5s ease;
-    top: 1%;
-    left: 90%;
+    top: 1.6%;
+    right: 3%;
 }
