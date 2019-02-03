@@ -19,7 +19,35 @@
     <!-- Fonts and icons -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+     
+    <!-- CSS for the tabs -->  
+    <link rel="stylesheet" type="text/css" href="tabsCSS.css">
+      
+    <!-- Script used to show or hide the content from the tabs -->  
+    <script>
+         function openUnit(evt, cityName) {
+         // Declare all variables
+         var i, tabcontent, tablinks;
+             
+         // Get all elements with class="tabcontent" and hide them
+         tabcontent = document.getElementsByClassName("tabcontent");
+         for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+         }
+
+         // Get all elements with class="tablinks" and remove the class "active"
+         tablinks = document.getElementsByClassName("tablinks");
+         for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+         }
+
+         // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+         }
+        </script>  
   </head>
+    
   <body>
 	<div class="text-center">
 		<!-- Button HTML (to Trigger Modal) -->
@@ -55,7 +83,17 @@
 				</div>
 			</div>
 		</div>
-	</div>     
+	</div>
+      
+    <!-- Pestaña Unidades -->
+        <div class="tab">
+            <button class="tablinks" onclick="openUnit(event, 'Unidades')">Unidades</button>    
+        </div>
+        
+    <!-- Sub-pestañas -->
+        <div id="Unidades" class="tabcontent"> 
+            <p>Aqui vendrian las sub-tabs</p>
+        </div>  
 
 
 
