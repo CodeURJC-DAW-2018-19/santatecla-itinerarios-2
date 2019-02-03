@@ -1,10 +1,10 @@
 /* Style the tab */
 .tab {
   overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;  
+  border-bottom: 1px solid #ccc;
+  /*background-color: #f1f1f1;*/
   position: relative;
-  top: 50px;    
+  /*top: 50px;*/    
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -35,5 +35,5 @@
   border: 1px solid #ccc;
   border-top: none;
   position: relative;
-  top: 60px;  
+  /*top: 60px;*/  
 }
