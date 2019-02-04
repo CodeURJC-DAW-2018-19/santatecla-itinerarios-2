@@ -92,6 +92,24 @@ body {
 #loginButton {
     position: absolute;
     transition: .5s ease;
-    top: 1.6%;
+    top: 17%;
     right: 3%;
+}
+#searchInput{
+    width: 500px;
+}
+#unitBox{
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    margin-left: 2%;
+    margin-right: 45%;
+    background-color: white;
+    border: 1px;
+    border-color: darkgray;
+    border-style: solid;
+    border-radius: 5px;
+}
+#background{
+    background-color: gainsboro;
 }
