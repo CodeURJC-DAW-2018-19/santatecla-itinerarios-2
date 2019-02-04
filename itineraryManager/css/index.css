@@ -105,6 +105,7 @@ body {
     padding-right: 25px;
     padding-left: 20px;
     padding-bottom: 5px;
+    padding-top: 10px;
     margin-top: 10px;
     margin-left: 2%;
     margin-right: 45%;
@@ -126,11 +127,61 @@ body {
     border: 1px solid #332C2C;
     border-radius: 0.15rem;
     padding: 10px;
-    margin-bottom: 0!important;
-    padding-bottom: 0!important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
 }
 
-.noBottomNoPadding{
-    margin-bottom: 0!important;
-    padding-bottom: 0!important;
+.noBottomNoPadding {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.selectBoxBugFixer {
+    height: auto !important;
+}
+
+#itineraryView {
+    overflow: hidden;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    background-color: white;
+}
+
+.view1 {
+    float: left;
+    width: 50%;
+}
+
+.view2 {
+    overflow: hidden;
+    padding-left: 10px;
+}
+
+.htmlBox {
+    background-color: aliceblue;
+    padding: 5px 5px 5px 5px;
+}
+
+#itinerary {
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    background-color: white;
+}
+
+#fieldsItinerary {
+    float: left;
+    width: 25%;
+}
+
+#itinerarySelects {
+    overflow: hidden;
+    background-color: white;
+}
+
+#radioButtonsIt {
+    text-align: right;
 }
