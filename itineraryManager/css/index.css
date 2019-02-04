@@ -89,3 +89,9 @@ body {
     display: inline-block;
     margin: 100px auto;
 }
+#loginButton {
+    position: absolute;
+    transition: .5s ease;
+    top: 1.6%;
+    right: 3%;
+}
