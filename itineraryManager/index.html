@@ -29,7 +29,7 @@
 </head>
 
 <body id=background>
-    
+
     <!-- Modal HTML (login) -->
     <div id="myModal" class="modal fade">
         <div class="modal-dialog modal-login">
@@ -64,10 +64,8 @@
         </div>
     </div>
 
-    <!-- TABS -->
-    <div class="card card-nav-tabs card-plain">
-
-        <!--- Tabs bar -->
+    <!-- Tabs -->
+    <div class="card card-nav-tabs card-plain noBottomNoPadding">
         <div class="card-header card-header-danger">
             <!-- Login button -->
             <button type="button" class="btn btn-default" id=loginButton href="#myModal" class="trigger-btn" data-toggle="modal">Login</button>
@@ -87,23 +85,21 @@
             </div>
         </div>
 
-        <!-- Tabs content -->
-        <div class="card-body ">
+        <div class="card-body noBottomNoPadding">
             <div class="tab-content text-center">
-                
+
                 <!-- "Unidades" tab content -->
                 <div class="tab-pane active" id="unidades">
                     <div id="unitBox">
                         <!-- Search bar -->
-                        <form class="form-inline ml-auto">
-                            <div class="form-group no-border">
+                        <div style="min-width: max-content;">
+                            <form class="form-inline ml-auto">
                                 <input id=searchInput type="text" class="form-control" placeholder="Buscar">
-                            </div>
-                            <button type="submit" class="btn btn-just-icon btn-round">
-                                <i class="material-icons">search</i>
-                            </button>
-                        </form>
-
+                                <button type="submit" class="btn btn-just-icon btn-round">
+                                    <i class="material-icons">search</i>
+                                </button>
+                            </form>
+                        </div>
                         <!-- Dropdown -->
                         <div id="accordion" role="tablist">
                             <div class="card card-collapse">
@@ -141,29 +137,12 @@
                                         <p> Itinerario 3 </p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card card-collapse">
-                                <div class="card-header" role="tab" id="headingThree">
-                                    <h5 class="mb-0">
-                                        <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            Unidad 3
-                                            <i class="material-icons">keyboard_arrow_down</i>
-                                        </a>
-                                    </h5>
-                                </div>
 
-                                <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p> Itinerario 1 </p>
-                                        <p> Itinerario 2 </p>
-                                        <p> Itinerario 3 </p>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
-                
                 <!-- "Unidad 1" tab content -->
                 <div class="tab-pane" id="unidad1">
                     <p>segunda</p>
@@ -174,8 +153,7 @@
 
 
 
-
-    <!--   Core JS Files   -->
+    <!-- Core JS Files -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="assets/js/core/jquery.min.js"></script>
