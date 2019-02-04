@@ -64,7 +64,7 @@
     </div>
 
     <!-- Tabs -->
-    <div class="card card-nav-tabs card-plain">
+    <div class="card card-nav-tabs card-plain noBottomNoPadding">
         <div class="card-header card-header-danger">
             <!-- Login button -->
             <button type="button" class="btn btn-default" id=loginButton href="#myModal" class="trigger-btn" data-toggle="modal">Login</button>
@@ -80,7 +80,7 @@
                 </div>
             </div>
         </div>
-        <div class="card-body ">
+        <div class="card-body noBottomNoPadding">
             <div class="tab-content text-center">
                 <div class="tab-pane active" id="home">
                     <form class="form-inline ml-auto">
@@ -98,15 +98,14 @@
 
     <div id="unitBox">
         <!-- Search bar -->
-        <form class="form-inline ml-auto">
-            <div class="form-group no-border">
+        <div style="min-width: max-content;">
+            <form class="form-inline ml-auto">
                 <input id=searchInput type="text" class="form-control" placeholder="Buscar">
-            </div>
-            <button type="submit" class="btn btn-just-icon btn-round">
-                <i class="material-icons">search</i>
-            </button>
-        </form>
-
+                <button type="submit" class="btn btn-just-icon btn-round">
+                    <i class="material-icons">search</i>
+                </button>
+            </form>
+        </div>
         <!-- Dropdown -->
         <div id="accordion" role="tablist">
             <div class="card card-collapse">
