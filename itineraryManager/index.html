@@ -20,12 +20,34 @@
 
     <!-- Our CSS files -->
     <link rel="stylesheet" type="text/css" href="css/tabsCSS.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/loginButton.css">
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/showHideTabContent.js"></script>
+    <!--script>
+         function openUnit(evt, cityName) {
+         // Declare all variables
+         var i, tabcontent, tablinks;
+             
+         // Get all elements with class="tabcontent" and hide them
+         tabcontent = document.getElementsByClassName("tabcontent");
+         for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+         }
+
+         // Get all elements with class="tablinks" and remove the class "active"
+         tablinks = document.getElementsByClassName("tablinks");
+         for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+         }
+
+         // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+         }
+        </script-->
 </head>
 
 <body>
@@ -89,6 +111,60 @@
                             <i class="material-icons">search</i>
                         </button>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="accordion" role="tablist">
+        <div class="card card-collapse">
+            <div class="card-header" role="tab" id="headingOne">
+                <h5 class="mb-0">
+                    <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Unidad 1
+                        <i class="material-icons">keyboard_arrow_down</i>
+                    </a>
+                </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <p> Itinerario 1 </p>
+                    <p> Itinerario 2 </p>
+                    <p> Itinerario 3 </p>
+                </div>
+            </div>
+        </div>
+        <div class="card card-collapse">
+            <div class="card-header" role="tab" id="headingTwo">
+                <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Unidad 2
+                        <i class="material-icons">keyboard_arrow_down</i>
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                    <p> Itinerario 1 </p>
+                    <p> Itinerario 2 </p>
+                    <p> Itinerario 3 </p>
+                </div>
+            </div>
+        </div>
+        <div class="card card-collapse">
+            <div class="card-header" role="tab" id="headingThree">
+                <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Unidad 3
+                        <i class="material-icons">keyboard_arrow_down</i>
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                    <p> Itinerario 1 </p>
+                    <p> Itinerario 2 </p>
+                    <p> Itinerario 3 </p>
                 </div>
             </div>
         </div>
