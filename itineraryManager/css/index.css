@@ -156,7 +156,11 @@ body {
 
 .view2 {
     overflow: hidden;
-    padding-left: 10px;
+    padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+    float: right;
+    
 }
 
 .htmlBox {
