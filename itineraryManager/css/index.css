@@ -201,3 +201,6 @@ body {
 .tabNavUnits:focus {
     background: yellowgreen !important;
 }
+.tab2{
+    font-size: medium;
+}
