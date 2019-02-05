@@ -160,7 +160,7 @@ body {
     border-width: 1px;
     border-style: solid;
     float: right;
-    
+
 }
 
 .html {
@@ -202,5 +202,9 @@ body {
 }
 
 .tabNavUnits:focus {
+    background: yellowgreen !important;
+}
+
+.tabNavUnits:hover {
     background: yellowgreen !important;
 }

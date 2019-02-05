@@ -32,3 +32,7 @@ Next, we have the unit page, showing its content or the itinerary section.
 This is the itinerary section of the unit.
 
 ![Screenshot of an itinerary section, within an unit.](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/Captura3.PNG "Screenshot of an itinerary section, within an unit")
+
+## Navigation Diagram:
+
+![](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/NavDiagram.png "Navigation Diagram")
