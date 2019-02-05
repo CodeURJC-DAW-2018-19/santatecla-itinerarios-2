@@ -160,9 +160,12 @@ body {
     border-width: 1px;
     border-style: solid;
     float: right;
-    
+
 }
 
+.html {
+    width: 50rem;
+} 
 .htmlBox {
     background-color: aliceblue;
     padding: 5px 5px 5px 5px;
@@ -201,6 +204,13 @@ body {
 .tabNavUnits:focus {
     background: yellowgreen !important;
 }
+
 .tab2{
     font-size: medium;
 }
+
+
+.tabNavUnits:hover {
+    background: yellowgreen !important;
+}
+
