@@ -163,6 +163,9 @@ body {
     
 }
 
+.html {
+    width: 105rem;
+} 
 .htmlBox {
     background-color: aliceblue;
     padding: 5px 5px 5px 5px;
