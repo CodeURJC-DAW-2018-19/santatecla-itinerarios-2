@@ -21,4 +21,14 @@ We used different tools to design our page, including some Bootstrap elements (o
 
 These are the pages we designed in this phase: 
 
-![Screenshot of main page](https://drive.google.com/open?id=1lBMslKouzs2mbhTe_Sq18h2nj75_uMpl)
+This is our main page:
+
+![Screenshot of main page.](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/Captura.PNG "Screenshot of main page")
+
+Next, we have the unit page, showing its content or the itinerary section.
+
+![Screenshot of an unit page with its content.](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/Captura2.PNG "Screenshot of an unit page with its content")
+
+This is the itinerary section of the unit.
+
+![Screenshot of an itinerary section, within an unit.](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/Captura3.PNG "Screenshot of an itinerary section, within an unit")
