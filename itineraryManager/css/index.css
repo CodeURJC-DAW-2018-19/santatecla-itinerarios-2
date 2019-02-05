@@ -189,3 +189,15 @@ body {
 #radioButtonsIt {
     text-align: right;
 }
+
+.itineraryText {
+    font-size: medium;
+}
+
+.unitText {
+    font-size: x-large;
+}
+
+.tabNavUnits:focus {
+    background: yellowgreen !important;
+}
