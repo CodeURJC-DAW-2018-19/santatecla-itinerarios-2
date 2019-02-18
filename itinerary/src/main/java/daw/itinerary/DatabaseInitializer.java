@@ -1,4 +1,4 @@
-package com.example.demo;
+package daw.itinerary;
 
 import javax.annotation.PostConstruct;
 
