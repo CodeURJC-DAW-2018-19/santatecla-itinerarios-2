@@ -1,5 +1,6 @@
 package daw.itinerary.security;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.ElementCollection;
@@ -8,8 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
-import org.springframework.data.annotation.Id;
-
+import javax.persistence.Id;
 
 @Entity
 public class User {
@@ -22,7 +22,7 @@ public class User {
 	private String passwordHash;
 
 	@ElementCollection(fetch = FetchType.EAGER)
-	private List<String> roles;
+	private List<String> roles = new ArrayList<String>();
 
 	// Constructor, getters, setters
 
