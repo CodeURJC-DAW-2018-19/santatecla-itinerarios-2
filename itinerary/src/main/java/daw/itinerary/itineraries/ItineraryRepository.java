@@ -1,4 +1,7 @@
 package daw.itinerary.itineraries;
 
-public class ItineraryRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ItineraryRepository extends JpaRepository<Itinerary, Long> {
+    
 }
