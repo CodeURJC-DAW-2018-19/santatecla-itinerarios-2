@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import daw.itinerary.unit.*;
+import daw.itinerary.itineraries.*;
 
 @Controller
 public class WebController {
