@@ -18,6 +18,15 @@ public class Itinerary {
     private String name;
 
     /**********************************************
+     * Constructors
+     *********************************************/
+    public Itinerary(){}
+
+    public Itinerary(String name){
+        this.setName(name);
+    }
+
+    /**********************************************
      * Methods
      *********************************************/
     @Override
