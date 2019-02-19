@@ -26,10 +26,5 @@ public class WebController {
 	public String index () {
 		return "index";
 	}
-	@RequestMapping("prueba")
-	public String prueba()
-	{
-		return "prueba";
-	}
 
 }
