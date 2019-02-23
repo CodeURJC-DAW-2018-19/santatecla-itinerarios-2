@@ -15,6 +15,7 @@ public class Content {
     
     private String title;
     private String desc;
+    private Image image;
 
     public Content(){}
 
@@ -45,7 +46,23 @@ public class Content {
     	this.desc = desc;
     }
     
-    @Override
+    public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public Image getImage() {
+		return image;
+	}
+
+	public void setImage(Image image) {
+		this.image = image;
+	}
+
+	@Override
 	public String toString() {
 		return "Content [id=" + id + ", title=" + title + ", description=" + desc + "]";
 	}

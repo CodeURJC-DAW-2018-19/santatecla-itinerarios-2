@@ -1,4 +1,4 @@
-package daw.itinerary;
+package daw.itinerary.content;
 
 public class Image {
 
