@@ -5,6 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import daw.itinerary.unit.Unit;
 
 @Entity
 public class Content {
@@ -63,8 +66,12 @@ public class Content {
 	}*/
 
 	@Override
+    @ManyToOne
+    private Unit unit;
+    
+    @Override
 	public String toString() {
-		return "Content [id=" + id + ", title=" + title + ", description=" + desc + "]";
+		return "Content [id=" + id + ", title=" + title + ", description=" + desc + ", unit=" + unit + "]";
 	}
     
 }
