@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import daw.itinerary.unit.Unit;
 
 @Entity
 public class Itinerary {
@@ -17,13 +20,15 @@ public class Itinerary {
 
     private String name;
 
+
     /**********************************************
      * Constructors
      *********************************************/
     public Itinerary(){}
 
-    public Itinerary(String name){
+    public Itinerary(String name, Unit unit){
         this.setName(name);
+        this.unit = unit;
     }
 
     /**********************************************
@@ -52,4 +57,7 @@ public class Itinerary {
     public void setName(String name) {
         this.name = name;
     }
+    
+    @ManyToOne
+    private Unit unit;
 }
