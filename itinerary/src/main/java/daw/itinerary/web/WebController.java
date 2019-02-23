@@ -30,5 +30,9 @@ public class WebController {
 	public String index () {
 		return "units";
 	}
+	@RequestMapping("/itinerary")
+	public String itinerary() {
+		return "itinerary";
+	}
 
 }
