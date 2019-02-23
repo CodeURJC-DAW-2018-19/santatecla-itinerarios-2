@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import daw.itinerary.unit.*;
+import daw.itinerary.content.*;
 import daw.itinerary.itineraries.*;
 
 @Controller
@@ -22,9 +23,12 @@ public class WebController {
 	@Autowired
     private UnitService service;
 	
+	@Autowired
+	private ContentService contentService;
+	
 	@RequestMapping("/")
 	public String index () {
-		return "index";
+		return "units";
 	}
 
 }
