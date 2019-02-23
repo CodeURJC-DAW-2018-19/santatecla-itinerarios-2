@@ -65,7 +65,6 @@ public class Content {
 		this.image = image;
 	}*/
 
-	@Override
     @ManyToOne
     private Unit unit;
     
