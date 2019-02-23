@@ -15,14 +15,14 @@ public class Content {
     
     private String title;
     private String desc;
-    private Image image;
+   /* private Image image;*/
 
     public Content(){}
 
-   /* public Content(String title){
+    public Content(String title){
         super();
     	this.title = title;
-    }	*/
+    }	
     
     public Content(String title, String desc){
         super();
@@ -54,13 +54,13 @@ public class Content {
 		this.id = id;
 	}
 
-	public Image getImage() {
+	/*public Image getImage() {
 		return image;
 	}
 
 	public void setImage(Image image) {
 		this.image = image;
-	}
+	}*/
 
 	@Override
 	public String toString() {

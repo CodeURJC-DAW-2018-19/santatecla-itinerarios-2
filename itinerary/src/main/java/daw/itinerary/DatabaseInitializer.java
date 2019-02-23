@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 
 
 import daw.itinerary.unit.*;
+import daw.itinerary.content.Content;
+import daw.itinerary.content.ContentRepository;
 import daw.itinerary.itineraries.*;
 import daw.itinerary.security.*;
 
@@ -16,6 +18,9 @@ public class DatabaseInitializer {
 	// Here repositories from database
 	@Autowired
 	private UnitRepository unitRepo;
+	
+	@Autowired
+	private ContentRepository contentRepo;
 
 	@Autowired
 	private UserRepository userRepository;
@@ -27,6 +32,10 @@ public class DatabaseInitializer {
 			unitRepo.save(new Unit("CERN"));
 			unitRepo.save(new Unit("Tim Berners Lee"));
 			unitRepo.save(new Unit("JavaScript"));
+			
+			/*Content sample initializer */
+			contentRepo.save(new Content("Para que","Lorem"));
+
 	}
 
 }
