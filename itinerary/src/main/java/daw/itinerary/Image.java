@@ -5,7 +5,8 @@ public class Image {
 	private int id;
 	private String name;
 
-	public void Image(int id, String name) {
+
+	public Image(int id, String name) {
 		this.name = name;
 		this.id = id;
 	}
