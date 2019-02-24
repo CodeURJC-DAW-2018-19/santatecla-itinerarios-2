@@ -11,6 +11,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		
 		//Public pages
 		http.authorizeRequests().antMatchers("/").permitAll();
+
 		
 		//Private pages
 	}

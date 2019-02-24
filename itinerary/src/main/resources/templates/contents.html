@@ -1,13 +1,21 @@
 {{>header}}
-<h2>Contents</h2>
+<h2>Fichas</h2>
 {{#content}}
 <div class="card" style="width:75rem">
 <div class="card-header">{{title}}</div>
 	<div class="card-body">
 	<p>{{desc}}</p>
 	{{^image}}
+	<form method="post" enctype="multipart/form-data">
 	<input type="file" name="file" accept=".png, .jpg"/>
-	<input type="submit" class="send" value="Send"/>
+	<input type="submit" class="send" name="send"/>
+	</form>
+	{{/image}}
+	{{#image}}
+	<p>
+		<span>{{name}}</span><br /> 
+		<img src='/contents/image/{{id}}' />
+	</p>
 	{{/image}}
 	</div>
 </div>
