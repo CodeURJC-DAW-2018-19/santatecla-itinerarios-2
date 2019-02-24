@@ -54,15 +54,6 @@ public class WebController {
 		return "itinerary";
 	}
 
-	@RequestMapping("/login")
-	public String login(Model model, HttpServletRequest request) {
-
-		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
-		model.addAttribute("token", token.getToken());
-
-		return "login";
-	}
-
 	@RequestMapping("/units")
 	public String units() {
 		return "units";
@@ -93,6 +84,7 @@ public class WebController {
 
 	@PostMapping(value = "/contents/upload")
 	public String imageUploaded(Model model, @RequestParam("file") MultipartFile file) {
+		
 		int id = imageId.getAndIncrement();
 
 		String fileName = "image-" + id + ".jpg";
@@ -103,20 +95,20 @@ public class WebController {
 				file.transferTo(uploadedFile);
 
 				images.put(id, new Image(id, fileName));
-				return "contents";
+				return "upload";
 			} catch (Exception e) {
 				model.addAttribute("error", e.getClass().getName() + ":" + e.getMessage());
 
-				return "contents";
+				return "upload";
 			}
 		} else {
 			model.addAttribute("error", "The file is empty");
-			return "contents";
+			return "upload";
 		}
 
 	}
 
-	@GetMapping("/contents/image/{id}")
+	@GetMapping("/images/{id}")
 	public void fileDownload(@PathVariable String id, HttpServletResponse res)
 			throws FileNotFoundException, IOException {
 		

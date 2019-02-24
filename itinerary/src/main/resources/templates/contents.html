@@ -5,18 +5,18 @@
 <div class="card-header">{{title}}</div>
 	<div class="card-body">
 	<p>{{desc}}</p>
-	{{^image}}
-	<form method="post" enctype="multipart/form-data">
+	{{^images}}
+	<form method="post" action="/contents/upload" enctype="multipart/form-data">
 	<input type="file" name="file" accept=".png, .jpg"/>
 	<input type="submit" class="send" name="send"/>
 	</form>
-	{{/image}}
-	{{#image}}
+	{{/images}}
+	{{#images}}
 	<p>
 		<span>{{name}}</span><br /> 
-		<img src='/contents/image/{{id}}' />
+		<img src='/images/{{id}}' />
 	</p>
-	{{/image}}
+	{{/images}}
 	</div>
 </div>
 {{/content}}
