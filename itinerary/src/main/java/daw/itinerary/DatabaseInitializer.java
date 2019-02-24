@@ -34,7 +34,9 @@ public class DatabaseInitializer {
 			unitRepo.save(new Unit("JavaScript"));
 			
 			/*Content sample initializer */
-			contentRepo.save(new Content("Para que","Lorem"));
+			contentRepo.save(new Content("¿Para qué?","Lorem"));
+			contentRepo.save(new Content("¿Por qué?","Ipsum"));
+			contentRepo.save(new Content("¿Cómo?","Midori"));
 
 	}
 

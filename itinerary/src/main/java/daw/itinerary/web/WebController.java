@@ -40,4 +40,10 @@ public class WebController {
 		return "units";
 	}
 
+	@GetMapping("/contents")
+	public String contents(Model model) {
+		
+		model.addAttribute("content",contentService.findAll());
+		return "contents";
+	}
 }
