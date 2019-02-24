@@ -18,7 +18,7 @@ public class Content {
     
     private String title;
     private String desc;
-   /* private Image image;*/
+    private String image;
 
     public Content(){}
 
@@ -57,15 +57,15 @@ public class Content {
 		this.id = id;
 	}
 
-	/*public Image getImage() {
+    public String getImage() {
 		return image;
 	}
 
-	public void setImage(Image image) {
+	public void setImage(String image) {
 		this.image = image;
-	}*/
+	}
 
-    @ManyToOne
+	@ManyToOne
     private Unit unit;
     
     @Override

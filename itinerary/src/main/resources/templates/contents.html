@@ -5,6 +5,9 @@
 <div class="card-header">{{title}}</div>
 	<div class="card-body">
 	<p>{{desc}}</p>
+	{{^image}}
+	<input type="submit" name="upload" value="Upload"/>
+	{{/image}}
 	</div>
 </div>
 {{/content}}
