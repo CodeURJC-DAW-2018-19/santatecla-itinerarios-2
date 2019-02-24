@@ -6,7 +6,8 @@
 	<div class="card-body">
 	<p>{{desc}}</p>
 	{{^image}}
-	<input type="submit" name="upload" value="Upload"/>
+	<input type="file" name="file" accept=".png, .jpg"/>
+	<input type="submit" class="send" value="Send"/>
 	{{/image}}
 	</div>
 </div>
