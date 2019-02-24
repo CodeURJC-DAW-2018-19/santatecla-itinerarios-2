@@ -43,8 +43,12 @@ This is the itinerary section of the unit.
 ## Setting up the IDE
 Once you downloaded the app, you'll need a MySQL server to set up a database.
 We use a database called db_prueba and an user called "springuser" with "user" pass, you can create the database and the user with the following MySQL shell commands:
+
   -create database db_prueba;
+  
   -create user "springuser"@"%" identified by "user";
+  
   -grant all on db_prueba.* to 'springuser'@'%';
+  
 Once you have this, and youre MySQL server is running, you just have to start the app. 
 The rest of the configuration is all on the application.properties.
