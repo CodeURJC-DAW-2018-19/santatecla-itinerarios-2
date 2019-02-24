@@ -5,6 +5,9 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import daw.itinerary.user.User;
+import daw.itinerary.user.UserRepository;
+
 @Component
 public class DatabaseUsersLoader {
 	
