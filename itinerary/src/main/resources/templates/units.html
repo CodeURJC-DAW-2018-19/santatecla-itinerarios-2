@@ -25,9 +25,9 @@
             <div id="{{id}}" class="collapse" role="tabpanel"
                  aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="card-body itineraryText">
-                    <p>Itinerario 1</p>
-                    <p>Itinerario 2</p>
-                    <p>Itinerario 3</p>
+                    {{#itineraries}}
+                    <p>{{name}}</p>
+                    {{/itineraries}}
                 </div>
             </div>
         </div>

@@ -35,22 +35,22 @@ public class DatabaseInitializer {
 	public void init() {
 			Content exampleContent = new Content("¿Para qué?","lus semper vitae. Sed auctor placerat viverra. Ut a tellus vitae sapien pellentesque elementu");
 			Unit unit1 = new Unit(1, "Javascript");
-			Unit unit2 = new Unit(2, "Año 1989");
 			Unit unit3 = new Unit(3, "CERN");
 			Unit unit4 = new Unit(4, "Tim Berners Lee");
+			Unit unit5 = new Unit(5, "Anio 1989");
 			/*Itinerary and Unit sample initializer */
 
 			unit1.addContent(exampleContent);
 			unitRepo.save(unit1);
-			unitRepo.save(unit2);
 			unitRepo.save(unit3);
 			unitRepo.save(unit4);
+			unitRepo.save(unit5);
 			
 			itineraryRepo.save(new Itinerary("Primeros pasos", unit1));
 			itineraryRepo.save(new Itinerary("Uso avanzado", unit1));
-			itineraryRepo.save(new Itinerary("Eventos", unit2));
-			itineraryRepo.save(new Itinerary("Cumpleaños de famosos", unit2));
-			itineraryRepo.save(new Itinerary("Calendario", unit2));
+			itineraryRepo.save(new Itinerary("Eventos", unit5));
+			itineraryRepo.save(new Itinerary("Cumpleaños de famosos", unit5));
+			itineraryRepo.save(new Itinerary("Calendario", unit5));
 			itineraryRepo.save(new Itinerary("Historia", unit3));
 			itineraryRepo.save(new Itinerary("Principales líneas de investigación", unit3));
 			itineraryRepo.save(new Itinerary("Futuros proyectos", unit3));
