@@ -24,7 +24,7 @@ public class User {
 	private Long id;
 
 	private String name;
-	
+
 	@JsonIgnore
 	private String passwordHash;
 
@@ -32,7 +32,7 @@ public class User {
 	private List<String> roles;
 
 	// CONSTRUCTORS
-	
+
 	public User() {
 	}
 
@@ -41,30 +41,29 @@ public class User {
 		this.passwordHash = new BCryptPasswordEncoder().encode(password);
 		this.roles = new ArrayList<>(Arrays.asList(roles));
 	}
-	
-	//GETTERS AND SETTERS
-	
-	
+
+	// GETTERS AND SETTERS
+
 	public String getName() {
 		return name;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	public String getPassword() {
+
+	public String getPasswordHash() {
 		return passwordHash;
 	}
-	
-	public void setPassword(String passwordHash) {
+
+	public void setPasswordHash(String passwordHash) {
 		this.passwordHash = passwordHash;
 	}
-	
+
 	public List<String> getRoles() {
 		return roles;
 	}
-	
+
 	public void setRoles(List<String> roles) {
 		this.roles = roles;
 	}
