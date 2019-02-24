@@ -2,20 +2,20 @@
 <h2>Fichas</h2>
 {{#content}}
 <div class="card" style="width:75rem">
-<div class="card-header">{{title}}</div>
+	<div class="card-header">{{title}}</div>
 	<div class="card-body">
-	<p>{{desc}}</p>
-	{{^images}}
-	<form method="post" action="/contents/upload" enctype="multipart/form-data">
-	<input type="file" name="file" accept=".png, .jpg"/>
-	<input type="submit" class="send" name="send"/>
-	</form>
-	{{/images}}
-	{{#images}}
-	<p>
-		<img src='/images/{{id}}' />
-	</p>
-	{{/images}}
+		<p>{{desc}}</p>
+		{{^images}}
+		<form method="post" action="/contents/upload" enctype="multipart/form-data">
+			<input type="file" name="file" accept=".png, .jpg"/>
+			<input type="submit" class="send" name="send"/>
+		</form>
+		{{/images}}
+		{{#images}}
+		<p>
+			<img src='/images/{{id}}' />
+		</p>
+		{{/images}}
 	</div>
 </div>
 {{/content}}

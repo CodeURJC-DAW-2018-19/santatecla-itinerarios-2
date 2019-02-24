@@ -1,58 +1,58 @@
-{{>header}}				
-					<div id="unitBox">
-						<!-- Search bar -->
-						<div style="min-width: max-content;">
-							<form class="form-inline ml-auto">
-								<input id=searchInput type="text" class="form-control"
-									placeholder="Buscar">
-								<button type="submit" class="btn btn-just-icon btn-round">
-									<i class="material-icons">search</i>
-								</button>
-							</form>
-						</div>
-						<!-- Dropdown -->
-						<div id="accordion" role="tablist">
-							{{#unit}}
-							<div class="card card-collapse">
-								<div class="card-header" role="tab" id="headingOne">
-									<h5 class="mb-0">
-										<a class=unitText data-toggle="collapse" href="#collapseOne"
-											aria-expanded="true" aria-controls="collapseOne"> {{name}} <i class="material-icons">keyboard_arrow_down</i>
-										</a>
-									</h5>
-								</div>
+{{>header}}
+<div id="unitBox">
+    <!-- Search bar -->
+    <div style="min-width: max-content;">
+        <form class="form-inline ml-auto">
+            <input id=searchInput type="text" class="form-control"
+                   placeholder="Buscar">
+            <button type="submit" class="btn btn-just-icon btn-round">
+                <i class="material-icons">search</i>
+            </button>
+        </form>
+    </div>
+    <!-- Dropdown -->
+    <div id="accordion" role="tablist">
+        {{#unit}}
+        <div class="card card-collapse">
+            <div class="card-header" role="tab" id="headingOne">
+                <h5 class="mb-0">
+                    <a class=unitText data-toggle="collapse" href="#{{id}}"
+                       aria-expanded="true" aria-controls="collapseOne"> {{name}} <i class="material-icons">keyboard_arrow_down</i>
+                    </a>
+                </h5>
+            </div>
 
-								  <div id="collapseOne" class="collapse" role="tabpanel"
-									aria-labelledby="headingOne" data-parent="#accordion">
-									<div class="card-body itineraryText">
-										<p>Itinerario 1</p>
-										<p>Itinerario 2</p>
-										<p>Itinerario 3</p>
-									</div>
-								</div>
-							</div>
-							<!-- <div class="card card-collapse">
-								<div class="card-header" role="tab" id="headingTwo">
-									<h5 class="mb-0">
-										<a class="collapsed unitText" data-toggle="collapse"
-											href="#collapseTwo" aria-expanded="false"
-											aria-controls="collapseTwo"> {{unit}} <i
-											class="material-icons">keyboard_arrow_down</i>
-										</a>
-									</h5>
-								</div>
+            <div id="{{id}}" class="collapse" role="tabpanel"
+                 aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body itineraryText">
+                    <p>Itinerario 1</p>
+                    <p>Itinerario 2</p>
+                    <p>Itinerario 3</p>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="card card-collapse">
+            <div class="card-header" role="tab" id="headingTwo">
+                <h5 class="mb-0">
+                    <a class="collapsed unitText" data-toggle="collapse"
+                        href="#collapseTwo" aria-expanded="false"
+                        aria-controls="collapseTwo"> {{unit}} <i
+                        class="material-icons">keyboard_arrow_down</i>
+                    </a>
+                </h5>
+            </div>
 
-								<div id="collapseTwo" class="collapse" role="tabpanel"
-									aria-labelledby="headingTwo" data-parent="#accordion">
-									<div class="card-body itineraryText">
-										<p>Itinerario 1</p>
-										<p>Itinerario 2</p>
-										<p>Itinerario 3</p>
-									</div>
-								</div>
-							</div> -->
-							{{/unit}}
-						</div>
-					</div>
-					<div>
-					</div>
+            <div id="collapseTwo" class="collapse" role="tabpanel"
+                aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body itineraryText">
+                    <p>Itinerario 1</p>
+                    <p>Itinerario 2</p>
+                    <p>Itinerario 3</p>
+                </div>
+            </div>
+        </div> -->
+        {{/unit}}
+    </div>
+</div>
+<div>
+</div>
