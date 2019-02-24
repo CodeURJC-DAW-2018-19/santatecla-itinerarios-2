@@ -1,4 +1,4 @@
-package daw.itinerary.security;
+/*package daw.itinerary.security;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -31,3 +31,4 @@ class CSRFHandlerInterceptor extends HandlerInterceptorAdapter {
 		}
 	}
 }
+*/

@@ -39,7 +39,7 @@ import daw.itinerary.content.*;
 public class WebController {
 
 	@Autowired
-	private UnitService service;
+	private UnitService unitService;
 
 
 
@@ -62,7 +62,9 @@ public class WebController {
 
 
 	@RequestMapping("/")
-	public String index() {
+	public String index(Model model) {
+		
+		model.addAttribute("unit", unitService.findAll());
 		return "units";
 	}
 
