@@ -10,7 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-	public UserRepositoryAuthProvider authenticationProvider;
+	public UserRepositoryAuthProvider userRepoAuthProvider;
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -35,7 +35,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
 		// Database authentication provider
-		auth.authenticationProvider(authenticationProvider);
+		auth.authenticationProvider(userRepoAuthProvider);
 
 	}
 
