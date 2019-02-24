@@ -34,5 +34,10 @@ public class WebController {
 	public String itinerary() {
 		return "itinerary";
 	}
+	
+	@RequestMapping("/units")
+	public String units() {
+		return "units";
+	}
 
 }
