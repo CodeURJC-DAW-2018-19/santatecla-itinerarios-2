@@ -36,6 +36,7 @@ public class WebController {
 	public String itinerary() {
 		return "itinerary";
 	}
+
 	@RequestMapping("/login")
 	public String login(Model model, HttpServletRequest request) {
 		 
@@ -44,5 +45,16 @@ public class WebController {
 
 		 return "login";
 	}
+	
+	@RequestMapping("/units")
+	public String units() {
+		return "units";
+	}
 
+	@GetMapping("/contents")
+	public String contents(Model model) {
+		
+		model.addAttribute("content",contentService.findAll());
+		return "contents";
+	}
 }
