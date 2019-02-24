@@ -36,3 +36,15 @@ This is the itinerary section of the unit.
 ## Navigation Diagram:
 
 ![](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/NavDiagram.png "Navigation Diagram")
+
+# Phase 2: Implementation of the web page using server generated HTML and AJAX
+## Entities Diagram
+## Class and templates Diagram
+## Setting up the IDE
+Once you downloaded the app, you'll need a MySQL server to set up a database.
+We use a database called db_prueba and an user called "springuser" with "user" pass, you can create the database and the user with the following MySQL shell commands:
+  -create database db_prueba;
+  -create user "springuser"@"%" identified by "user";
+  -grant all on db_prueba.* to 'springuser'@'%';
+Once you have this, and youre MySQL server is running, you just have to start the app. 
+The rest of the configuration is all on the application.properties.
