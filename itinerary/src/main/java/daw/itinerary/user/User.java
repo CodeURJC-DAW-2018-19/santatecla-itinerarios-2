@@ -1,6 +1,7 @@
 package daw.itinerary.user;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.persistence.ElementCollection;
@@ -10,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 import javax.persistence.Id;
+
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -26,44 +29,43 @@ public class User {
 	private String passwordHash;
 
 	@ElementCollection(fetch = FetchType.EAGER)
-	private List<String> roles = new ArrayList<String>();
+	private List<String> roles;
 
-	// Constructor, getters, setters
+	// CONSTRUCTORS
+	
+	public User() {
+	}
 
-	public User(String newName, String newPass, String rol) {
-		name = newName;
-		passwordHash = newPass;
-		roles.add(rol);
+	public User(String name, String password, String... roles) {
+		this.name = name;
+		this.passwordHash = new BCryptPasswordEncoder().encode(password);
+		this.roles = new ArrayList<>(Arrays.asList(roles));
 	}
 	
-	public User(String newName, String newPass, String rol1, String rol2) {
-		name = newName;
-		passwordHash = newPass;
-		roles.add(rol1);
-		roles.add(rol2);
-	}
+	//GETTERS AND SETTERS
+	
 	
 	public String getName() {
 		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	public String getPassword() {
 		return passwordHash;
 	}
 	
+	public void setPassword(String passwordHash) {
+		this.passwordHash = passwordHash;
+	}
+	
 	public List<String> getRoles() {
 		return roles;
 	}
 	
-	public void setName(String newName) {
-		name = newName;
-	}
-	
-	public void setPassword(String newPass) {
-		passwordHash = newPass;
-	}
-	
-	public void setRoles(List<String> newRoles) {
-		roles = newRoles;
+	public void setRoles(List<String> roles) {
+		this.roles = roles;
 	}
 }
