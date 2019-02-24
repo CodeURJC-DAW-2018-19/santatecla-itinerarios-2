@@ -1,4 +1,4 @@
-package daw.itinerary.security;
+package daw.itinerary.user;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +19,8 @@ public class User {
 	private Long id;
 
 	private String name;
+	
+	@JsonIgnore
 	private String passwordHash;
 
 	@ElementCollection(fetch = FetchType.EAGER)
