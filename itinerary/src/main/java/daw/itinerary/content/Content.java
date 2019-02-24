@@ -32,6 +32,7 @@ public class Content {
     	this.title = title;
         this.desc = desc;
     }
+    
 
     public String getTitle(){
         return title;

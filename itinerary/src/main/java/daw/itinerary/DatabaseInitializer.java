@@ -1,5 +1,7 @@
 package daw.itinerary;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,17 +30,21 @@ public class DatabaseInitializer {
 
 	@PostConstruct
 	public void init() {
-
+			Content exampleContent = new Content("¿Para qué?","lus semper vitae. Sed auctor placerat viverra. Ut a tellus vitae sapien pellentesque elementu");
+			Unit exampleUnit = new Unit("Javascript");
+			
+			exampleUnit.addContent(exampleContent);
 			unitRepo.save(new Unit("Año 1989"));
 			unitRepo.save(new Unit("CERN"));
 			unitRepo.save(new Unit("Tim Berners Lee"));
-			unitRepo.save(new Unit("JavaScript"));
+			unitRepo.save(exampleUnit);
+			
 			
 			/*Content sample initializer */
-			contentRepo.save(new Content("¿Para qué?","lus semper vitae. Sed auctor placerat viverra. Ut a tellus vitae sapien pellentesque elementu"));
+			contentRepo.save(exampleContent);
 			contentRepo.save(new Content("¿Por qué?",". Pellentesque vitae sapien magna. Ut id ullamcorper elit. Fusce feugiat, sem at euismod placerat, mauris ex mattis"));
 			contentRepo.save(new Content("¿Cómo?","massa. Quisque ornare ipsum id ligula tincidunt, condimentum porta mus, augue lectus ultrices velit, in tincidunt purus nunc sit amet lacus"));
-
+			
 	}
 
 }
