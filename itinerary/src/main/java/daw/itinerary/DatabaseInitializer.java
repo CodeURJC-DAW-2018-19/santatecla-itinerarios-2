@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 
 import daw.itinerary.unit.*;
+import daw.itinerary.user.UserRepository;
 import daw.itinerary.content.Content;
 import daw.itinerary.content.ContentRepository;
 import daw.itinerary.itineraries.*;

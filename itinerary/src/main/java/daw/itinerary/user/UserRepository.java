@@ -1,4 +1,4 @@
-package daw.itinerary.security;
+package daw.itinerary.user;
 
 import java.util.List;
 
