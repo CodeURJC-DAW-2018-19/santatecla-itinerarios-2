@@ -27,6 +27,7 @@ public class DatabaseInitializer {
 	@PostConstruct
 	public void init() {
 
+<<<<<<< HEAD
 		unitRepo.save(new Unit("Año 1989"));
 		unitRepo.save(new Unit("CERN"));
 		unitRepo.save(new Unit("Tim Berners Lee"));
@@ -45,6 +46,17 @@ public class DatabaseInitializer {
 		userRepository.save(new User("estudiante2", "pass2", "ROLE_USER"));
 
 		userRepository.save(new User("profesor", "passprofe", "ROLE_USER", "ROLE_ADMIN"));
+=======
+			unitRepo.save(new Unit("Año 1989"));
+			unitRepo.save(new Unit("CERN"));
+			unitRepo.save(new Unit("Tim Berners Lee"));
+			unitRepo.save(new Unit("JavaScript"));
+			
+			/*Content sample initializer */
+			contentRepo.save(new Content("¿Para qué?","Lorem"));
+			contentRepo.save(new Content("¿Por qué?","Ipsum"));
+			contentRepo.save(new Content("¿Cómo?","Midori"));
+>>>>>>> parent of 13ad99c... Content style updated
 
 	}
 
