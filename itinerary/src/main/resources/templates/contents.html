@@ -1,7 +1,10 @@
 {{>header}}
 <h2>Contents</h2>
- {{#content}}
-<ul>
-	<li>{{title}}</li>
-</ul>
+{{#content}}
+<div class="card" style="width:75rem">
+<div class="card-header">{{title}}</div>
+	<div class="card-body">
+	<p>{{desc}}</p>
+	</div>
+</div>
 {{/content}}

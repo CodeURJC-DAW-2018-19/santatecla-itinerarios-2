@@ -214,3 +214,11 @@ body {
     background: yellowgreen !important;
 }
 
+.card-body{
+	font-size:large;
+}
+.card-header{
+	font-size:x-large;
+	background-color: red;
+}
+
