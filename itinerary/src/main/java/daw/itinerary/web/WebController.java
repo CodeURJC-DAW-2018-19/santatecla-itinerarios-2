@@ -1,5 +1,6 @@
 package daw.itinerary.web;
 
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -18,22 +19,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import daw.itinerary.unit.*;
+import daw.itinerary.user.UserComponent;
 import daw.itinerary.content.*;
-import daw.itinerary.itineraries.*;
 
 @Controller
 public class WebController {
@@ -41,8 +39,27 @@ public class WebController {
 	@Autowired
 	private UnitService service;
 
+
 	@Autowired
 	private ContentService contentService;
+
+
+	@Autowired
+	private UserComponent userComponent;
+
+	@Autowired
+	private ContentService contentService;
+
+	@ModelAttribute
+	public void addUserToModel(Model model) {
+		boolean logged = userComponent.getLoggedUser() != null;
+		model.addAttribute("logged", logged);
+		if (logged) {
+			model.addAttribute("admin", userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN"));
+			model.addAttribute("userName", userComponent.getLoggedUser().getName());
+		}
+	}
+
 
 	@RequestMapping("/")
 	public String index() {
@@ -54,6 +71,16 @@ public class WebController {
 		return "itinerary";
 	}
 
+
+
+	@RequestMapping("/login")
+	public String login(Model model) {
+
+		model.addAttribute("hideLogin", true);
+		return "login";
+	}
+
+
 	@RequestMapping("/units")
 	public String units() {
 		return "units";
@@ -63,7 +90,9 @@ public class WebController {
 	public String contents(Model model) {
 
 		model.addAttribute("content", contentService.findAll());
+
 		model.addAttribute("images", images.values());
+
 		return "contents";
 	}
 
