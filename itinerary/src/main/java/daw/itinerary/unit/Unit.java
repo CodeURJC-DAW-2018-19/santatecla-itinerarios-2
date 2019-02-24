@@ -46,7 +46,11 @@ public class Unit {
         this.contents.add(content);
     }
     
-    @Override
+    public Set<Content> getContents() {
+		return contents;
+	}
+
+	@Override
    	public String toString() {
    		return "Content [id=" + id + ", name=" + name + "]";
    	}
