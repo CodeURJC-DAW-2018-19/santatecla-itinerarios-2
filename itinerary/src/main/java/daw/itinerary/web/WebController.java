@@ -34,6 +34,7 @@ import org.springframework.web.multipart.MultipartFile;
 import daw.itinerary.unit.*;
 import daw.itinerary.user.UserComponent;
 import daw.itinerary.content.*;
+import daw.itinerary.itineraries.ItineraryService;
 
 @Controller
 public class WebController {
@@ -41,7 +42,8 @@ public class WebController {
 	@Autowired
 	private UnitService unitService;
 
-
+	@Autowired
+	private	ItineraryService itService;
 
 
 	@Autowired
@@ -70,6 +72,12 @@ public class WebController {
 
 	@RequestMapping("/itinerary")
 	public String itinerary() {
+		return "itinerary";
+	}
+	@RequestMapping("/units/{units_id}/itinerary")
+	public String itinerary(Model model) {
+//		model.addAttribute("unit", unitService.findOne(id));
+//		model.addAttribute("itinerary", itService.findAll());
 		return "itinerary";
 	}
 
@@ -157,5 +165,11 @@ public class WebController {
 		}
 
 	}
+	
+	@GetMapping("/error")
+	public String error() {
+		return "error";
+	}
+	
 
 }
