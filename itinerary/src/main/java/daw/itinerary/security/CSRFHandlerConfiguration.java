@@ -1,4 +1,4 @@
-/*package daw.itinerary.security;
+package daw.itinerary.security;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,8 +27,9 @@ class CSRFHandlerInterceptor extends HandlerInterceptorAdapter {
 
 		if (modelAndView != null) {
 			CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+			if (token !=null) {
 			modelAndView.addObject("token", token.getToken());
+			}
 		}
 	}
 }
-*/
