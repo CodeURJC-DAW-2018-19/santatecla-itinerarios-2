@@ -1,4 +1,4 @@
-package daw.itinerary.security;
+package daw.itinerary.controllers;
 
 import javax.servlet.http.HttpSession;
 
