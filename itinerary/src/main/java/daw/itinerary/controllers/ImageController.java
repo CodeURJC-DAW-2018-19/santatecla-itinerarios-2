@@ -14,6 +14,7 @@ import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +26,7 @@ import org.springframework.web.multipart.MultipartFile;
 import daw.itinerary.content.ContentService;
 import daw.itinerary.content.Image;
 
+@Controller
 public class ImageController {
 	
 	@Autowired
@@ -58,15 +60,19 @@ public class ImageController {
 				file.transferTo(uploadedFile);
 
 				images.put(id, new Image(id, fileName));
-				return "upload";
+				model.addAttribute("content", contentService.findAll());
+
+				model.addAttribute("images", images.values());
+
+				return "/contents";
 			} catch (Exception e) {
 				model.addAttribute("error", e.getClass().getName() + ":" + e.getMessage());
 
-				return "upload";
+				return "/contents";
 			}
 		} else {
 			model.addAttribute("error", "The file is empty");
-			return "upload";
+			return "/contents";
 		}
 
 	}
