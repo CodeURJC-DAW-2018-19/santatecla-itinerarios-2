@@ -55,9 +55,9 @@ public class LoginController {
 		return "login";
 	}
 	
-	@RequestMapping("/privado")
+	@RequestMapping("/private")
 	public String privado() {
-		return "privado";
+		return "private";
 	}
 	
 
