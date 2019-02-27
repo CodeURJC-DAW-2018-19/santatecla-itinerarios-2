@@ -54,5 +54,11 @@ public class LoginController {
 		model.addAttribute("hideLogin", true);
 		return "login";
 	}
+	
+	@RequestMapping("/privado")
+	public String privado() {
+		return "privado";
+	}
+	
 
 }
