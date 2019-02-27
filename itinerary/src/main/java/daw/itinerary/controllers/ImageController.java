@@ -60,14 +60,13 @@ public class ImageController {
 				file.transferTo(uploadedFile);
 
 				images.put(id, new Image(id, fileName));
-				model.addAttribute("content", contentService.findAll());
 
 				model.addAttribute("images", images.values());
-
+				model.addAttribute("content", contentService.findAll());
 				return "/contents";
 			} catch (Exception e) {
 				model.addAttribute("error", e.getClass().getName() + ":" + e.getMessage());
-
+				model.addAttribute("content", contentService.findAll());
 				return "/contents";
 			}
 		} else {
