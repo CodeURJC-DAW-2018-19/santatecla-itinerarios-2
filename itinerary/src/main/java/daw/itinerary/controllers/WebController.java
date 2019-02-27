@@ -79,6 +79,16 @@ public class WebController {
 		return "itinerary";
 	}
 
+
+
+	@RequestMapping("/login")
+	public String login(Model model) {
+
+		model.addAttribute("hideLogin", true);
+		return "login";
+	}
+
+
 	@RequestMapping("/units")
 	public String units() {
 		return "units";
@@ -89,7 +99,6 @@ public class WebController {
 	public String error() {
 		return "error";
 	}
-	
 	
 
 }
