@@ -17,8 +17,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure (HttpSecurity http) throws Exception {
 		
 		//Public pages
-		http.authorizeRequests().antMatchers("/").permitAll();
+		http.authorizeRequests().antMatchers("/static/**", "/").permitAll();
         http.authorizeRequests().antMatchers("/login").permitAll();
+        http.authorizeRequests().antMatchers("/css/**", "/js/**", "/material-dashboard-html-v2.1.1/**").permitAll();
         
         // Private pages (all other pages)
         http.authorizeRequests().anyRequest().authenticated();
@@ -29,8 +30,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.formLogin().passwordParameter("password");
         http.formLogin().defaultSuccessUrl("/");
         http.formLogin().failureUrl("/loginerror");
-        
-
 
 		
 	}
