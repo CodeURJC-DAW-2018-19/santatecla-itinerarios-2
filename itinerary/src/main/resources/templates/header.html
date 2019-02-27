@@ -90,8 +90,10 @@
 				<div class="nav-tabs-wrapper">
 					<ul class="nav nav-tabs" data-tabs="tabs">
 						<li class="nav-item"><a class="nav-link active" href="/">Unidades</a></li>
+						{{#unit}}
 						<li class="nav-item"><a class="nav-link tabNavUnits"
-							href="#unidad1" data-toggle="tab">Unidad 1</a></li>
+							href="units/{{id}}" data-toggle="tab">{{name}}</a></li>
+						{{/unit}}
 					</ul>
 				</div>
 			</div>
