@@ -82,6 +82,7 @@ public class WebController
 	@RequestMapping("/units/{units_id}/itinerary")
 	public String itinerary(Model model)
 	{
+		model.addAttribute("unit", unitService.findAll());
 //		model.addAttribute("unit", unitService.findOne(id));
 //		model.addAttribute("itinerary", itService.findAll());
 		return "itinerary";
