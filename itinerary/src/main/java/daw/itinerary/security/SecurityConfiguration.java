@@ -16,18 +16,24 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 
 		// Public pages
-		http.authorizeRequests().anyRequest().permitAll();
+		http.authorizeRequests().antMatchers("/units").permitAll();
 		http.authorizeRequests().antMatchers("/login").permitAll();
+		http.authorizeRequests().antMatchers("/logout").permitAll();
 		http.authorizeRequests().antMatchers("/css/**", "/js/**", "/material-dashboard-html-v2.1.1/**").permitAll();
 
 		// Private pages (all other pages)
+		http.authorizeRequests().antMatchers("/units/**").hasAnyRole("USER");
 
 		// Login form
 		http.formLogin().loginPage("/login");
 		http.formLogin().usernameParameter("username");
 		http.formLogin().passwordParameter("password");
-		http.formLogin().defaultSuccessUrl("/");
+		http.formLogin().defaultSuccessUrl("/units");
 		http.formLogin().failureUrl("/loginerror");
+		
+		// Logout
+        http.logout().logoutUrl("/logout");
+        http.logout().logoutSuccessUrl("/units");
 
 	}
 
