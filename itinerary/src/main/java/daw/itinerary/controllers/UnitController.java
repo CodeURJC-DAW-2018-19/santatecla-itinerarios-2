@@ -27,11 +27,4 @@ public class UnitController
 
         return "units";
     }
-
-    @RequestMapping("/units/{units_id}/contents")
-    public String contents(Model model)
-    {
-        model.addAttribute("unit", unitService.findAll());
-        return "contents";
-    }
 }
