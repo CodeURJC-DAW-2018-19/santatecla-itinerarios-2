@@ -58,9 +58,9 @@ public class DatabaseInitializer {
 			
 			/*Content sample initializer */
 			contentRepo.save(exampleContent);
-			contentRepo.save(new Content("¿Por qué?",". Pellentesque vitae sapien magna. Ut id ullamcorper elit. Fusce feugiat, sem at euismod placerat, mauris ex mattis"));
-			contentRepo.save(new Content("¿Cómo?","massa. Quisque ornare ipsum id ligula tincidunt, condimentum porta mus, augue lectus ultrices velit, in tincidunt purus nunc sit amet lacus"));
-			
+			contentRepo.save(new Content("¿Por qué?",". Pellentesque vitae sapien magna. Ut id ullamcorper elit. Fusce feugiat, sem at euismod placerat, mauris ex mattis", unit1));
+			contentRepo.save(new Content("¿Cómo?","massa. Quisque ornare ipsum id ligula tincidunt, condimentum porta mus, augue lectus ultrices velit, in tincidunt purus nunc sit amet lacus", unit3));
+
 			/*User samples*/
 			userRepository.save(new User("alumno1", "pass1", "ROLE_USER"));
 			userRepository.save(new User("alumno2", "pass2", "ROLE_USER"));
