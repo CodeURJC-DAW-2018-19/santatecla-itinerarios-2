@@ -49,6 +49,8 @@ public class WebController
 	@Autowired
 	private UserComponent userComponent;
 
+	@Autowired 
+	private UnitService unitService;
 
 	@ModelAttribute
 	public void addUserToModel(Model model)
@@ -62,46 +64,6 @@ public class WebController
 		}
 	}
 
-
-
-	@RequestMapping("/")
-	public String index(Model model) {
-		
-		model.addAttribute("unit", unitService.findAll());
-		return "units";
-	}
-
-	@RequestMapping("/itinerary")
-	public String itinerary() {
-		return "itinerary";
-	}
-	@RequestMapping("/units/{units_id}/itinerary")
-	public String itinerary(Model model) {
-//		model.addAttribute("unit", unitService.findOne(id));
-//		model.addAttribute("itinerary", itService.findAll());
-		return "itinerary";
-	}
-
-
-	@GetMapping("/contents")
-	public String contents(Model model)
-	{
-
-
-
-	@RequestMapping("/login")
-	public String login(Model model) {
-
-		model.addAttribute("hideLogin", true);
-		return "login";
-	}
-
-
-
-	@RequestMapping("/units")
-	public String units() {
-		return "units";
-	}
 
 	@GetMapping("/error")
 	public String error()
