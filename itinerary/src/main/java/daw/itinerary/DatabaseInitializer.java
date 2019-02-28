@@ -35,7 +35,7 @@ public class DatabaseInitializer {
 			Unit unit1 = new Unit(1, "Javascript");
 			Unit unit3 = new Unit(3, "CERN");
 			Unit unit4 = new Unit(4, "Tim Berners Lee");
-			Unit unit5 = new Unit(5, "Anio 1989");
+			Unit unit5 = new Unit(5, "Año 1989");
 			/*Itinerary and Unit sample initializer */
 
 			unit1.addContent(exampleContent);
