@@ -37,28 +37,31 @@ import daw.itinerary.content.*;
 import daw.itinerary.itineraries.ItineraryService;
 
 @Controller
-public class WebController {
+public class WebController
+{
+
+	//@Autowired
+	//private UnitService unitService;
 
 	@Autowired
-	private UnitService unitService;
-
-	@Autowired
-	private	ItineraryService itService;
-
+	private ItineraryService itService;
 
 	@Autowired
 	private UserComponent userComponent;
 
 
 	@ModelAttribute
-	public void addUserToModel(Model model) {
+	public void addUserToModel(Model model)
+	{
 		boolean logged = userComponent.getLoggedUser() != null;
 		model.addAttribute("logged", logged);
-		if (logged) {
+		if(logged)
+		{
 			model.addAttribute("admin", userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN"));
 			model.addAttribute("userName", userComponent.getLoggedUser().getName());
 		}
 	}
+
 
 
 	@RequestMapping("/")
@@ -80,6 +83,11 @@ public class WebController {
 	}
 
 
+	@GetMapping("/contents")
+	public String contents(Model model)
+	{
+
+
 
 	@RequestMapping("/login")
 	public String login(Model model) {
@@ -89,16 +97,17 @@ public class WebController {
 	}
 
 
+
 	@RequestMapping("/units")
 	public String units() {
 		return "units";
 	}
 
-	
 	@GetMapping("/error")
-	public String error() {
+	public String error()
+	{
 		return "error";
 	}
-	
+
 
 }
