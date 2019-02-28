@@ -27,12 +27,17 @@ import org.springframework.web.multipart.MultipartFile;
 import daw.itinerary.content.Content;
 import daw.itinerary.content.ContentService;
 import daw.itinerary.content.Image;
+import daw.itinerary.unit.Unit;
+import daw.itinerary.unit.UnitService;
 
 @Controller
 public class ImageController {
 	
 	@Autowired
 	private ContentService contentService;
+	
+	@Autowired
+	private UnitService unitService;
 
 	/* Image "downloading" */
 
@@ -66,7 +71,7 @@ public class ImageController {
 	}
 	
 	
-	@GetMapping("/contents/editContent/{id}")
+	@GetMapping("/units/{units.id}/contents/edit/{id}/")
 	public String editContent(Model model, @PathVariable long id) {
 		
 		Optional<Content> content = contentService.findOne(id);
@@ -77,8 +82,9 @@ public class ImageController {
 		return "editContent";
 	}
 	
-	@PostMapping("/contents/save/{id}")
-	public String saveBook(Model model, Content content, @RequestParam("file") MultipartFile file, @PathVariable long id) {
+	@PostMapping("/units/{units.id}/contents/edit/{id}/save")
+	public String saveBook(Model model, Content content, @RequestParam("file") MultipartFile file, @PathVariable long id,
+			@PathVariable("units.id") long unitId) {
 		
 //		Image handler
 		
@@ -90,10 +96,13 @@ public class ImageController {
 				file.transferTo(uploadedFile);
 
 				content.setImage(fileName);
-				
+				content.setUnit(unitService.findOne(unitId).get());
 				contentService.save(content);
 				
-				model.addAttribute("content", contentService.findAll());
+				Unit unit = unitService.findOne(unitId).get();
+		        model.addAttribute("units", unit);
+		        model.addAttribute("unit", unitService.findAll());
+		        model.addAttribute("contents", unit.getContents());
 				return "contents";
 			} catch (Exception e) {
 				model.addAttribute("error", e.getClass().getName() + ":" + e.getMessage());
@@ -102,6 +111,10 @@ public class ImageController {
 			}
 		} else {
 			contentService.save(content);
+			Unit unit = unitService.findOne(unitId).get();
+	        model.addAttribute("units", unit);
+	        model.addAttribute("unit", unitService.findAll());
+	        model.addAttribute("contents", unit.getContents());
 
 			model.addAttribute("content", contentService.findAll());
 			return "/contents";

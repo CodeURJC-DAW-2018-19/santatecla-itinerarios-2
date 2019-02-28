@@ -72,6 +72,14 @@ public class Content {
 		this.image = image;
 	}
 
+	public Unit getUnit() {
+		return unit;
+	}
+
+	public void setUnit(Unit unit) {
+		this.unit = unit;
+	}
+
 	@ManyToOne
     private Unit unit;
     
