@@ -1,82 +1,104 @@
 {{>header}}
-						<!-- Itineraries -->
-						<div class="tab-pane" id="itinerarios1" aria-expanded="">
-							<div id=itineraryView>
-								<form>
-									<legend>Vista:</legend>
-									<div class="row view1">
-										<div class="col">
-											<select class="form-control selectpicker selectBoxBugFixer"
-												data-style="btn btn-link" id="exampleFormControlSelect1">
-												<option selected disabled>Elegir unidad</option>
-												<option>Unidad 1</option>
-											</select>
-										</div>
-										<div class="col">
-											<select class="form-control selectpicker selectBoxBugFixer"
-												data-style="btn btn-link" id="exampleFormControlSelect1">
-												<option selected disabled>Elegir ficha</option>
-												<option>Ficha 1</option>
-												<option>Ficha 2</option>
-												<option>Ficha 3</option>
-												<option>Ficha 4</option>
-											</select>
-										</div>
-									</div>
-								</form>
-								<div class="view2 html">
-									<legend>HTML</legend>
-									<div class="card">
-										<div class="card-body">This is some text within a card
-											body.</div>
-									</div>
-									<div class="card">
-										<div class="card-body">This is some text within a card
-											body.</div>
-									</div>
-									<div class="card">
-										<div class="card-body">This is some text within a card
-											body.</div>
-									</div>
-								</div>
-							</div>
-							<div id=itinerary>
-								<hr>
-								<legend>Itinerario:</legend>
-								<div id=itinerarySelects>
-									<div id=fieldsItinerary class="row">
-										<div class="col">
-											<select class="form-control selectpicker selectBoxBugFixer"
-												data-style="btn btn-link" id="exampleFormControlSelect1">
-												<option selected disabled>Elegir unidad</option>
-												<option>Unidad 1</option>
-											</select>
-										</div>
-										<div class="col">
-											<select class="form-control selectpicker selectBoxBugFixer"
-												data-style="btn btn-link" id="exampleFormControlSelect1">
-												<option selected disabled>Elegir itinerario</option>
-											</select>
-										</div>
-									</div>
-								</div>
-								<!-- Div for lists of itinerary -->
-								<div>
-									<p>Div for lists of itinerary</p>
-								</div>
-								<hr>
-								<div id=radioButtonsIt class="form-check form-check-radio">
-									<label class="form-check-label"> <input
-										class="form-check-input" type="radio" name="exampleRadios"
-										id="exampleRadios1" value="option1" checked> Vista <span
-										class="circle"> <span class="check"></span>
+<div class="card-body noBottomNoPadding">
+    <div class="tab-content">
+
+        <!-- "Unidad 1" tab content -->
+        <div class="tab-pane active" id="unidad1">
+            <ul class="nav nav-pills nav-pills-primary" role="tablist">
+                <li class="nav-item"><a class="nav-link tab2"
+                                        href="contents">Fichas</a></li>
+                <li class="nav-item"><a class="nav-link tab2"
+                                        href="itinerary">Itinerarios</a></li>
+            </ul>
+            <div class="tab-content tab-space">
+                <div class="tab-pane active" id="fichas" aria-expanded="true">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Itineraries -->
+    <div class="tab-pane" id="itinerarios1" aria-expanded="">
+        <div id=itineraryView>
+            <form>
+                <legend>Vista:</legend>
+                <div class="row view1">
+                    <div class="col">
+                        <select class="form-control selectpicker selectBoxBugFixer"
+                                data-style="btn btn-link" id="exampleFormControlSelect1">
+                            <option selected disabled>Elegir unidad</option>
+                            <option>Unidad 1</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <select class="form-control selectpicker selectBoxBugFixer"
+                                data-style="btn btn-link" id="exampleFormControlSelect1">
+                            <option selected disabled>Elegir ficha</option>
+                            <option>Ficha 1</option>
+                            <option>Ficha 2</option>
+                            <option>Ficha 3</option>
+                            <option>Ficha 4</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+            <div class="view2 html">
+                <legend>HTML</legend>
+                <div class="card">
+                    <div class="card-body">This is some text within a card
+                        body.
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">This is some text within a card
+                        body.
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">This is some text within a card
+                        body.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id=itinerary>
+            <hr>
+            <legend>Itinerario:</legend>
+            <div id=itinerarySelects>
+                <div id=fieldsItinerary class="row">
+                    <div class="col">
+                        <select class="form-control selectpicker selectBoxBugFixer"
+                                data-style="btn btn-link" id="exampleFormControlSelect1">
+                            <option selected disabled>Elegir unidad</option>
+                            <option>Unidad 1</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <select class="form-control selectpicker selectBoxBugFixer"
+                                data-style="btn btn-link" id="exampleFormControlSelect1">
+                            <option selected disabled>Elegir itinerario</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- Div for lists of itinerary -->
+            <div>
+                <p>Div for lists of itinerary</p>
+            </div>
+            <hr>
+            <div id=radioButtonsIt class="form-check form-check-radio">
+                <label class="form-check-label"> <input
+                        class="form-check-input" type="radio" name="exampleRadios"
+                        id="exampleRadios1" value="option1" checked> Vista <span
+                        class="circle"> <span class="check"></span>
 									</span>
-									</label> <label class="form-check-label"> <input
-										class="form-check-input" type="radio" name="exampleRadios"
-										id="exampleRadios1" value="option1"> Itinerario <span
-										class="circle"> <span class="check"></span>
+                </label> <label class="form-check-label"> <input
+                    class="form-check-input" type="radio" name="exampleRadios"
+                    id="exampleRadios1" value="option1"> Itinerario <span
+                    class="circle"> <span class="check"></span>
 									</span>
-									</label>
-								</div>
-							</div>
-						</div>
+            </label>
+            </div>
+        </div>
+    </div>
