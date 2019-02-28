@@ -36,4 +36,11 @@ public class UnitController
 //		model.addAttribute("itinerary", itService.findAll());
         return "itinerary";
     }
+
+    @RequestMapping("/units/{units_id}/contents")
+    public String contents(Model model)
+    {
+        model.addAttribute("unit", unitService.findAll());
+        return "contents";
+    }
 }
