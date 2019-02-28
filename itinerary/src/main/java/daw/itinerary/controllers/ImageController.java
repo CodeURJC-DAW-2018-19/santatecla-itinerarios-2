@@ -47,10 +47,9 @@ public class ImageController {
 		}
 	}
 
-	@PostMapping(value = "/contents/upload")
-	public String imageUploaded(Model model, @RequestParam("file") MultipartFile file) {
+	@PostMapping(value = "/contents/upload/{id}")
+	public String imageUploaded(Model model, @RequestParam("file") MultipartFile file, @PathVariable Long id) {
 		
-		int id = imageId.getAndIncrement();
 
 		String fileName = "image-" + id + ".jpg";
 
@@ -59,7 +58,7 @@ public class ImageController {
 				File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
 				file.transferTo(uploadedFile);
 
-				images.put(id, new Image(id, fileName));
+//				images.put(id, new Image(id, fileName));
 
 				model.addAttribute("images", images.values());
 				model.addAttribute("content", contentService.findAll());

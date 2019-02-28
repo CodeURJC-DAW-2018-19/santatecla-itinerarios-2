@@ -6,16 +6,14 @@
 	<div class="card-body">
 		<p>{{desc}}</p>
 		{{^images}}
-		<form method="post" action="/contents/upload" enctype="multipart/form-data">
+		<form method="post" action="/contents/upload/{{id}}" enctype="multipart/form-data">
 			<input type="file" name="file" accept=".png, .jpg"/>
 			<input type="submit" class="send" name="send"/>
 		</form>
 		{{/images}}
-		{{#images}}
 		<p>
 			<img src='/images/{{id}}' />
 		</p>
-		{{/images}}
 	</div>
 </div>
 {{/content}}
