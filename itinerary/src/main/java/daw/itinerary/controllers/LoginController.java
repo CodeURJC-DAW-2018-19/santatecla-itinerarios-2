@@ -47,6 +47,7 @@ public class LoginController {
 			return new ResponseEntity<>(true, HttpStatus.OK);
 		}
 	}
+
 	
 	@RequestMapping("/login")
 	public String login(Model model) {
@@ -60,5 +61,6 @@ public class LoginController {
 		return "private";
 	}
 	
+
 
 }
