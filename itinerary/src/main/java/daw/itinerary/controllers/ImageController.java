@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import daw.itinerary.content.Content;
 import daw.itinerary.content.ContentService;
 import daw.itinerary.content.Image;
 
@@ -32,48 +34,9 @@ public class ImageController {
 	@Autowired
 	private ContentService contentService;
 
-	/* Image uploading */
+	/* Image "downloading" */
 
 	private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "images");
-
-	private Map<Integer, Image> images = new ConcurrentHashMap<>();
-	private AtomicInteger imageId = new AtomicInteger();
-
-	@PostConstruct
-	public void init() throws IOException {
-
-		if (!Files.exists(FILES_FOLDER)) {
-			Files.createDirectories(FILES_FOLDER);
-		}
-	}
-
-	@PostMapping(value = "/contents/upload/{id}")
-	public String imageUploaded(Model model, @RequestParam("file") MultipartFile file, @PathVariable Long id) {
-		
-
-		String fileName = "image-" + id + ".jpg";
-
-		if (!file.isEmpty()) {
-			try {
-				File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
-				file.transferTo(uploadedFile);
-
-//				images.put(id, new Image(id, fileName));
-
-				model.addAttribute("images", images.values());
-				model.addAttribute("content", contentService.findAll());
-				return "/contents";
-			} catch (Exception e) {
-				model.addAttribute("error", e.getClass().getName() + ":" + e.getMessage());
-				model.addAttribute("content", contentService.findAll());
-				return "/contents";
-			}
-		} else {
-			model.addAttribute("error", "The file is empty");
-			return "/contents";
-		}
-
-	}
 
 	@GetMapping("/images/{id}")
 	public void fileDownload(@PathVariable String id, HttpServletResponse res)
@@ -99,8 +62,49 @@ public class ImageController {
 
 		model.addAttribute("content", contentService.findAll());
 
-		model.addAttribute("images", images.values());
-
 		return "contents";
+	}
+	
+	
+	@GetMapping("/contents/editContent/{id}")
+	public String editContent(Model model, @PathVariable long id) {
+		
+		Optional<Content> content = contentService.findOne(id);
+		
+		if(content.isPresent()) {
+			model.addAttribute("content", content.get());
+		}
+		return "editContent";
+	}
+	
+	@PostMapping("/contents/save/{id}")
+	public String saveBook(Model model, Content content, @RequestParam("file") MultipartFile file, @PathVariable long id) {
+		
+//		Image handler
+		
+		String fileName = "image-" + id + ".jpg";
+
+		if (!file.isEmpty()) {
+			try {
+				File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
+				file.transferTo(uploadedFile);
+
+				content.setImage(fileName);
+				
+				contentService.save(content);
+				
+				model.addAttribute("content", contentService.findAll());
+				return "contents";
+			} catch (Exception e) {
+				model.addAttribute("error", e.getClass().getName() + ":" + e.getMessage());
+				model.addAttribute("content", contentService.findAll());
+				return "/contents";
+			}
+		} else {
+			contentService.save(content);
+
+			model.addAttribute("content", contentService.findAll());
+			return "/contents";
+		}
 	}
 }
