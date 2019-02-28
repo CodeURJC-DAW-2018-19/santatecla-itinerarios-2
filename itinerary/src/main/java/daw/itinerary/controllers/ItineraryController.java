@@ -7,24 +7,23 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class UnitController
+public class ItineraryController
 {
     @Autowired
     private UnitService unitService;
 
-    @RequestMapping("/")
-    public String index()
+    @RequestMapping("/itinerary")
+    public String itinerary()
     {
-
-        return "redirect:units";
+        return "itinerary";
     }
 
-    @RequestMapping("/units")
-    public String units(Model model)
+    @RequestMapping("/units/{units_id}/itinerary")
+    public String itinerary(Model model)
     {
-
         model.addAttribute("unit", unitService.findAll());
-
-        return "units";
+//		model.addAttribute("unit", unitService.findOne(id));
+//		model.addAttribute("itinerary", itService.findAll());
+        return "itinerary";
     }
 }

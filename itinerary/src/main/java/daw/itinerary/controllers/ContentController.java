@@ -7,24 +7,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class UnitController
+public class ContentController
 {
     @Autowired
     private UnitService unitService;
 
-    @RequestMapping("/")
-    public String index()
+    @RequestMapping("/units/{units_id}/contents")
+    public String contents(Model model)
     {
-
-        return "redirect:units";
-    }
-
-    @RequestMapping("/units")
-    public String units(Model model)
-    {
-
         model.addAttribute("unit", unitService.findAll());
-
-        return "units";
+        return "contents";
     }
 }

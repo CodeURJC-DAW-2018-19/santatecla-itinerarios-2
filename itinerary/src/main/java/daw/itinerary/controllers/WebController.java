@@ -64,12 +64,6 @@ public class WebController
 		}
 	}
 
-	@RequestMapping("/itinerary")
-	public String itinerary()
-	{
-		return "itinerary";
-	}
-
 	@GetMapping("/contents")
 	public String contents(Model model)
 	{
