@@ -40,12 +40,11 @@ import daw.itinerary.itineraries.ItineraryService;
 public class WebController
 {
 
-	@Autowired
-	private UnitService unitService;
+	//@Autowired
+	//private UnitService unitService;
 
 	@Autowired
 	private ItineraryService itService;
-
 
 	@Autowired
 	private UserComponent userComponent;
@@ -63,39 +62,6 @@ public class WebController
 			model.addAttribute("admin", userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN"));
 			model.addAttribute("userName", userComponent.getLoggedUser().getName());
 		}
-	}
-
-
-	@RequestMapping("/")
-	public String index()
-	{
-
-		return "redirect:units";
-	}
-
-	@RequestMapping("/itinerary")
-	public String itinerary()
-	{
-		return "itinerary";
-	}
-
-	@RequestMapping("/units/{units_id}/itinerary")
-	public String itinerary(Model model)
-	{
-//		model.addAttribute("unit", unitService.findOne(id));
-//		model.addAttribute("itinerary", itService.findAll());
-		return "itinerary";
-	}
-
-
-
-	@RequestMapping("/units")
-	public String units(Model model)
-	{
-
-		model.addAttribute("unit", unitService.findAll());
-
-		return "units";
 	}
 
 	@GetMapping("/contents")

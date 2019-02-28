@@ -2,128 +2,135 @@
 <html lang="es">
 
 <head>
-<title>Gestor de itinerarios</title>
+    <title>Gestor de itinerarios</title>
 
-<meta charset="utf-8">
-<meta
-	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-	name="viewport" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8">
+    <meta
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+            name="viewport"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
-<!-- Material Dashboard CSS -->
-<link
-	href="/material-dashboard-html-v2.1.1/assets/css/material-dashboard.css?v=2.1.0"
-	rel="stylesheet" />
+    <!-- Material Dashboard CSS -->
+    <link
+            href="/material-dashboard-html-v2.1.1/assets/css/material-dashboard.css?v=2.1.0"
+            rel="stylesheet"/>
 
-<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round"
-	rel="stylesheet">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round"
+          rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<!-- Fonts and icons -->
-<link rel="stylesheet" type="text/css"
-	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <!-- Fonts and icons -->
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
 
-<!-- Our CSS files -->
-<link rel="stylesheet" type="text/css" href="/css/index.css">
+    <!-- Our CSS files -->
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
 
-<!-- Scripts -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="js/showHideTabContent.js"></script>
+    <!-- Scripts -->
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/showHideTabContent.js"></script>
 </head>
 
 <body id=background>
 
-	<!-- Modal HTML (login) -->
-	<div id="myModal" class="modal fade">
-		<div class="modal-dialog modal-login">
-			<div class="modal-content">
+<!-- Modal HTML (login) -->
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-login">
+        <div class="modal-content">
 
-				<div class="modal-header">
-					<h4 class="modal-title">Iniciar sesión</h4>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-hidden="true">&times;</button>
-				</div>
+            <div class="modal-header">
+                <h4 class="modal-title">Iniciar sesión</h4>
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">&times;
+                </button>
+            </div>
 
-				<div class="modal-body">
-					<form action="/examples/actions/confirmation.php" method="post">
-						<div class="form-group">
-							<i class="fa fa-user"></i> <input type="text"
-								class="form-control" placeholder="Usuario" required="required">
-						</div>
-						<div class="form-group">
-							<i class="fa fa-lock"></i> <input type="password"
-								class="form-control" placeholder="Contraseña"
-								required="required">
-						</div>
-						<div class="form-group">
-							<input type="submit" class="btn btn-primary btn-block btn-lg"
-								value="Iniciar sesión">
-						</div>
-					</form>
-				</div>
+            <div class="modal-body">
+                <form action="/examples/actions/confirmation.php" method="post">
+                    <div class="form-group">
+                        <i class="fa fa-user"></i> <input type="text"
+                                                          class="form-control" placeholder="Usuario"
+                                                          required="required">
+                    </div>
+                    <div class="form-group">
+                        <i class="fa fa-lock"></i> <input type="password"
+                                                          class="form-control" placeholder="Contraseña"
+                                                          required="required">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary btn-block btn-lg"
+                               value="Iniciar sesión">
+                    </div>
+                </form>
+            </div>
 
-				<div class="modal-footer">
-					<a href="#">¿Ha olvidado su contraseña?</a>
-				</div>
+            <div class="modal-footer">
+                <a href="#">¿Ha olvidado su contraseña?</a>
+            </div>
 
-			</div>
-		</div>
-	</div>
+        </div>
+    </div>
+</div>
 
-	<!-- Tabs -->
-	<div class="card card-nav-tabs card-plain noBottomNoPadding">
-		<div class="card-header card-header-danger">
-			<!-- Login button -->
-			<button type="button" class="btn btn-default" id=loginButton
-				href="#myModal" class="trigger-btn" data-toggle="modal">Login</button>
+<!-- Tabs -->
+<div class="card card-nav-tabs card-plain noBottomNoPadding">
+    <div class="card-header card-header-danger">
+        <!-- Login button -->
+        <button type="button" class="btn btn-default" id=loginButton
+                href="#myModal" class="trigger-btn" data-toggle="modal">Login
+        </button>
 
-			<!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
-			<div class="nav-tabs-navigation">
-				<div class="nav-tabs-wrapper">
-					<ul class="nav nav-tabs" data-tabs="tabs">
-						<li class="nav-item"><a class="nav-link active" href="/">Unidades</a></li>
-						{{#unit}}
-						<li class="nav-item"><a class="nav-link tabNavUnits"
-							href="units/{{id}}" data-toggle="tab">{{name}}</a></li>
-						{{/unit}}
-					</ul>
-				</div>
-			</div>
-		</div>
+        <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+        <div class="nav-tabs-navigation">
+            <div class="nav-tabs-wrapper">
+                <ul class="nav nav-tabs" data-tabs="tabs">
+                    <li class="nav-item"><a class="nav-link active" href="/">Unidades</a></li>
+                    {{#unit}}
+                    <li class="nav-item"><a class="nav-link tabNavUnits"
+                                            href="/units/{{id}}/contents">{{name}}</a></li>
+                    {{/unit}}
+                </ul>
+            </div>
+        </div>
+    </div>
 
-		<div class="card-body noBottomNoPadding">
-			<div class="tab-content">
+    <!--div class="card-body noBottomNoPadding">
+        <div class="tab-content">
 
-				<!-- "Unidad 1" tab content -->
-				<div class="tab-pane" id="unidad1">
-					<ul class="nav nav-pills nav-pills-primary" role="tablist">
-						<li class="nav-item"><a class="nav-link tab2"
-							 href="contents">Fichas</a></li>
-						<li class="nav-item"><a class="nav-link tab2"
-							href="/itinerary">Itinerarios 1</a></li>
-					</ul>
-					<div class="tab-content tab-space">
-						<div class="tab-pane active" id="fichas" aria-expanded="true">
+            --------
+            In the comment below, 2 "--" are missing
+            put them to comment it againg
+            --------
+            <! "Unidad 1" tab content >
+            <div class="tab-pane" id="unidad1">
+                <ul class="nav nav-pills nav-pills-primary" role="tablist">
+                    <li class="nav-item"><a class="nav-link tab2"
+                         href="contents">Fichas</a></li>
+                    <li class="nav-item"><a class="nav-link tab2"
+                        href="/itinerary">Itinerarios 1</a></li>
+                </ul>
+                <div class="tab-content tab-space">
+                    <div class="tab-pane active" id="fichas" aria-expanded="true">
 
-						</div>
+                    </div>
 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                </div>
+            </div>
+        </div-->
+    </div>
+    </div>
 
-	<!-- Material Dashboard Core initialisations of plugins and Bootstrap Material Design Library -->
-	<script
-		src="/material-dashboard-html-v2.1.1/assets/js/material-dashboard.js"></script>
+    <!-- Material Dashboard Core initialisations of plugins and Bootstrap Material Design Library -->
+    <script
+            src="/material-dashboard-html-v2.1.1/assets/js/material-dashboard.js"></script>
 </body>
 
 </html>
