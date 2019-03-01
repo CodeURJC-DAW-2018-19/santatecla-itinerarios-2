@@ -70,6 +70,50 @@ public class ImageController {
 		return "contents";
 	}
 	
+	@GetMapping("/units/{units.id}/contents/newContent/")
+	public String newContent(Model model, @PathVariable("units.id") long id) {
+		return "newContent";
+		
+	}
+	
+	@PostMapping("/units/{units.id}/contents/newContent/save/")
+	public String saveContent(Model model, Content content, @RequestParam("file") MultipartFile file,
+			@PathVariable("units.id") long unitId) {
+		
+		if (!file.isEmpty()) {
+			try {
+				contentService.save(content);
+				String fileName = "image-" + content.getId() + ".jpg";
+				File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
+				file.transferTo(uploadedFile);
+
+				content.setImage(fileName);
+				content.setUnit(unitService.findOne(unitId).get());
+
+				contentService.save(content);
+				Unit unit = unitService.findOne(unitId).get();
+		        model.addAttribute("units", unit);
+		        model.addAttribute("unit", unitService.findAll());
+		        model.addAttribute("contents", unit.getContents());
+				return "contents";
+			} catch (Exception e) {
+				model.addAttribute("error", e.getClass().getName() + ":" + e.getMessage());
+				model.addAttribute("content", contentService.findAll());
+				return "/contents";
+			}
+		} else {
+			content.setUnit(unitService.findOne(unitId).get());
+			contentService.save(content);
+			Unit unit = unitService.findOne(unitId).get();
+	        model.addAttribute("units", unit);
+	        model.addAttribute("unit", unitService.findAll());
+	        model.addAttribute("contents", unit.getContents());
+
+			model.addAttribute("content", contentService.findAll());
+			return "/contents";
+		}
+	}
+	
 	
 	@GetMapping("/units/{units.id}/contents/edit/{id}/")
 	public String editContent(Model model, @PathVariable long id) {
