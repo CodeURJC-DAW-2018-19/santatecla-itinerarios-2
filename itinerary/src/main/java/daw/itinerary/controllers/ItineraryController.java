@@ -1,5 +1,6 @@
 package daw.itinerary.controllers;
 
+import daw.itinerary.content.ContentService;
 import daw.itinerary.itineraries.ItineraryService;
 import daw.itinerary.unit.Unit;
 import daw.itinerary.unit.UnitService;
@@ -18,6 +19,9 @@ public class ItineraryController
     @Autowired
     private ItineraryService itineraryService;
 
+    @Autowired
+    private ContentService contentService;
+
     @RequestMapping("/itinerary")
     public String itinerary()
     {
@@ -30,7 +34,8 @@ public class ItineraryController
         Unit unit = unitService.findOne(unit_id).get();
         model.addAttribute("units", unit);
         model.addAttribute("unit", unitService.findAll());
-        model.addAttribute("itineraries", unit.getContents());
+        model.addAttribute("contents", contentService.findAll());
+        model.addAttribute("itineraries", unit.getItineraries());
 
         return "itinerary";
     }
