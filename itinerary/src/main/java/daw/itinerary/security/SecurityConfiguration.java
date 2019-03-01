@@ -6,8 +6,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-	
-	protected void configure (HttpSecurity http) throws Exception {
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
 		
 		//Public pages
 		http.authorizeRequests().antMatchers("/").permitAll().and().csrf().disable();
