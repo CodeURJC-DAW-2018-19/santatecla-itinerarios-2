@@ -95,11 +95,15 @@ public class ImageController {
 		        model.addAttribute("units", unit);
 		        model.addAttribute("unit", unitService.findAll());
 		        model.addAttribute("contents", unit.getContents());
+		        // In previous version we use "contents", no redirect
+				// Change it because a bug
 				return "contents";
 			} catch (Exception e) {
 				model.addAttribute("error", e.getClass().getName() + ":" + e.getMessage());
 				model.addAttribute("content", contentService.findAll());
-				return "/contents";
+				// In previous version we use "/contents", no redirect
+				// Change it because a bug
+				return "redirect:/units/{units.id}/contents";
 			}
 		} else {
 			content.setUnit(unitService.findOne(unitId).get());
@@ -110,7 +114,7 @@ public class ImageController {
 	        model.addAttribute("contents", unit.getContents());
 
 			model.addAttribute("content", contentService.findAll());
-			return "/contents";
+			return "redirect:/units/{units.id}/contents";
 		}
 	}
 	
