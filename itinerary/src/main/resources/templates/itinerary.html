@@ -6,7 +6,7 @@
         <div class="tab-pane active" id="unidad1">
             <ul class="nav nav-pills nav-pills-primary" role="tablist">
                 <li class="nav-item"><a class="nav-link tab2"
-                                        href="contents">Fichas</a></li>
+                                        {{#unit}}href="/units/{{id}}/contents"{{/unit}}>Fichas</a></li>
                 {{#units}}
                 {{#itineraries}}
                 <li class="nav-item"><a class="nav-link tab2"
