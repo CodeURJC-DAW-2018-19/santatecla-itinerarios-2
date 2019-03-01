@@ -51,7 +51,12 @@ public class Unit {
 		return contents;
 	}
 
-	@Override
+    public Set<Itinerary> getItineraries()
+    {
+        return itineraries;
+    }
+
+    @Override
    	public String toString() {
    		return "Content [id=" + id + ", name=" + name + "]";
    	}
