@@ -97,7 +97,7 @@ public class ImageController {
 		        model.addAttribute("contents", unit.getContents());
 		        // In previous version we use "contents", no redirect
 				// Change it because a bug
-				return "contents";
+				return "redirect:/units/{units.id}/contents";
 			} catch (Exception e) {
 				model.addAttribute("error", e.getClass().getName() + ":" + e.getMessage());
 				model.addAttribute("content", contentService.findAll());
