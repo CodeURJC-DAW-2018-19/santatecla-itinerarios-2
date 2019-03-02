@@ -32,7 +32,9 @@
                         <select class="form-control selectpicker selectBoxBugFixer"
                                 data-style="btn btn-link" id="exampleFormControlSelect1">
                             <option selected disabled>Elegir unidad</option>
-                            <option>Unidad 1</option>
+                            {{#unit}}
+                            <option>{{name}}</option>
+                            {{/unit}}
                         </select>
                     </div>
                     <div class="col">
