@@ -68,6 +68,8 @@ public class WebController
 	public String contents(Model model)
 	{
 
+		boolean logged = userComponent.getLoggedUser() != null;
+		model.addAttribute("logged", logged);
 		model.addAttribute("content", contentService.findAll());
 
 		model.addAttribute("images", images.values());
@@ -146,8 +148,10 @@ public class WebController
 	}
 
 	@GetMapping("/error")
-	public String error()
+	public String error(Model model)
 	{
+		boolean logged = userComponent.getLoggedUser() != null;
+		model.addAttribute("logged", logged);
 		return "error";
 	}
 
