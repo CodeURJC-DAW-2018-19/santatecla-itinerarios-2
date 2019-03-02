@@ -11,7 +11,10 @@
         </form>
     </div>
 <!--     Add units button  -->
+	{{#admin}}
     <input type="button" class="newUnit" onclick="location.href='/units/newUnit/';" value="Unidad nueva" />
+    {{/admin}}
+    
     <!-- Dropdown -->
     <div id="accordion" role="tablist">
         {{#unit}}

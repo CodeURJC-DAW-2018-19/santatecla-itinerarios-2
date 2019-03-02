@@ -40,6 +40,11 @@ public class ContentController
         model.addAttribute("units", unit);
         model.addAttribute("unit", unitService.findAll());
         model.addAttribute("contents", unit.getContents());
+        
+        if(logged)
+		{
+			model.addAttribute("admin", userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN"));
+		}
         return "contents";
     }
 }
