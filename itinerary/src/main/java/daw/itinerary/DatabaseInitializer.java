@@ -68,6 +68,12 @@ public class DatabaseInitializer {
 			
 			/*Content sample initializer */
 			contentRepo.save(exampleContent);
+
+			for(int i = 0; i < 83; i++)
+			{
+				contentRepo.save(new Content("Title " + i, "Pichulo", unit1));
+			}
+
 			contentRepo.save(new Content("¿Qué?","JavaScript es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, ​ basado en prototipos, imperativo, débilmente tipado y dinámico.", unit1));
 			contentRepo.save(new Content("Historia","JavaScript fue desarrollado originalmente por Brendan Eich de Netscape con el nombre de Mocha, el cual fue renombrado posteriormente a LiveScript, para finalmente quedar como JavaScript.", unit1));
 			contentRepo.save(new Content("¿Qué?","La Organización Europea para la Investigación Nuclear (nombre oficial en francés: Organisation européenne pour la recherche nucléaire),1​ comúnmente conocida por la sigla CERN (Conseil Européen pour la Recherche Nucléaire", unit3));
