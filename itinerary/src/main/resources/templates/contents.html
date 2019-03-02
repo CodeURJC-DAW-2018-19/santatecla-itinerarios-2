@@ -20,7 +20,7 @@
     </div>
 </div>
 {{#units}}
-{{#contents}}
+{{#contentsPage}}
 <div class="card" style="width:75rem">
 	<div class="card-header">{{title}}</div>
 	<div class="card-body">
@@ -31,8 +31,9 @@
 		{{/image}}
 	</div>
 </div>
-{{/contents}}
+{{/contentsPage}}
 
+<input id="loadMore" type="button" class="send" onclick="loadMore()" value="Cargar más"/>
 <input type="button" class="send" onclick="location.href='/units/{{units.id}}/contents/newContent/';" value="Ficha nueva" />
 
 {{/units}}
