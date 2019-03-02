@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import daw.itinerary.user.User;
@@ -22,7 +23,7 @@ public class LoginController {
 	@Autowired
 	private UserComponent userComponent;
 
-	@RequestMapping("/logIn")
+	/*@RequestMapping("/api/logIn")
 	public ResponseEntity<User> logIn() {
 
 		if (!userComponent.isLoggedUser()) {
@@ -35,7 +36,7 @@ public class LoginController {
 		}
 	}
 
-	@RequestMapping("/logOut")
+	@RequestMapping("/api/logOut")
 	public ResponseEntity<Boolean> logOut(HttpSession session) {
 
 		if (!userComponent.isLoggedUser()) {
@@ -46,10 +47,16 @@ public class LoginController {
 			log.info("Logged Out");
 			return new ResponseEntity<>(true, HttpStatus.OK);
 		}
-	}
+	}*/
 	
 	@RequestMapping("/login")
 	public String login(HttpSession session) {
-		return "login";
+		return "redirect:/units";
 	}
+	
+	@GetMapping("/logout")
+    public String logout(Model model, HttpSession session) {
+        session.invalidate();
+        return "redirect:/login";
+    }
 }
