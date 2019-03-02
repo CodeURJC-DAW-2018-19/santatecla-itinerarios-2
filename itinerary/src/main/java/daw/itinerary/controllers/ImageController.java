@@ -78,6 +78,8 @@ public class ImageController {
 	
 	@GetMapping("/units/{units.id}/contents/newContent/")
 	public String newContent(Model model, @PathVariable("units.id") long id) {
+		boolean logged = userComponent.getLoggedUser() != null;
+		model.addAttribute("logged", logged);
 		return "newContent";
 		
 	}
@@ -131,6 +133,8 @@ public class ImageController {
 		Optional<Content> content = contentService.findOne(id);
 		
 		if(content.isPresent()) {
+			boolean logged = userComponent.getLoggedUser() != null;
+			model.addAttribute("logged", logged);
 			model.addAttribute("content", content.get());
 		}
 		return "editContent";

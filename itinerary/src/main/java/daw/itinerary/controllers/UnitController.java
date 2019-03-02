@@ -38,8 +38,10 @@ public class UnitController
 	}
 
 	@GetMapping("/units/newUnit/")
-	public String newUnit() {
+	public String newUnit(Model model) {
 
+		boolean logged = userComponent.getLoggedUser() != null;
+		model.addAttribute("logged", logged);
 		return "newUnit";
 	}
 
