@@ -82,7 +82,9 @@ public class ImageController {
 	@PostMapping("/units/{units.id}/contents/newContent/save/")
 	public String saveContent(Model model, Content content, @RequestParam("file") MultipartFile file,
 			@PathVariable("units.id") long unitId) {
-		
+		if (content.getTitle().isEmpty()) {
+			return "redirect:/units/{units.id}/contents";
+		}
 		if (!file.isEmpty()) {
 			try {
 				contentService.save(content);
@@ -140,7 +142,9 @@ public class ImageController {
 			@PathVariable("units.id") long unitId) {
 		
 //		Image handler
-		
+		if (content.getTitle().isEmpty()) {
+			return "redirect:/units/{units.id}/contents";
+		}
 		String fileName = "image-" + id + ".jpg";
 
 		if (!file.isEmpty()) {
