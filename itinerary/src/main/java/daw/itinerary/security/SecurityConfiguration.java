@@ -22,8 +22,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers("/css/**", "/js/**", "/material-dashboard-html-v2.1.1/**").permitAll();
 
 		// Private pages (all other pages)
-		http.authorizeRequests().antMatchers("/units/**").hasAnyRole("USER", "ADMIN");
-
+		http.authorizeRequests().antMatchers("/units/{id}/contents").hasAnyRole("USER", "ADMIN");
+		http.authorizeRequests().antMatchers("/units/{unit_id}/itinerary/{id}").hasAnyRole("USER", "ADMIN");
+		http.authorizeRequests().antMatchers("/units/newUnit/**").hasAnyRole("ADMIN");
+		http.authorizeRequests().antMatchers("/units/{units.id}/contents/newContent/**").hasAnyRole("ADMIN");
+		http.authorizeRequests().antMatchers("/units/{units.id}/contents/edit/{id}/**").hasAnyRole("ADMIN");
+		
 		// Login form
 		http.formLogin().loginPage("/login");
 		http.formLogin().usernameParameter("username");
