@@ -45,20 +45,17 @@
 	<div class="card card-nav-tabs card-plain noBottomNoPadding">
 		<div class="card-header card-header-danger">
 
-			{{^logged}}
 			<!-- Login button -->
+			{{^logged}}
 			<button type="button" class="btn btn-default" id=loginButton
-				href="#myModal" class="trigger-btn" data-toggle="modal">Login
-			</button>
-			{{/logged}} {{#logged}}
-			<ul class="nav navbar-nav">
-				<li>{{userName}}</li>
-				<li><form action="/logout" method="post">
-						<button class="btn btn-default navbar-btn" type="submit">Log
-							Out</button>
-						<input type="hidden" name="_csrf" value="{{token}}" />
-					</form></li>
-			</ul>
+				href="#myModal" class="trigger-btn" data-toggle="modal">Iniciar
+				sesión</button>
+			{{/logged}}
+			
+			{{#logged}}
+			<button type="button" class="btn btn-default" id=loginButton
+				href="#myModal2" class="trigger-btn" data-toggle="modal">Cerrar
+				sesión</button>
 			{{/logged}}
 
 			<!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
@@ -74,8 +71,8 @@
 			</div>
 		</div>
 	</div>
-	
-	<!-- Modal HTML (login) -->
+
+	<!-- LOGIN -->
 	<div id="myModal" class="modal fade">
 		<div class="modal-dialog modal-login">
 			<div class="modal-content">
@@ -91,13 +88,15 @@
 						class="navbar-form navbar-right" role="search">
 						<div class="form-group">
 							<i class="fa fa-user"></i> <input type="text"
-								class="form-control" placeholder="Usuario" required="required">
+								class="form-control" name="username" placeholder="Usuario"
+								required="required">
 						</div>
 						<div class="form-group">
 							<i class="fa fa-lock"></i> <input type="password"
-								class="form-control" placeholder="Contraseña"
+								class="form-control" name="password" placeholder="Contraseña"
 								required="required">
 						</div>
+						<input type="hidden" name="_csrf" value="{{token}}" />
 						<div class="form-group">
 							<input type="submit" class="btn btn-primary btn-block btn-lg"
 								value="Iniciar sesión">
@@ -108,10 +107,34 @@
 				<div class="modal-footer">
 					<a href="#">¿Ha olvidado su contraseña?</a>
 				</div>
-
 			</div>
 		</div>
 	</div>
+	
+	<div id="myModal2" class="modal fade">
+		<div class="modal-dialog modal-login">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<h4 class="modal-title">Cerrando sesión</h4>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+				</div>
+
+				<div class="modal-body">
+					<form action="/logout" method="post"
+						class="navbar-form navbar-right" role="search">
+						<input type="hidden" name="_csrf" value="{{token}}" />
+						<div class="form-group">
+							<input type="submit" class="btn btn-primary btn-block btn-lg"
+								value="Aceptar">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
 
 	<!-- Material Dashboard Core initialisations of plugins and Bootstrap Material Design Library -->
 	<script
