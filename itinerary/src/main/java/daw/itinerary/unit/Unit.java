@@ -24,6 +24,10 @@ public class Unit {
 
     public Unit(){}
 
+    public Unit(String name) {
+    	this.name = name;
+    }
+    
     public Unit(long id, String name){
         this.id = id;
     	this.name = name;
@@ -51,7 +55,12 @@ public class Unit {
 		return contents;
 	}
 
-	@Override
+    public Set<Itinerary> getItineraries()
+    {
+        return itineraries;
+    }
+
+    @Override
    	public String toString() {
    		return "Content [id=" + id + ", name=" + name + "]";
    	}

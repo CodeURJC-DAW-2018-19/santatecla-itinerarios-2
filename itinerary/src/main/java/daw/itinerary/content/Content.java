@@ -32,7 +32,13 @@ public class Content {
     	this.title = title;
         this.desc = desc;
     }
-    
+
+    public Content(String title, String desc, Unit unit){
+        super();
+        this.title = title;
+        this.desc = desc;
+        this.unit = unit;
+    }
 
     public String getTitle(){
         return title;
@@ -64,6 +70,14 @@ public class Content {
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+
+	public Unit getUnit() {
+		return unit;
+	}
+
+	public void setUnit(Unit unit) {
+		this.unit = unit;
 	}
 
 	@ManyToOne

@@ -226,3 +226,33 @@ body {
 .send {
 	margin-top: 10px;
 }
+
+.newUnit {
+	float:right;
+	margin:10px;
+}
+
+.searchBar {
+	float:left;
+}
+
+
+img.center {
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    margin:auto;
+}
+p.center{
+    text-align:center;
+    margin-top:450px; // change it according to your need
+}
+
+.btn.btn-danger.center{
+	position: fixed;
+	top: 50%;
+	margin-top:220px;
+	right: 40%;
+}

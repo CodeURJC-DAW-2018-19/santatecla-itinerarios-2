@@ -1,0 +1,9 @@
+{{>header}}
+<h1>Nueva ficha</h1>
+		<form method="post" action="save/" enctype="multipart/form-data">
+			<h3> Titulo : <input type="text" name="title"/> </h3>
+			<h3> Descripcion : </h3>
+		<textarea id="desc" name="desc" rows=6 cols=30></textarea>
+			<h3> Imagen : <input type="file" name="file" accept=".png, .jpg"/> </h3>
+			<input type="submit" class="send" name="send"/>
+		</form>

@@ -6,9 +6,13 @@
         <div class="tab-pane active" id="unidad1">
             <ul class="nav nav-pills nav-pills-primary" role="tablist">
                 <li class="nav-item"><a class="nav-link tab2"
-                                        href="contents">Fichas</a></li>
-                <li class="nav-item active"><a class="nav-link tab2"
-                                        href="itinerary">Itinerarios</a></li>
+                                        {{#units}}href="/units/{{id}}/contents" {{/units}}>Fichas</a></li>
+                {{#units}}
+                {{#itineraries}}
+                <li class="nav-item"><a class="nav-link tab2"
+                                        href="{{id}}">{{name}}</a></li>
+                {{/itineraries}}
+                {{/units}}
             </ul>
             <div class="tab-content tab-space">
                 <div class="tab-pane active" id="fichas" aria-expanded="true">
@@ -26,14 +30,16 @@
                 <div class="row view1">
                     <div class="col">
                         <select class="form-control selectpicker selectBoxBugFixer"
-                                data-style="btn btn-link" id="exampleFormControlSelect1">
+                                data-style="btn btn-link" id="select1">
                             <option selected disabled>Elegir unidad</option>
-                            <option>Unidad 1</option>
+                            {{#unit}}
+                            <option>{{name}}</option>
+                            {{/unit}}
                         </select>
                     </div>
                     <div class="col">
                         <select class="form-control selectpicker selectBoxBugFixer"
-                                data-style="btn btn-link" id="exampleFormControlSelect1">
+                                data-style="btn btn-link" id="select2">
                             <option selected disabled>Elegir ficha</option>
                             <option>Ficha 1</option>
                             <option>Ficha 2</option>
@@ -69,14 +75,16 @@
                 <div id=fieldsItinerary class="row">
                     <div class="col">
                         <select class="form-control selectpicker selectBoxBugFixer"
-                                data-style="btn btn-link" id="exampleFormControlSelect1">
+                                data-style="btn btn-link" id="select3">
                             <option selected disabled>Elegir unidad</option>
-                            <option>Unidad 1</option>
+                            {{#unit}}
+                            <option>{{name}}</option>
+                            {{/unit}}
                         </select>
                     </div>
                     <div class="col">
                         <select class="form-control selectpicker selectBoxBugFixer"
-                                data-style="btn btn-link" id="exampleFormControlSelect1">
+                                data-style="btn btn-link" id="select4">
                             <option selected disabled>Elegir itinerario</option>
                         </select>
                     </div>
@@ -90,12 +98,12 @@
             <div id=radioButtonsIt class="form-check form-check-radio">
                 <label class="form-check-label"> <input
                         class="form-check-input" type="radio" name="exampleRadios"
-                        id="exampleRadios1" value="option1" checked> Vista <span
+                        id="radio1" value="option1" checked> Vista <span
                         class="circle"> <span class="check"></span>
 									</span>
                 </label> <label class="form-check-label"> <input
                     class="form-check-input" type="radio" name="exampleRadios"
-                    id="exampleRadios1" value="option1"> Itinerario <span
+                    id="radio2" value="option1"> Itinerario <span
                     class="circle"> <span class="check"></span>
 									</span>
             </label>

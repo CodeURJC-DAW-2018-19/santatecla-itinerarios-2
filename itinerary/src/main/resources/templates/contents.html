@@ -1,21 +1,38 @@
 {{>header}}
-<h2>Fichas</h2>
-{{#content}}
+<div class="card-body noBottomNoPadding">
+    <div class="tab-content">
+
+        <!-- "Unidad 1" tab content -->
+        <div class="tab-pane active" id="unidad1">
+            <ul class="nav nav-pills nav-pills-primary" role="tablist">
+                <li class="nav-item active"><a class="nav-link tab2"
+                                               href="contents">Fichas</a></li>
+                <li class="nav-item"><a class="nav-link tab2"
+                                        href="itinerary/{{id}}">Itinerarios</a></li>
+            </ul>
+            <div class="tab-content tab-space">
+                <div class="tab-pane active" id="fichas" aria-expanded="true">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{{#units}}
+{{#contents}}
 <div class="card" style="width:75rem">
 	<div class="card-header">{{title}}</div>
 	<div class="card-body">
 		<p>{{desc}}</p>
-		{{^images}}
-		<form method="post" action="/contents/upload" enctype="multipart/form-data">
-			<input type="file" name="file" accept=".png, .jpg"/>
-			<input type="submit" class="send" name="send"/>
-		</form>
-		{{/images}}
-		{{#images}}
-		<p>
-			<img src='/images/{{id}}' />
-		</p>
-		{{/images}}
+		<a href="/units/{{units.id}}/contents/edit/{{id}}/"> Editar ficha </a>
+		{{#image}}
+		<img src="/images/{{id}}"/>
+		{{/image}}
 	</div>
 </div>
-{{/content}}
+{{/contents}}
+
+<input type="button" class="send" onclick="location.href='/units/{{units.id}}/contents/newContent/';" value="Ficha nueva" />
+
+{{/units}}
