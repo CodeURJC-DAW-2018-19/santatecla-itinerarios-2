@@ -1,7 +1,5 @@
 package daw.itinerary.controllers;
 
-import daw.itinerary.content.Content;
-import daw.itinerary.content.ContentService;
 import daw.itinerary.unit.Unit;
 import daw.itinerary.unit.UnitService;
 import daw.itinerary.user.UserComponent;

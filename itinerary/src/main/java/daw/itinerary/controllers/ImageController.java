@@ -6,12 +6,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Map;
 import java.util.Optional;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicInteger;
 
-import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +22,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import daw.itinerary.content.Content;
 import daw.itinerary.content.ContentService;
-import daw.itinerary.content.Image;
 import daw.itinerary.unit.Unit;
 import daw.itinerary.unit.UnitService;
 import daw.itinerary.user.UserComponent;

@@ -1,7 +1,6 @@
 package daw.itinerary.controllers;
 
 import daw.itinerary.content.ContentService;
-import daw.itinerary.itineraries.ItineraryService;
 import daw.itinerary.unit.Unit;
 import daw.itinerary.unit.UnitService;
 import daw.itinerary.user.UserComponent;
@@ -20,9 +19,6 @@ public class ItineraryController
     
     @Autowired
 	private UserComponent userComponent;
-
-    @Autowired
-    private ItineraryService itineraryService;
 
     @Autowired
     private ContentService contentService;
