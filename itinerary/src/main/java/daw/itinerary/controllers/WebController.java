@@ -37,139 +37,39 @@ import daw.itinerary.content.*;
 import daw.itinerary.itineraries.ItineraryService;
 
 @Controller
-public class WebController {
+public class WebController
+{
+
+	//@Autowired
+	//private UnitService unitService;
 
 	@Autowired
-	private UnitService unitService;
-
-	@Autowired
-	private	ItineraryService itService;
-
+	private ItineraryService itService;
 
 	@Autowired
 	private UserComponent userComponent;
 
-	@Autowired
-	private ContentService contentService;
+	@Autowired 
+	private UnitService unitService;
 
 	@ModelAttribute
-	public void addUserToModel(Model model) {
+	public void addUserToModel(Model model)
+	{
 		boolean logged = userComponent.getLoggedUser() != null;
 		model.addAttribute("logged", logged);
-		if (logged) {
+		if(logged)
+		{
 			model.addAttribute("admin", userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN"));
 			model.addAttribute("userName", userComponent.getLoggedUser().getName());
 		}
 	}
 
 
-	@RequestMapping("/")
-	public String index(Model model) {
-		
-		model.addAttribute("unit", unitService.findAll());
-		return "units";
-	}
-
-	@RequestMapping("/itinerary")
-	public String itinerary() {
-		return "itinerary";
-	}
-	@RequestMapping("/units/{units_id}/itinerary")
-	public String itinerary(Model model) {
-//		model.addAttribute("unit", unitService.findOne(id));
-//		model.addAttribute("itinerary", itService.findAll());
-		return "itinerary";
-	}
-
-
-
-	@RequestMapping("/login")
-	public String login(Model model) {
-
-		model.addAttribute("hideLogin", true);
-		return "login";
-	}
-
-
-	@RequestMapping("/units")
-	public String units() {
-		return "units";
-	}
-
-	@GetMapping("/contents")
-	public String contents(Model model) {
-
-		model.addAttribute("content", contentService.findAll());
-
-		model.addAttribute("images", images.values());
-
-		return "contents";
-	}
-
-	/* Image uploading */
-
-	private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "images");
-
-	private Map<Integer, Image> images = new ConcurrentHashMap<>();
-	private AtomicInteger imageId = new AtomicInteger();
-
-	@PostConstruct
-	public void init() throws IOException {
-
-		if (!Files.exists(FILES_FOLDER)) {
-			Files.createDirectories(FILES_FOLDER);
-		}
-	}
-
-	@PostMapping(value = "/contents/upload")
-	public String imageUploaded(Model model, @RequestParam("file") MultipartFile file) {
-		
-		int id = imageId.getAndIncrement();
-
-		String fileName = "image-" + id + ".jpg";
-
-		if (!file.isEmpty()) {
-			try {
-				File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
-				file.transferTo(uploadedFile);
-
-				images.put(id, new Image(id, fileName));
-				return "upload";
-			} catch (Exception e) {
-				model.addAttribute("error", e.getClass().getName() + ":" + e.getMessage());
-
-				return "upload";
-			}
-		} else {
-			model.addAttribute("error", "The file is empty");
-			return "upload";
-		}
-
-	}
-
-	@GetMapping("/images/{id}")
-	public void fileDownload(@PathVariable String id, HttpServletResponse res)
-			throws FileNotFoundException, IOException {
-		
-		String fileName = "image-" + id + ".jpg";
-
-		Path image = FILES_FOLDER.resolve(fileName);
-		
-		if(Files.exists(image)) {
-			res.setContentType("image/jpeg");
-			res.setContentLength((int) image.toFile().length());
-			FileCopyUtils.copy(Files.newInputStream(image), res.getOutputStream());
-			
-		} else {
-			res.sendError(401, "File does not exist");
-		}
-
-	}
-	
 	@GetMapping("/error")
-	public String error() {
+	public String error()
+	{
 		return "error";
 	}
-	
+
 
 }
