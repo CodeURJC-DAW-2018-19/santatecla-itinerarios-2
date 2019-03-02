@@ -25,14 +25,16 @@
 	<div class="card-header">{{title}}</div>
 	<div class="card-body">
 		<p>{{desc}}</p>
+		{{#admin}}
 		<a href="/units/{{units.id}}/contents/edit/{{id}}/"> Editar ficha </a>
+		{{/admin}}
 		{{#image}}
 		<img src="/images/{{id}}"/>
 		{{/image}}
 	</div>
 </div>
 {{/contents}}
-
+{{#admin}}
 <input type="button" class="send" onclick="location.href='/units/{{units.id}}/contents/newContent/';" value="Ficha nueva" />
-
+{{/admin}}
 {{/units}}

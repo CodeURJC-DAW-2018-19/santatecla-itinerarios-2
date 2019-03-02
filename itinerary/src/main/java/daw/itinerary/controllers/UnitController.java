@@ -33,6 +33,10 @@ public class UnitController
     	boolean logged = userComponent.getLoggedUser() != null;
     	model.addAttribute("logged", logged);
         model.addAttribute("unit", unitService.findAll());
+        if(logged)
+		{
+			model.addAttribute("admin", userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN"));
+		}
 
 		return "units";
 	}
