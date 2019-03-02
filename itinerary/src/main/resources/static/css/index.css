@@ -227,3 +227,11 @@ body {
 	margin-top: 10px;
 }
 
+.newUnit {
+	float:right;
+	margin:10px;
+}
+
+.searchBar {
+	float:left;
+}

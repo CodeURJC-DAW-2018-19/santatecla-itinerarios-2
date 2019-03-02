@@ -24,6 +24,10 @@ public class Unit {
 
     public Unit(){}
 
+    public Unit(String name) {
+    	this.name = name;
+    }
+    
     public Unit(long id, String name){
         this.id = id;
     	this.name = name;

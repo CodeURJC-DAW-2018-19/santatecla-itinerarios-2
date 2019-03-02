@@ -1,7 +1,7 @@
 {{>header}}
 <div id="unitBox">
     <!-- Search bar -->
-    <div style="min-width: max-content;">
+    <div  class="searchBar" style="min-width: max-content;">
         <form class="form-inline ml-auto">
             <input id=searchInput type="text" class="form-control"
                    placeholder="Buscar">
@@ -10,6 +10,8 @@
             </button>
         </form>
     </div>
+<!--     Add units button  -->
+    <input type="button" class="newUnit" onclick="location.href='/units/newUnit/';" value="Unidad nueva" />
     <!-- Dropdown -->
     <div id="accordion" role="tablist">
         {{#unit}}
