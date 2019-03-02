@@ -29,6 +29,7 @@ import daw.itinerary.content.ContentService;
 import daw.itinerary.content.Image;
 import daw.itinerary.unit.Unit;
 import daw.itinerary.unit.UnitService;
+import daw.itinerary.user.UserComponent;
 
 @Controller
 public class ImageController {
@@ -38,6 +39,9 @@ public class ImageController {
 	
 	@Autowired
 	private UnitService unitService;
+	
+	@Autowired
+	private UserComponent userComponent;
 
 	/* Image "downloading" */
 
@@ -65,6 +69,8 @@ public class ImageController {
 	@GetMapping("/contents")
 	public String contents(Model model) {
 
+		boolean logged = userComponent.getLoggedUser() != null;
+		model.addAttribute("logged", logged);
 		model.addAttribute("content", contentService.findAll());
 
 		return "contents";
