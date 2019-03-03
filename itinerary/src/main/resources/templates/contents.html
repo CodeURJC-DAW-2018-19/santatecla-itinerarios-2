@@ -35,8 +35,10 @@
 </div>
 {{/contentsPage}}
 {{#admin}}
-<input id="loadMore" type="button" class="send" onclick="loadMore()" value="Cargar más"/>
+
+{{>contentsList}}
 <input type="button" class="send" onclick="location.href='/units/{{units.id}}/contents/newContent/';"
        value="Ficha nueva"/>
+
 {{/admin}}
 {{/units}}
