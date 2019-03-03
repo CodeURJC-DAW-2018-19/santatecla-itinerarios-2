@@ -1,5 +1,7 @@
 package daw.itinerary.content;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,6 +24,10 @@ public class ContentService {
 	public List<Content> findAll() {
 		return repository.findAll();
 	}
+
+    public Page<Content> findAll(Pageable page) {
+        return repository.findAll(page);
+    }
 
 	public void save(Content content) {
 		repository.save(content);

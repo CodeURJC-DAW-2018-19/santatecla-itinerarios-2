@@ -20,21 +20,25 @@
     </div>
 </div>
 {{#units}}
-{{#contents}}
+{{#contentsPage}}
 <div class="card" style="width:75rem">
-	<div class="card-header">{{title}}</div>
-	<div class="card-body">
-		<p>{{desc}}</p>
-		{{#admin}}
-		<a href="/units/{{units.id}}/contents/edit/{{id}}/"> Editar ficha </a>
-		{{/admin}}
-		{{#image}}
-		<img src="/images/{{id}}"/>
-		{{/image}}
-	</div>
+    <div class="card-header">{{title}}</div>
+    <div class="card-body">
+        <p>{{desc}}</p>
+        {{#admin}}
+        <a href="/units/{{units.id}}/contents/edit/{{id}}/"> Editar ficha </a>
+        {{/admin}}
+        {{#image}}
+        <img src="/images/{{id}}"/>
+        {{/image}}
+    </div>
 </div>
-{{/contents}}
+{{/contentsPage}}
 {{#admin}}
-<input type="button" class="send" onclick="location.href='/units/{{units.id}}/contents/newContent/';" value="Ficha nueva" />
+
+{{>contentsList}}
+<input type="button" class="send" onclick="location.href='/units/{{units.id}}/contents/newContent/';"
+       value="Ficha nueva"/>
+
 {{/admin}}
-{{/units}}
+<input id="loadMore" type="button" class="send" onclick="loadMore(this, {{units.id}})" value="Cargar más"/>{{/units}}
