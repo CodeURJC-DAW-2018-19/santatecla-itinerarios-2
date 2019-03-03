@@ -17,6 +17,8 @@ We also use [Trello.](https://trello.com/b/6ClCgEkx/itinerary-manager-daw)
 
 ## Navigation Diagram, up to date
 
+
+
 ![](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/navphase2.png "Navigation Diagram")
 
 
