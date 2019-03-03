@@ -1,7 +1,9 @@
-function loadMore(id) {
+var nextPage = 1;
+function loadMore(button, id) {
     $.ajax({
-        url: 'https://localhost:8443/units/{{id}}/contents/?page=1&size=3'
-    }).done(function (items) {
-        
-    })
+        url: "/units/" + id + "/contents/list/?page=" + nextPage,
+    }).done(function (contentsList) {
+        $(button).replaceWith(contentsList);
+        nextPage++;
+    });
 }
