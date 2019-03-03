@@ -1,6 +1,7 @@
 package daw.itinerary.controllers;
 
 import daw.itinerary.content.Content;
+import daw.itinerary.content.ContentRepository;
 import daw.itinerary.content.ContentService;
 import daw.itinerary.unit.Unit;
 import daw.itinerary.unit.UnitService;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,26 +27,50 @@ public class ContentController
     private ContentService contentService;
 
     @Autowired
-	private UserComponent userComponent;
+    private ContentRepository repo;
+
+    @Autowired
+    private UserComponent userComponent;
 
     @RequestMapping("/units/{id}/contents")
-    public String contents(Model model, @PathVariable long id, Pageable page)
+    public String contents(Model model, @PathVariable long id, @PageableDefault(size = 10) Pageable page)
     {
-    	boolean logged = userComponent.getLoggedUser() != null;
-		model.addAttribute("logged", logged);
+        boolean logged = userComponent.getLoggedUser() != null;
+        model.addAttribute("logged", logged);
 
-        Page<Content> contents = contentService.findAll(new PageRequest(0, 10));
+        Page<Content> contents = repo.findAllByUnitId(id, page);
         model.addAttribute("contentsPage", contents);
 
         Unit unit = unitService.findOne(id).get();
         model.addAttribute("units", unit);
         model.addAttribute("unit", unitService.findAll());
         model.addAttribute("contents", unit.getContents());
-        
+
         if(logged)
-		{
-			model.addAttribute("admin", userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN"));
-		}
+        {
+            model.addAttribute("admin", userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN"));
+        }
         return "contents";
+    }
+
+    @RequestMapping("/units/{id}/contents/list")
+    public String contentsList(Model model, @PathVariable long id, @PageableDefault(size = 10) Pageable page)
+    {
+        boolean logged = userComponent.getLoggedUser() != null;
+        model.addAttribute("logged", logged);
+
+        Page<Content> contents = repo.findAllByUnitId(id, page);
+        model.addAttribute("contentsPage", contents);
+
+        Unit unit = unitService.findOne(id).get();
+        model.addAttribute("units", unit);
+        model.addAttribute("unit", unitService.findAll());
+        model.addAttribute("contents", unit.getContents());
+
+        if(logged)
+        {
+            model.addAttribute("admin", userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN"));
+        }
+        return "contentsList";
     }
 }
