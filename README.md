@@ -45,16 +45,16 @@ This is the itinerary section of the unit.
 
 Screenshots of the main pages of our app in Phase 2:
 
-![Screenshot of main page.](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/fase2units.PNG "Screenshot of main page")
+![Screenshot of main page.](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/fase2units.png "Screenshot of main page")
 
-![Screenshot of login page.](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/fase2login.PNG "Screenshot of login form")
+![Screenshot of login page.](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/fase2login.png "Screenshot of login form")
 
 
-![Screenshot of contents page.](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/fase2fichas.PNG "Screenshot of contents page")
+![Screenshot of contents page.](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/fase2fichas.png "Screenshot of contents page")
 
-![Screenshot of itinerary page.](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/fase2itinerarios.PNG "Screenshot of itinerary page")
+![Screenshot of itinerary page.](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/fase2itinerarios.png "Screenshot of itinerary page")
 
-![Screenshot of error page.](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/fase2error.PNG "Screenshot of error page")
+![Screenshot of error page.](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/fase2error.png "Screenshot of error page")
 
 
 ## Entities Diagram
