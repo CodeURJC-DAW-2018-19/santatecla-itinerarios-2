@@ -15,6 +15,12 @@
 We use Google Drive to share documents related to the project.
 We also use [Trello.](https://trello.com/b/6ClCgEkx/itinerary-manager-daw)
 
+## Navigation Diagram, up to date
+
+![](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/navphase2.png "Navigation Diagram")
+
+
+
 # Phase 1: Page Design with HTML and CSS Bootstrap
 
 We used different tools to design our page, including some Bootstrap elements (our login modal, for example) and primarily Material Dashboard elements. Material Dashboard can be found [here](https://www.creative-tim.com/product/material-dashboard)
@@ -32,10 +38,6 @@ Next, we have the unit page, showing its content or the itinerary section.
 This is the itinerary section of the unit.
 
 ![Screenshot of an itinerary section, within an unit.](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/Captura3.PNG "Screenshot of an itinerary section, within an unit")
-
-## Navigation Diagram:
-
-![](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/NavDiagram.png "Navigation Diagram")
 
 # Phase 2: Implementation of the web page using server generated HTML and AJAX
 ## Entities Diagram
