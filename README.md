@@ -66,14 +66,14 @@ This is our current entities diagram:
 
 We created a class diagram showcasing all the classes from our application, as requested. Different types of classes have a color of their own. The color code is:
 
-Purple - Repositories
-Blue - Entities
-Pink - Services
-Gray - Standard class
-Dark green - Components
-Gradient pink - Configurations
-Red - Controllers
-Yellow - Templates
+Purple - Repositories,
+Blue - Entities,
+Pink - Services,
+Gray - Standard class,
+Dark green - Components,
+Gradient pink - Configurations,
+Red - Controllers,
+Yellow - Templates.
 
 
 ![Class diagram.](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/classdiag.png "Class diagram")
