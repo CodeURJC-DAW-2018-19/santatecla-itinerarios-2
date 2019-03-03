@@ -63,6 +63,21 @@ This is our current entities diagram:
 
 ![Entities diagram.](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/entities.png "Entities diagram")
 ## Class and templates Diagram
+
+We created a class diagram showcasing all the classes from our application, as requested. Different types of classes have a color of their own. The color code is:
+
+Purple - Repositories
+Blue - Entities
+Pink - Services
+Gray - Standard class
+Dark green - Components
+Gradient pink - Configurations
+Red - Controllers
+Yellow - Templates
+
+
+![Class diagram.](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/classdiag.png "Class diagram")
+
 ## Setting up the IDE
 Once you downloaded the app, you'll need a MySQL server to set up a database.
 We use a database called db_prueba and an user called "springuser" with "user" pass, you can create the database and the user with the following MySQL shell commands:
