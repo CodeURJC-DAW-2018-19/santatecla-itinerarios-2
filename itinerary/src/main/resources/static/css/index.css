@@ -260,3 +260,7 @@ p.center{
 .btn.btn-default.custom {
 	margin: 20px;	
 }
+
+.btn.btn-default.custom.newUnit {
+	float:right;	
+}
