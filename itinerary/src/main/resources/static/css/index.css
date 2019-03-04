@@ -256,3 +256,7 @@ p.center{
 	margin-top:220px;
 	right: 40%;
 }
+
+.btn.btn-default.custom {
+	margin: 20px;	
+}
