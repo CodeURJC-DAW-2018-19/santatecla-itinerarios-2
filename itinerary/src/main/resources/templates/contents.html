@@ -37,8 +37,8 @@
 {{#admin}}
 
 {{>contentsList}}
-<input type="button" class="send" onclick="location.href='/units/{{units.id}}/contents/newContent/';"
+<input type="button" class="btn btn-default" onclick="location.href='/units/{{units.id}}/contents/newContent/';"
        value="Ficha nueva"/>
 
 {{/admin}}
-<input id="loadMore" type="button" class="send" onclick="loadMore(this, {{units.id}})" value="Cargar más"/>{{/units}}
+<input id="loadMore" type="button" class="btn btn-default custom" onclick="loadMore(this, {{units.id}})" value="Cargar más"/>{{/units}}
