@@ -1,6 +1,7 @@
 package daw.itinerary.api;
 
 import daw.itinerary.unit.Unit;
+import daw.itinerary.unit.UnitRepository;
 import daw.itinerary.unit.UnitService;
 import daw.itinerary.user.UserComponent;
 
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UnitRestController
 {
+	
     @Autowired
     private UnitService unitService;
     
@@ -58,5 +61,10 @@ public class UnitRestController
 			unitService.save(unit);
 		}
 		return "redirect:/units";
+		
+	}
+	@GetMapping("/api/units/{id}")
+	public Unit getUnit(@PathVariable long id) {
+		return unitService.findOne(id).get(); 
 	}
 }

@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import daw.itinerary.unit.Unit;
 
 @Entity
@@ -80,6 +82,7 @@ public class Content {
 		this.unit = unit;
 	}
 
+	@JsonIgnore
 	@ManyToOne
     private Unit unit;
     
