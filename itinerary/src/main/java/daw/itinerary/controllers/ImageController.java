@@ -28,7 +28,7 @@ import daw.itinerary.user.UserComponent;
 
 @Controller
 public class ImageController {
-	
+	/*
 	@Autowired
 	private ContentService contentService;
 	
@@ -39,7 +39,7 @@ public class ImageController {
 	private UserComponent userComponent;
 
 	/* Image "downloading" */
-
+/*
 	private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "images");
 
 	@GetMapping("/images/{id}")
@@ -177,5 +177,5 @@ public class ImageController {
 			model.addAttribute("content", contentService.findAll());
 			return "redirect:/units/{units.id}/contents";
 		}
-	}
+	}*/
 }

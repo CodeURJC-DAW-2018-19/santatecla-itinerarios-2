@@ -178,4 +178,4 @@ public class ImageRestController {
 			return "redirect:/units/{units.id}/contents";
 		}
 	}
-}
+}*/

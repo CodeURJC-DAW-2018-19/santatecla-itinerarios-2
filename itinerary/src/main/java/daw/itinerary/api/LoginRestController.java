@@ -47,7 +47,7 @@ public class LoginRestController {
 			log.info("Logged Out");
 			return new ResponseEntity<>(true, HttpStatus.OK);
 		}
-	}*/
+	}
 	
 	@RequestMapping("/login")
 	public String login(HttpSession session) {
@@ -61,4 +61,4 @@ public class LoginRestController {
         return "redirect:/login";
     }
 
-}
+}*/
