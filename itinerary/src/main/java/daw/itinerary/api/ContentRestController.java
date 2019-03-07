@@ -10,12 +10,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-/*
+
+import java.util.Set;
+
 @RestController
 public class ContentRestController
 {
@@ -23,15 +24,18 @@ public class ContentRestController
     private UnitService unitService;
 
     @Autowired
-    private ContentService contentService;
-
-    @Autowired
     private ContentRepository repo;
 
     @Autowired
     private UserComponent userComponent;
 
-    @RequestMapping("/units/{id}/contents")
+    @RequestMapping("/api/units/{id}/contents")
+    public Page<Content> unitContents(Model model, @PathVariable long id, @PageableDefault(size = 10) Pageable page)
+    {
+        return repo.findAllByUnitId(id, page);
+    }
+
+    /*@RequestMapping("/units/{id}/contents")
     public String contents(Model model, @PathVariable long id, @PageableDefault(size = 10) Pageable page)
     {
         boolean logged = userComponent.getLoggedUser() != null;
@@ -71,5 +75,5 @@ public class ContentRestController
             model.addAttribute("admin", userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN"));
         }
         return "contentsList";
-    }
+    }*/
 }
