@@ -1,7 +1,6 @@
 package daw.itinerary.api;
 
 import daw.itinerary.unit.Unit;
-import daw.itinerary.unit.UnitRepository;
 import daw.itinerary.unit.UnitService;
 import daw.itinerary.user.UserComponent;
 
