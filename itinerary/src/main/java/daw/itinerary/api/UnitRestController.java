@@ -4,6 +4,8 @@ import daw.itinerary.unit.Unit;
 import daw.itinerary.unit.UnitService;
 import daw.itinerary.user.UserComponent;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,8 +13,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class UnitRestController
 {
     @Autowired
@@ -21,13 +24,12 @@ public class UnitRestController
     @Autowired
 	private UserComponent userComponent;
 
-	@RequestMapping("/")
-	public String index() {
-
-		return "redirect:units";
+	@RequestMapping("/api")
+	public Collection<Unit> index(Model model) {
+		return unitService.findAll();
 	}
 
-    @RequestMapping("/units")
+    @RequestMapping("/api/units")
     public String units(Model model)
     {
     	boolean logged = userComponent.getLoggedUser() != null;
@@ -41,7 +43,7 @@ public class UnitRestController
 		return "units";
 	}
 
-	@GetMapping("/units/newUnit/")
+	@GetMapping("/api/units/newUnit/")
 	public String newUnit(Model model) {
 
 		boolean logged = userComponent.getLoggedUser() != null;
@@ -49,7 +51,7 @@ public class UnitRestController
 		return "newUnit";
 	}
 
-	@PostMapping("/units/newUnit/save")
+	@PostMapping("/api/units/newUnit/save")
 	public String unitCreated(Model model, @RequestParam("name") String name) {
 		if (!name.isEmpty()) {
 			Unit unit = new Unit(name);
