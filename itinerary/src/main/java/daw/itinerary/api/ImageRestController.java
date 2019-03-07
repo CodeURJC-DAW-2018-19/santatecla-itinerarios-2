@@ -25,7 +25,7 @@ import daw.itinerary.content.ContentService;
 import daw.itinerary.unit.Unit;
 import daw.itinerary.unit.UnitService;
 import daw.itinerary.user.UserComponent;
-
+/*
 @Controller
 public class ImageRestController {
 	
@@ -39,7 +39,7 @@ public class ImageRestController {
 	private UserComponent userComponent;
 
 	/* Image "downloading" */
-
+/*
 	private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "images");
 
 	@GetMapping("/images/{id}")

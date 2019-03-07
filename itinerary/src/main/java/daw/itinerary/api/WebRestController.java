@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import daw.itinerary.user.UserComponent;
-
-@Controller
+/*
+@RestController
 public class WebRestController
 {
 

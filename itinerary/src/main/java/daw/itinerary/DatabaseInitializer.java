@@ -69,7 +69,7 @@ public class DatabaseInitializer {
 			/*Content sample initializer */
 			contentRepo.save(exampleContent);
 
-			for(int i = 0; i < 83; i++)
+			for(int i = 0; i < 13; i++)
 			{
 				contentRepo.save(new Content("Title " + i, "Pichulo", unit1));
 			}

@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import daw.itinerary.user.User;
 import daw.itinerary.user.UserComponent;
-
-@Controller
+/*
+@RestController
 public class LoginRestController {
 
 	private static final Logger log = LoggerFactory.getLogger(LoginRestController.class);
