@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import daw.itinerary.itineraries.*;
 import daw.itinerary.content.*;
 
@@ -68,6 +69,7 @@ public class Unit {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "unit")
     private Set<Itinerary> itineraries;
 
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "unit")
     private Set<Content> contents;
 
