@@ -59,7 +59,17 @@ public class Itinerary {
     public void setName(String name) {
         this.name = name;
     }
-    
+
+    public Unit getUnit()
+    {
+        return unit;
+    }
+
+    public void setUnit(Unit unit)
+    {
+        this.unit = unit;
+    }
+
     @JsonIgnore
     @ManyToOne
     private Unit unit;
