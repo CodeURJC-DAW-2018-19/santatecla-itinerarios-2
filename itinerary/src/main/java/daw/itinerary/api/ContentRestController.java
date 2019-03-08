@@ -26,52 +26,63 @@ import java.util.Collection;
 import java.util.Optional;
 
 @RestController
-public class ContentRestController
-{
-    @Autowired
-    private UnitService unitService;
+public class ContentRestController {
+	@Autowired
+	private UnitService unitService;
 
-    @Autowired
-    private ContentRepository repo;
+	@Autowired
+	private ContentRepository repo;
 
-    @Autowired
-    private UserComponent userComponent;
+	@Autowired
+	private UserComponent userComponent;
 
-    @Autowired
-    private ContentService contentService;
+	@Autowired
+	private ContentService contentService;
 
-    /* Image "downloading" */
-    private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "images");
+	/* Image "downloading" */
+	private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "images");
 
-    @RequestMapping("/api/units/{id}/contents")
-    public Page<Content> unitContents(Model model, @PathVariable long id, @PageableDefault(size = 10) Pageable page)
-    {
-        return repo.findAllByUnitId(id, page);
-    }
-    
-    @GetMapping("/api/contents")
-    public Collection<Content> getAllContents(){
-    	return contentService.findAll();
-    }
-    
-    @PostMapping("/api/units/{id}/newContent")
-    @ResponseStatus(HttpStatus.CREATED)
-    public Content createContentInUnit(@RequestBody Content content, @PathVariable long id ) {
+	@RequestMapping("/api/units/{id}/contents")
+	public Page<Content> unitContents(Model model, @PathVariable long id, @PageableDefault(size = 10) Pageable page) {
+		return repo.findAllByUnitId(id, page);
+	}
 
-    	content.setUnit(unitService.findOne(id).get());
-    	contentService.save(content);
-    	return content;
-    }
-    @PostMapping("/api/units/{id}/contents/{content_id}/uploadImage")
-    public Content uploadImageToContent(@PathVariable("id") long id, @PathVariable("content_id") long content_id, @RequestParam("file") MultipartFile file) throws IllegalStateException, IOException{
-    	if (!file.isEmpty()) {
-    		String fileName = "image-" + content_id + ".jpg";
-    	    File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
-    	    file.transferTo(uploadedFile);
-    		contentService.findOne(content_id).get().setImage(fileName);
-    }
-    	return contentService.findOne(content_id).get();
-    }
+	@GetMapping("/api/contents")
+	public Collection<Content> getAllContents() {
+		return contentService.findAll();
+	}
 
-    
+	@PostMapping("/api/units/{id}/newContent")
+	@ResponseStatus(HttpStatus.CREATED)
+	public Content createContentInUnit(@RequestBody Content content, @PathVariable long id) {
+
+		content.setUnit(unitService.findOne(id).get());
+		contentService.save(content);
+		return content;
+	}
+
+	@PostMapping("/api/units/{id}/contents/{content_id}/uploadImage")
+	public Content uploadImageToContent(@PathVariable("id") long id, @PathVariable("content_id") long content_id,
+			@RequestParam("file") MultipartFile file) throws IllegalStateException, IOException {
+		if (!file.isEmpty()) {
+			String fileName = "image-" + content_id + ".jpg";
+			File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
+			file.transferTo(uploadedFile);
+			contentService.findOne(content_id).get().setImage(fileName);
+		}
+		return contentService.findOne(content_id).get();
+	}
+
+	@DeleteMapping("/api/units/{id}/deleteContent")
+	public Content deleteContent(@PathVariable("id") long id, @RequestParam("content_id") long content_id) {
+		Content content = contentService.findOne(content_id).get();
+		if (contentService.findOne(content_id).isPresent()) {
+			
+			contentService.delete(content_id);
+			return content;
+		}
+
+		return content;
+	}
+
 }
