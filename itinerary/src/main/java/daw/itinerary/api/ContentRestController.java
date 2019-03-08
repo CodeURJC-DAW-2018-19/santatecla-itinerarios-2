@@ -57,19 +57,24 @@ public class ContentRestController
     
     @PostMapping("/api/units/{id}/newContent")
     @ResponseStatus(HttpStatus.CREATED)
-    public Content createContentInUnit(@RequestBody Content content, @PathVariable long id /*, @RequestParam("file") MultipartFile file) throws IllegalStateException, IOException*/) {
-    	/*if (!file.isEmpty()) {
-    		String fileName = "image-" + content.getId() + ".jpg";
-            File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
-            file.transferTo(uploadedFile);
-        	content.setImage(fileName);
-    	}*/
+    public Content createContentInUnit(@RequestBody Content content, @PathVariable long id ) {
 
     	content.setUnit(unitService.findOne(id).get());
     	contentService.save(content);
     	return content;
     }
-    
+    @PostMapping("/api/units/{id}/contents/{content_id}/uploadImage")
+    public Content uploadImageToContent(@PathVariable("content_id") long content_id, @RequestParam("file") MultipartFile file) throws IllegalStateException, IOException{
+    	if (!file.isEmpty()) {
+    		String fileName = "image-" + content_id + ".jpg";
+    	    File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
+    	    file.transferTo(uploadedFile);
+    		contentService.findOne(content_id).get().setImage(fileName);
+    }
+    	return contentService.findOne(content_id).get();
+    	
+    }
+
     
     
     /*@RequestMapping("/units/{id}/contents")
