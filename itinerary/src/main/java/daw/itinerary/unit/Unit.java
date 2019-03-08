@@ -69,7 +69,6 @@ public class Unit {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "unit")
     private Set<Itinerary> itineraries;
 
-    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "unit")
     private Set<Content> contents;
 
