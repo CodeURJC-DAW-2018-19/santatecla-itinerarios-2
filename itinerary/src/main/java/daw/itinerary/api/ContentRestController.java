@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +22,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Collection;
 import java.util.Optional;
 
 @RestController
@@ -46,7 +48,29 @@ public class ContentRestController
     {
         return repo.findAllByUnitId(id, page);
     }
+    
+    @GetMapping("/api/contents")
+    public Collection<Content> getAllContents(){
+    	return contentService.findAll();
+    }
+    
+    @PostMapping("/api/units/{id}/newContent")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Content createContentInUnit(@RequestBody Content content, @PathVariable long id /*, @RequestParam("file") MultipartFile file) throws IllegalStateException, IOException*/) {
+    	/*if (!file.isEmpty()) {
+    		String fileName = "image-" + content.getId() + ".jpg";
+            File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
+            file.transferTo(uploadedFile);
+        	content.setImage(fileName);
+    	}*/
 
+    	content.setUnit(unitService.findOne(id).get());
+    	contentService.save(content);
+    	return content;
+    }
+    
+    
+    
     /*@RequestMapping("/units/{id}/contents")
     public String contents(Model model, @PathVariable long id, @PageableDefault(size = 10) Pageable page)
     {
