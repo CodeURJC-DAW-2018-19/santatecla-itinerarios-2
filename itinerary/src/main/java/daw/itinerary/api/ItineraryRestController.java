@@ -47,7 +47,7 @@ public class ItineraryRestController
         return repoItinerary.findItineraryByIdAndUnitId(id, unit_id);
     }
 
-    @RequestMapping("/api/units/{unit_id}/itinerary")
+    @RequestMapping("/api/units/{unit_id}/itineraries")
     public Set<Itinerary> itinerary(Model model, @PathVariable long unit_id)
     {
         return repoItinerary.findAllByUnitId(unit_id);
