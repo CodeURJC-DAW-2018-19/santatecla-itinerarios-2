@@ -36,18 +36,21 @@ public class ItineraryRestController
     private ItineraryRepository repoItinerary;
 
     @RequestMapping("/api/itinerary")
+    @ResponseStatus(HttpStatus.OK)
     public List<Itinerary> itinerary()
     {
         return repoItinerary.findAll();
     }
 
     @RequestMapping("/api/units/{unit_id}/itinerary/{id}")
+    @ResponseStatus(HttpStatus.OK)
     public Itinerary itinerary(Model model, @PathVariable long unit_id, @PathVariable long id)
     {
         return repoItinerary.findItineraryByIdAndUnitId(id, unit_id);
     }
 
     @RequestMapping("/api/units/{unit_id}/itinerary")
+    @ResponseStatus(HttpStatus.OK)
     public Set<Itinerary> itinerary(Model model, @PathVariable long unit_id)
     {
         return repoItinerary.findAllByUnitId(unit_id);

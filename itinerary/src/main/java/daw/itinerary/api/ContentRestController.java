@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
@@ -42,6 +43,7 @@ public class ContentRestController
     private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "images");
 
     @RequestMapping("/api/units/{id}/contents")
+    @ResponseStatus(HttpStatus.OK)
     public Page<Content> unitContents(Model model, @PathVariable long id, @PageableDefault(size = 10) Pageable page)
     {
         return repo.findAllByUnitId(id, page);
