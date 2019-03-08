@@ -69,11 +69,6 @@ public class DatabaseInitializer {
 			/*Content sample initializer */
 			contentRepo.save(exampleContent);
 
-			for(int i = 0; i < 13; i++)
-			{
-				contentRepo.save(new Content("Title " + i, "Pichulo", unit1));
-			}
-
 			contentRepo.save(new Content("¿Qué?","JavaScript es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, ​ basado en prototipos, imperativo, débilmente tipado y dinámico.", unit1));
 			contentRepo.save(new Content("Historia","JavaScript fue desarrollado originalmente por Brendan Eich de Netscape con el nombre de Mocha, el cual fue renombrado posteriormente a LiveScript, para finalmente quedar como JavaScript.", unit1));
 			contentRepo.save(new Content("¿Qué?","La Organización Europea para la Investigación Nuclear (nombre oficial en francés: Organisation européenne pour la recherche nucléaire),1​ comúnmente conocida por la sigla CERN (Conseil Européen pour la Recherche Nucléaire", unit3));
@@ -84,7 +79,10 @@ public class DatabaseInitializer {
 			contentRepo.save(new Content("¿Qué?","Este año marca un giro en la historia del mundo por las revoluciones que derrocaron a los estados comunistas de Bloque del Este, son conocidos como las Revoluciones de 1989", unit5));
 			contentRepo.save(new Content("Historia","Las matemáticas o la matemática1​ (del latín mathematĭca, y este del griego μαθηματικά, derivado de μάθημα, ‘conocimiento’) es una ciencia formal que, partiendo de axiomas y siguiendo el razonamiento lógico", unit6));
 			contentRepo.save(new Content("Aspectos formales","Es muy posible que el arte del cálculo haya sido desarrollado antes incluso que la escritura,14​ relacionado fundamentalmente con la contabilidad y la administración de bienes, el comercio, en la agrimensura y, posteriormente, en la astronomía.", unit6));
-
+			for(int i = 0; i < 13; i++)
+			{
+				contentRepo.save(new Content("Title " + i, "Pichulo", unit1));
+			}
 
 			/*User samples*/
 			userRepository.save(new User("alumno1", "pass1", "ROLE_USER"));
