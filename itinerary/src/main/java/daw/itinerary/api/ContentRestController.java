@@ -49,15 +49,6 @@ public class ContentRestController {
         return repo.findAllByUnitId(id, page);
     }
     
-    @GetMapping("/api/contents")
-    public Collection<Content> getAllContents(){
-    	return contentService.findAll();
-    }
-    
-    @PostMapping("/api/units/{id}/newContent")
-    @ResponseStatus(HttpStatus.CREATED)
-    public Content createContentInUnit(@RequestBody Content content, @PathVariable long id ) {
-
 
 	@GetMapping("/api/contents")
 	public Collection<Content> getAllContents() {
