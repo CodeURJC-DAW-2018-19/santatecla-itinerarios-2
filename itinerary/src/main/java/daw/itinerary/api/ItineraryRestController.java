@@ -49,7 +49,8 @@ public class ItineraryRestController
         return repoItinerary.findItineraryByIdAndUnitId(id, unit_id);
     }
 
-    @RequestMapping("/api/units/{unit_id}/itinerary")
+
+    @RequestMapping("/api/units/{unit_id}/itineraries")
     @ResponseStatus(HttpStatus.OK)
     public Set<Itinerary> itinerary(Model model, @PathVariable long unit_id)
     {
@@ -66,24 +67,4 @@ public class ItineraryRestController
         return itinerary;
     }
 
-    /*
-    @RequestMapping("/itinerary")
-    public String itinerary()
-    {
-        return "itinerary";
-    }
-
-    @RequestMapping("/units/{unit_id}/itinerary/{id}")
-    public String itinerary(Model model, @PathVariable long unit_id)
-    {
-    	boolean logged = userComponent.getLoggedUser() != null;
-		model.addAttribute("logged", logged);
-        Unit unit = unitService.findOne(unit_id).get();
-        model.addAttribute("units", unit);
-        model.addAttribute("unit", unitService.findAll());
-        model.addAttribute("contents", contentService.findAll());
-        model.addAttribute("itineraries", unit.getItineraries());
-
-        return "itinerary";
-    }*/
 }
