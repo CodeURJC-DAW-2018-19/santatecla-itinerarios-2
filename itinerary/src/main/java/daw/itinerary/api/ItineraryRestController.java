@@ -1,5 +1,6 @@
 package daw.itinerary.api;
 
+import daw.itinerary.content.Content;
 import daw.itinerary.content.ContentService;
 import daw.itinerary.itineraries.Itinerary;
 import daw.itinerary.itineraries.ItineraryRepository;
@@ -62,5 +63,17 @@ public class ItineraryRestController
 
         return itinerary;
     }
+    
+	@DeleteMapping("/api/units/{unit_id}/itinerary/{itinerary_id}/deleteItinerary")
+	public Itinerary deleteContent(@PathVariable("itinerary_id") long id) {
+		Itinerary itinerary = itineraryService.findOne(id).get();
+		if (itineraryService.findOne(id).isPresent()) {
+			
+			itineraryService.delete(id);
+			return itinerary;
+		}
+
+		return itinerary;
+	}
 
 }
