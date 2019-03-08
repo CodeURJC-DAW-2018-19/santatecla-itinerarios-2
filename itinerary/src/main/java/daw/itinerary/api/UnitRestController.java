@@ -1,5 +1,6 @@
 package daw.itinerary.api;
 
+import daw.itinerary.content.Content;
 import daw.itinerary.unit.Unit;
 import daw.itinerary.unit.UnitService;
 import daw.itinerary.user.UserComponent;
@@ -8,6 +9,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,6 +42,17 @@ public class UnitRestController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public Unit createUnit(@RequestBody Unit unit) {
 		unitService.save(unit);
+		return unit;
+	}
+	
+	@DeleteMapping("/api/units/{id}/deleteUnit")
+	public Unit deleteContent(@PathVariable("id") long id) {
+		Unit unit = unitService.findOne(id).get();
+		if (unitService.findOne(id).isPresent()) {
+			unitService.delete(id);
+			return unit;
+		}
+
 		return unit;
 	}
 	
