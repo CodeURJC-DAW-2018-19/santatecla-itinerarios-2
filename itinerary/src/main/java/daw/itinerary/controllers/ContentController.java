@@ -81,16 +81,15 @@ public class ContentController {
 	@GetMapping("/images/{id}")
 	public void fileDownload(@PathVariable Long id, HttpServletResponse res) throws FileNotFoundException, IOException {
 
-		String fileName = "image-" + id + ".jpg";
-
 //      These lines when we stored images in the file system 
+//		String fileName = "image-" + id + ".jpg";
 //      Path imagePath = FILES_FOLDER.resolve(fileName);
 //      res.setContentLength((int) image.toFile().length());
-
-		byte[] image = contentService.findOne(id).get().getImageRaw();
-		res.setContentType("image/jpeg");
-		FileCopyUtils.copy(image, res.getOutputStream());
-
+		if (contentService.findOne(id).get().isHasImage()) {
+			byte[] image = contentService.findOne(id).get().getImageRaw();
+			res.setContentType("image/jpeg");
+			FileCopyUtils.copy(image, res.getOutputStream());
+		}
 	}
 
 	@GetMapping("/contents")
@@ -121,11 +120,12 @@ public class ContentController {
 			try {
 				contentService.save(content);
 				String fileName = "image-" + content.getId() + ".jpg";
-				
-				/*These methods where used when we stored the images in the file system
-				File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
-				file.transferTo(uploadedFile);
-				content.setImage(fileName);*/
+
+				/*
+				 * These methods where used when we stored the images in the file system File
+				 * uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
+				 * file.transferTo(uploadedFile); content.setImage(fileName);
+				 */
 
 				content.setImageRaw(file.getBytes());
 				content.setHasImage(true);
@@ -176,7 +176,6 @@ public class ContentController {
 	public String saveContent(Model model, Content content, @RequestParam("file") MultipartFile file,
 			@PathVariable long id, @PathVariable("units.id") long unitId) {
 
-//		Image handler
 		if (content.getTitle().isEmpty()) {
 			return "redirect:/units/{units.id}/contents";
 		}
@@ -184,13 +183,13 @@ public class ContentController {
 
 		if (!file.isEmpty()) {
 			try {
-				
-				/*These methods where used when we stored the images in the file system
-				File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
-				file.transferTo(uploadedFile);
-				content.setImage(fileName);
-*/
-				content.setImageRaw(file.getBytes());				
+
+				/*
+				 * These methods where used when we stored the images in the file system File
+				 * uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
+				 * file.transferTo(uploadedFile); content.setImage(fileName);
+				 */
+				content.setImageRaw(file.getBytes());
 				content.setHasImage(true);
 				content.setUnit(unitService.findOne(unitId).get());
 				contentService.save(content);
