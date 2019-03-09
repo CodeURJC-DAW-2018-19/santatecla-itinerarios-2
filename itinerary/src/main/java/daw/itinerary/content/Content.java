@@ -21,7 +21,7 @@ public class Content {
     
     private String title;
     private String desc;
-    private String image;
+    private boolean hasImage;
 
     @Lob
     private byte[] imageRaw;
@@ -69,14 +69,6 @@ public class Content {
 		this.id = id;
 	}
 
-    public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
-	}
-
 	public Unit getUnit() {
 		return unit;
 	}
@@ -91,6 +83,14 @@ public class Content {
 
 	public void setImageRaw(byte[] imageRaw) {
 		this.imageRaw = imageRaw;
+	}
+
+	public boolean isHasImage() {
+		return hasImage;
+	}
+
+	public void setHasImage(boolean hasImage) {
+		this.hasImage = hasImage;
 	}
 
 	@JsonIgnore

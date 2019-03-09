@@ -25,214 +25,195 @@ import java.nio.file.Paths;
 import java.util.Optional;
 
 @Controller
-public class ContentController
-{
-    @Autowired
-    private UnitService unitService;
+public class ContentController {
+	@Autowired
+	private UnitService unitService;
 
-    @Autowired
-    private ContentService contentService;
+	@Autowired
+	private ContentService contentService;
 
-    @Autowired
-    private ContentRepository repo;
+	@Autowired
+	private ContentRepository repo;
 
-    @Autowired
-    private UserComponent userComponent;
+	@Autowired
+	private UserComponent userComponent;
 
-    @RequestMapping("/units/{id}/contents")
-    public String contents(Model model, @PathVariable long id, @PageableDefault(size = 10) Pageable page)
-    {
-        boolean logged = userComponent.getLoggedUser() != null;
-        model.addAttribute("logged", logged);
+	@RequestMapping("/units/{id}/contents")
+	public String contents(Model model, @PathVariable long id, @PageableDefault(size = 10) Pageable page) {
+		boolean logged = userComponent.getLoggedUser() != null;
+		model.addAttribute("logged", logged);
 
-        Page<Content> contents = repo.findAllByUnitId(id, page);
-        model.addAttribute("contentsPage", contents);
+		Page<Content> contents = repo.findAllByUnitId(id, page);
+		model.addAttribute("contentsPage", contents);
 
-        Unit unit = unitService.findOne(id).get();
-        model.addAttribute("units", unit);
-        model.addAttribute("unit", unitService.findAll());
-        model.addAttribute("contents", unit.getContents());
+		Unit unit = unitService.findOne(id).get();
+		model.addAttribute("units", unit);
+		model.addAttribute("unit", unitService.findAll());
+		model.addAttribute("contents", unit.getContents());
 
-        if(logged)
-        {
-            model.addAttribute("admin", userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN"));
-        }
-        return "contents";
-    }
+		if (logged) {
+			model.addAttribute("admin", userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN"));
+		}
+		return "contents";
+	}
 
-    @RequestMapping("/units/{id}/contents/list")
-    public String contentsList(Model model, @PathVariable long id, @PageableDefault(size = 10) Pageable page)
-    {
-        boolean logged = userComponent.getLoggedUser() != null;
-        model.addAttribute("logged", logged);
+	@RequestMapping("/units/{id}/contents/list")
+	public String contentsList(Model model, @PathVariable long id, @PageableDefault(size = 10) Pageable page) {
+		boolean logged = userComponent.getLoggedUser() != null;
+		model.addAttribute("logged", logged);
 
-        Page<Content> contents = repo.findAllByUnitId(id, page);
-        model.addAttribute("contentsPage", contents);
+		Page<Content> contents = repo.findAllByUnitId(id, page);
+		model.addAttribute("contentsPage", contents);
 
-        Unit unit = unitService.findOne(id).get();
-        model.addAttribute("units", unit);
-        model.addAttribute("unit", unitService.findAll());
-        model.addAttribute("contents", unit.getContents());
+		Unit unit = unitService.findOne(id).get();
+		model.addAttribute("units", unit);
+		model.addAttribute("unit", unitService.findAll());
+		model.addAttribute("contents", unit.getContents());
 
-        if(logged)
-        {
-            model.addAttribute("admin", userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN"));
-        }
-        return "contentsList";
-    }
+		if (logged) {
+			model.addAttribute("admin", userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN"));
+		}
+		return "contentsList";
+	}
 
-    private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "images");
+	private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "images");
 
-    @GetMapping("/images/{id}")
-    public void fileDownload(@PathVariable Long id, HttpServletResponse res)
-            throws FileNotFoundException, IOException
-    {
+	@GetMapping("/images/{id}")
+	public void fileDownload(@PathVariable Long id, HttpServletResponse res) throws FileNotFoundException, IOException {
 
-        String fileName = "image-" + id + ".jpg";
+		String fileName = "image-" + id + ".jpg";
 
-//        Path imagePath = FILES_FOLDER.resolve(fileName);
-        byte[] image = contentService.findOne(id).get().getImageRaw();
+//      These lines when we stored images in the file system 
+//      Path imagePath = FILES_FOLDER.resolve(fileName);
+//      res.setContentLength((int) image.toFile().length());
 
-            res.setContentType("image/jpeg");
-//            res.setContentLength((int) image.toFile().length());
-            FileCopyUtils.copy(image, res.getOutputStream());
+		byte[] image = contentService.findOne(id).get().getImageRaw();
+		res.setContentType("image/jpeg");
+		FileCopyUtils.copy(image, res.getOutputStream());
 
+	}
 
-    }
+	@GetMapping("/contents")
+	public String contents(Model model) {
 
-    @GetMapping("/contents")
-    public String contents(Model model)
-    {
+		boolean logged = userComponent.getLoggedUser() != null;
+		model.addAttribute("logged", logged);
+		model.addAttribute("content", contentService.findAll());
 
-        boolean logged = userComponent.getLoggedUser() != null;
-        model.addAttribute("logged", logged);
-        model.addAttribute("content", contentService.findAll());
+		return "contents";
+	}
 
-        return "contents";
-    }
+	@GetMapping("/units/{units.id}/contents/newContent/")
+	public String newContent(Model model, @PathVariable("units.id") long id) {
+		boolean logged = userComponent.getLoggedUser() != null;
+		model.addAttribute("logged", logged);
+		return "newContent";
 
-    @GetMapping("/units/{units.id}/contents/newContent/")
-    public String newContent(Model model, @PathVariable("units.id") long id)
-    {
-        boolean logged = userComponent.getLoggedUser() != null;
-        model.addAttribute("logged", logged);
-        return "newContent";
+	}
 
-    }
+	@PostMapping("/units/{units.id}/contents/newContent/save/")
+	public String saveContent(Model model, Content content, @RequestParam("file") MultipartFile file,
+			@PathVariable("units.id") long unitId) {
+		if (content.getTitle().isEmpty()) {
+			return "redirect:/units/{units.id}/contents";
+		}
+		if (!file.isEmpty()) {
+			try {
+				contentService.save(content);
+				String fileName = "image-" + content.getId() + ".jpg";
+				
+				/*These methods where used when we stored the images in the file system
+				File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
+				file.transferTo(uploadedFile);
+				content.setImage(fileName);*/
 
-    @PostMapping("/units/{units.id}/contents/newContent/save/")
-    public String saveContent(Model model, Content content, @RequestParam("file") MultipartFile file,
-                              @PathVariable("units.id") long unitId)
-    {
-        if(content.getTitle().isEmpty())
-        {
-            return "redirect:/units/{units.id}/contents";
-        }
-        if(!file.isEmpty())
-        {
-            try
-            {
-                contentService.save(content);
-                String fileName = "image-" + content.getId() + ".jpg";
-                File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
-                file.transferTo(uploadedFile);
+				content.setImageRaw(file.getBytes());
+				content.setHasImage(true);
+				content.setUnit(unitService.findOne(unitId).get());
 
-                content.setImage(fileName);
-                content.setUnit(unitService.findOne(unitId).get());
+				contentService.save(content);
+				Unit unit = unitService.findOne(unitId).get();
+				model.addAttribute("units", unit);
+				model.addAttribute("unit", unitService.findAll());
+				model.addAttribute("contents", unit.getContents());
+				// In previous version we use "contents", no redirect
+				// Change it because a bug
+				return "redirect:/units/{units.id}/contents";
+			} catch (Exception e) {
+				model.addAttribute("error", e.getClass().getName() + ":" + e.getMessage());
+				model.addAttribute("content", contentService.findAll());
+				// In previous version we use "/contents", no redirect
+				// Change it because a bug
+				return "redirect:/units/{units.id}/contents";
+			}
+		} else {
+			content.setUnit(unitService.findOne(unitId).get());
+			contentService.save(content);
+			Unit unit = unitService.findOne(unitId).get();
+			model.addAttribute("units", unit);
+			model.addAttribute("unit", unitService.findAll());
+			model.addAttribute("contents", unit.getContents());
 
-                contentService.save(content);
-                Unit unit = unitService.findOne(unitId).get();
-                model.addAttribute("units", unit);
-                model.addAttribute("unit", unitService.findAll());
-                model.addAttribute("contents", unit.getContents());
-                // In previous version we use "contents", no redirect
-                // Change it because a bug
-                return "redirect:/units/{units.id}/contents";
-            } catch(Exception e)
-            {
-                model.addAttribute("error", e.getClass().getName() + ":" + e.getMessage());
-                model.addAttribute("content", contentService.findAll());
-                // In previous version we use "/contents", no redirect
-                // Change it because a bug
-                return "redirect:/units/{units.id}/contents";
-            }
-        } else
-        {
-            content.setUnit(unitService.findOne(unitId).get());
-            contentService.save(content);
-            Unit unit = unitService.findOne(unitId).get();
-            model.addAttribute("units", unit);
-            model.addAttribute("unit", unitService.findAll());
-            model.addAttribute("contents", unit.getContents());
+			model.addAttribute("content", contentService.findAll());
+			return "redirect:/units/{units.id}/contents";
+		}
+	}
 
-            model.addAttribute("content", contentService.findAll());
-            return "redirect:/units/{units.id}/contents";
-        }
-    }
+	@GetMapping("/units/{units.id}/contents/edit/{id}/")
+	public String editContent(Model model, @PathVariable long id) {
 
+		Optional<Content> content = contentService.findOne(id);
 
-    @GetMapping("/units/{units.id}/contents/edit/{id}/")
-    public String editContent(Model model, @PathVariable long id)
-    {
+		if (content.isPresent()) {
+			boolean logged = userComponent.getLoggedUser() != null;
+			model.addAttribute("logged", logged);
+			model.addAttribute("content", content.get());
+		}
+		return "editContent";
+	}
 
-        Optional<Content> content = contentService.findOne(id);
-
-        if(content.isPresent())
-        {
-            boolean logged = userComponent.getLoggedUser() != null;
-            model.addAttribute("logged", logged);
-            model.addAttribute("content", content.get());
-        }
-        return "editContent";
-    }
-
-    @PostMapping("/units/{units.id}/contents/edit/{id}/save")
-    public String saveContent(Model model, Content content, @RequestParam("file") MultipartFile file, @PathVariable long id,
-                              @PathVariable("units.id") long unitId)
-    {
+	@PostMapping("/units/{units.id}/contents/edit/{id}/save")
+	public String saveContent(Model model, Content content, @RequestParam("file") MultipartFile file,
+			@PathVariable long id, @PathVariable("units.id") long unitId) {
 
 //		Image handler
-        if(content.getTitle().isEmpty())
-        {
-            return "redirect:/units/{units.id}/contents";
-        }
-        String fileName = "image-" + id + ".jpg";
+		if (content.getTitle().isEmpty()) {
+			return "redirect:/units/{units.id}/contents";
+		}
+		String fileName = "image-" + id + ".jpg";
 
-        if(!file.isEmpty())
-        {
-            try
-            {
-                File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
-                file.transferTo(uploadedFile);
-                
-                content.setImageRaw(file.getBytes());
+		if (!file.isEmpty()) {
+			try {
+				
+				/*These methods where used when we stored the images in the file system
+				File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
+				file.transferTo(uploadedFile);
+				content.setImage(fileName);
+*/
+				content.setImageRaw(file.getBytes());				
+				content.setHasImage(true);
+				content.setUnit(unitService.findOne(unitId).get());
+				contentService.save(content);
+				Unit unit = unitService.findOne(unitId).get();
+				model.addAttribute("units", unit);
+				model.addAttribute("unit", unitService.findAll());
+				model.addAttribute("contents", unit.getContents());
+				return "redirect:/units/{units.id}/contents";
+			} catch (Exception e) {
+				model.addAttribute("error", e.getClass().getName() + ":" + e.getMessage());
+				model.addAttribute("content", contentService.findAll());
+				return "redirect:/units/{units.id}/contents";
+			}
+		} else {
+			content.setUnit(unitService.findOne(unitId).get());
+			contentService.save(content);
+			Unit unit = unitService.findOne(unitId).get();
+			model.addAttribute("units", unit);
+			model.addAttribute("unit", unitService.findAll());
+			model.addAttribute("contents", unit.getContents());
 
-                content.setImage(fileName);
-                content.setUnit(unitService.findOne(unitId).get());
-                contentService.save(content);
-
-                Unit unit = unitService.findOne(unitId).get();
-                model.addAttribute("units", unit);
-                model.addAttribute("unit", unitService.findAll());
-                model.addAttribute("contents", unit.getContents());
-                return "redirect:/units/{units.id}/contents";
-            } catch(Exception e)
-            {
-                model.addAttribute("error", e.getClass().getName() + ":" + e.getMessage());
-                model.addAttribute("content", contentService.findAll());
-                return "redirect:/units/{units.id}/contents";
-            }
-        } else
-        {
-            content.setUnit(unitService.findOne(unitId).get());
-            contentService.save(content);
-            Unit unit = unitService.findOne(unitId).get();
-            model.addAttribute("units", unit);
-            model.addAttribute("unit", unitService.findAll());
-            model.addAttribute("contents", unit.getContents());
-
-            model.addAttribute("content", contentService.findAll());
-            return "redirect:/units/{units.id}/contents";
-        }
-    }
+			model.addAttribute("content", contentService.findAll());
+			return "redirect:/units/{units.id}/contents";
+		}
+	}
 }

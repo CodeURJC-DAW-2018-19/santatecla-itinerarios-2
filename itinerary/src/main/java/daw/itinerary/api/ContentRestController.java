@@ -72,7 +72,7 @@ public class ContentRestController {
 			String fileName = "image-" + content_id + ".jpg";
 			File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
 			file.transferTo(uploadedFile);
-			contentService.findOne(content_id).get().setImage(fileName);
+//			contentService.findOne(content_id).get().setImage(fileName);
 		}
 		return contentService.findOne(content_id).get();
 	}
@@ -99,7 +99,7 @@ public class ContentRestController {
 			String fileName = "image-" + content_id + ".jpg";
 			File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
 			file.transferTo(uploadedFile);
-			contentService.findOne(content_id).get().setImage(fileName);
+//			contentService.findOne(content_id).get().setImage(fileName);
 		}
 		return contentService.findOne(content_id).get();
 	}
