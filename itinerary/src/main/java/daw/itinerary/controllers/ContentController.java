@@ -84,24 +84,19 @@ public class ContentController
     private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "images");
 
     @GetMapping("/images/{id}")
-    public void fileDownload(@PathVariable String id, HttpServletResponse res)
+    public void fileDownload(@PathVariable Long id, HttpServletResponse res)
             throws FileNotFoundException, IOException
     {
 
         String fileName = "image-" + id + ".jpg";
 
-        Path image = FILES_FOLDER.resolve(fileName);
+//        Path imagePath = FILES_FOLDER.resolve(fileName);
+        byte[] image = contentService.findOne(id).get().getImageRaw();
 
-        if(Files.exists(image))
-        {
             res.setContentType("image/jpeg");
-            res.setContentLength((int) image.toFile().length());
-            FileCopyUtils.copy(Files.newInputStream(image), res.getOutputStream());
+//            res.setContentLength((int) image.toFile().length());
+            FileCopyUtils.copy(image, res.getOutputStream());
 
-        } else
-        {
-            res.sendError(401, "File does not exist");
-        }
 
     }
 
@@ -209,6 +204,8 @@ public class ContentController
             {
                 File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
                 file.transferTo(uploadedFile);
+                
+                content.setImageRaw(file.getBytes());
 
                 content.setImage(fileName);
                 content.setUnit(unitService.findOne(unitId).get());

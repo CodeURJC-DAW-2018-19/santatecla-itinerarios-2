@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -22,6 +23,8 @@ public class Content {
     private String desc;
     private String image;
 
+    @Lob
+    private byte[] imageRaw;
     public Content(){}
 
     public Content(String title){
@@ -80,6 +83,14 @@ public class Content {
 
 	public void setUnit(Unit unit) {
 		this.unit = unit;
+	}
+
+	public byte[] getImageRaw() {
+		return imageRaw;
+	}
+
+	public void setImageRaw(byte[] imageRaw) {
+		this.imageRaw = imageRaw;
 	}
 
 	@JsonIgnore

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -87,5 +88,21 @@ public class ContentRestController {
 
 		return content;
 	}
+	
+	@PostMapping("/api/units/{id}/contents/{content_id}/uploadImageRaw")
+	public Content uploadImageToContentArray(@PathVariable("id") long id, @PathVariable("content_id") long content_id,
+			@RequestParam("file") MultipartFile file) throws IllegalStateException, IOException {
+		if (!file.isEmpty()) {
+            FileInputStream inputStream = (FileInputStream) file.getInputStream();
+            byte[] bytes = file.getBytes();
+            contentService.findOne(content_id).get().setImageRaw(bytes);
+			String fileName = "image-" + content_id + ".jpg";
+			File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
+			file.transferTo(uploadedFile);
+			contentService.findOne(content_id).get().setImage(fileName);
+		}
+		return contentService.findOne(content_id).get();
+	}
+	
 
 }
