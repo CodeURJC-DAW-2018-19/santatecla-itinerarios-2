@@ -247,6 +247,148 @@ These are the status codes that are returned by the application in this cases:
 | New itinerary | https://localhost:8443/api/units/{unit_id}/newItinerary | POST |
 | Delete specific itinerary | https://localhost:8443/api/units/{unit_id}/itinerary/{itinerary_id}/deleteItinerary | DELETE 
 
+#### URL
+`https://localhost:8443/api/itinerary`
+
+#### Request
+~~~~
+[
+    {
+        "id": 8,
+        "name": "Primeros pasos"
+    },
+    {
+        "id": 9,
+        "name": "Uso avanzado"
+    },
+    {
+        "id": 10,
+        "name": "Eventos"
+    },
+    {
+        "id": 11,
+        "name": "Cumpleaños de famosos"
+    },
+    {
+        "id": 12,
+        "name": "Calendario"
+    },
+    {
+        "id": 13,
+        "name": "Historia"
+    },
+    {
+        "id": 14,
+        "name": "Principales líneas de investigación"
+    },
+    {
+        "id": 15,
+        "name": "Futuros proyectos"
+    },
+    {
+        "id": 16,
+        "name": "Datos adicionales"
+    },
+    {
+        "id": 17,
+        "name": "Biografía"
+    },
+    {
+        "id": 18,
+        "name": "World Wide Web"
+    },
+    {
+        "id": 19,
+        "name": "Cálculo diferencial"
+    },
+    {
+        "id": 20,
+        "name": "Algoritmos matemáticos"
+    },
+    {
+        "id": 21,
+        "name": "Psicobiología"
+    },
+    {
+        "id": 22,
+        "name": "Comportamiento humano"
+    },
+    {
+        "id": 23,
+        "name": "Psicometría"
+    },
+    {
+        "id": 24,
+        "name": "Terapia cognitivo conductual"
+    }
+]
+~~~~
+
+#### URL
+`https://localhost:8443/api/units/{unit_id}/itinerary/{id}`
+##### Notes
+- {unit_id} is where unit id is written. (In this example is 1)
+- {id} is where the itinerary is written. (In this example is 8)
+
+#### Request
+~~~~
+{
+    "id": 8,
+    "name": "Primeros pasos"
+}
+~~~~
+
+#### URL
+`https://localhost:8443/api/units/{unit_id}/itineraries`
+##### Notes
+- {unit_id} is where unit id is written. (In this example is 1)
+
+#### Request
+~~~~
+[
+    {
+        "id": 8,
+        "name": "Primeros pasos"
+    },
+    {
+        "id": 9,
+        "name": "Uso avanzado"
+    }
+]
+~~~~
+
+#### URL
+`https://localhost:8443/api/units/{unit_id}/newItinerary`
+##### Notes
+- {unit_id} is where unit id is written. (In this example is 1)
+#### Body
+~~~~
+{
+	"name": "De principiante a maestro"
+}
+~~~~
+#### Request
+~~~~
+{
+    "id": 52,
+    "name": "De principiante a maestro"
+}
+~~~~
+
+#### URL
+`https://localhost:8443/api/units/{unit_id}/itinerary/{itinerary_id}/deleteItinerary`
+##### Notes
+- {unit_id} is where unit id is written. (In this example is 1)
+- {itinerary_id} is where the itinerary id which is going to be delete is written. (In this example is 8)
+
+#### Request
+~~~~
+{
+    "id": 8,
+    "name": "Primeros pasos"
+}
+~~~~
+
 ### Log in & log out
 | Resource | URL | Supported operations |
 |----------|-----|----------------------|
