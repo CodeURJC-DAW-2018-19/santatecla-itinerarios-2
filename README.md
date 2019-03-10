@@ -110,5 +110,16 @@ And the file we need to actually launch the app:
 [DockerHub Repository.](https://cloud.docker.com/repository/docker/dawgrupo8/fase3)
 Then it'll sync both images and we will be ready to launch our app. Few things to point out: Our app will always wait for the database to start up. If the app launches before the database, it'll restart itself. Also, to access our web, we must use now the port **8080** instead of the 8443 that we used before. If you are using Docker CE for Windows or Linux, you'll be able to access using localhost; but if you are in Docker Toolbox instead (Mac, Standard versions of Windows...) you must first start your Docker Toolbox quickstart terminal and find your virtual machine ip. For this purpose, you can use the *docker-machine ip default* command. You'll be using that ip to access the web, in our case it is https://192.168.99.100:8080/
 
+## Class Diagram
 
+Purple - Repositories,
+Blue - Entities,
+Pink - Services,
+Gray - Standard class,
+Dark green - Components,
+Gradient pink - Configurations,
+Red - Controllers,
+Yellow - Templates,
+Orange - Object.
 
+![Class diagram.](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/classdiagPhase3.png "Class diagram")
