@@ -397,13 +397,10 @@ These are the status codes that are returned by the application in this cases:
 | Log in | https://localhost:8443/api/logIn | GET |
 | Log out | https://localhost:8443/api/logOut | GET |
 
-### Request examples (JSON)
-#### URL
-`https://localhost:8443/api/logIn`
-#### Request
-~~~~
-
-~~~~
+#### Log in
+To log in, you have to go to Authorization, on Postman, and set to "Basic Auth" the field "TYPE". Then, set the user name and the password. If it does not work, enter the request url `https://localhost:8443/api/logIn`.
+#### Log out
+To log out, set to "No Auth" the field "TYPE" told before and enter the request url `https://localhost:8443/api/logOut`.
 
 ### Unit
 | Resource | URL | Supported operations |
@@ -414,3 +411,387 @@ These are the status codes that are returned by the application in this cases:
 | Delete unit | https://localhost:8443/api/units/{id}/deleteUnit | DELETE |
 
 ### Request examples (JSON)
+#### URL
+`https://localhost:8443/api/units`
+#### Request
+~~~~
+[
+    {
+        "name": "Javascript",
+        "itineraries": [
+            {
+                "id": 8,
+                "name": "Primeros pasos"
+            },
+            {
+                "id": 9,
+                "name": "Uso avanzado"
+            }
+        ],
+        "contents": [
+            {
+                "id": 26,
+                "title": "¿Qué?",
+                "desc": "JavaScript es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, ? basado en prototipos, imperativo, débilmente tipado y dinámico.",
+                "hasImage": false,
+                "imageRaw": null
+            },
+            {
+                "id": 39,
+                "title": "Title 3",
+                "desc": "Pichulo",
+                "hasImage": false,
+                "imageRaw": null
+            },
+            {
+                "id": 44,
+                "title": "Title 8",
+                "desc": "Pichulo",
+                "hasImage": false,
+                "imageRaw": null
+            },
+            {
+                "id": 47,
+                "title": "Title 11",
+                "desc": "Pichulo",
+                "hasImage": false,
+                "imageRaw": null
+            },
+            {
+                "id": 43,
+                "title": "Title 7",
+                "desc": "Pichulo",
+                "hasImage": false,
+                "imageRaw": null
+            },
+            {
+                "id": 27,
+                "title": "Historia",
+                "desc": "JavaScript fue desarrollado originalmente por Brendan Eich de Netscape con el nombre de Mocha, el cual fue renombrado posteriormente a LiveScript, para finalmente quedar como JavaScript.",
+                "hasImage": false,
+                "imageRaw": null
+            },
+            {
+                "id": 42,
+                "title": "Title 6",
+                "desc": "Pichulo",
+                "hasImage": false,
+                "imageRaw": null
+            },
+            {
+                "id": 46,
+                "title": "Title 10",
+                "desc": "Pichulo",
+                "hasImage": false,
+                "imageRaw": null
+            },
+            {
+                "id": 36,
+                "title": "Title 0",
+                "desc": "Pichulo",
+                "hasImage": false,
+                "imageRaw": null
+            },
+            {
+                "id": 41,
+                "title": "Title 5",
+                "desc": "Pichulo",
+                "hasImage": false,
+                "imageRaw": null
+            },
+            {
+                "id": 40,
+                "title": "Title 4",
+                "desc": "Pichulo",
+                "hasImage": false,
+                "imageRaw": null
+            },
+            {
+                "id": 48,
+                "title": "Title 12",
+                "desc": "Pichulo",
+                "hasImage": false,
+                "imageRaw": null
+            },
+            {
+                "id": 37,
+                "title": "Title 1",
+                "desc": "Pichulo",
+                "hasImage": false,
+                "imageRaw": null
+            },
+            {
+                "id": 45,
+                "title": "Title 9",
+                "desc": "Pichulo",
+                "hasImage": false,
+                "imageRaw": null
+            },
+            {
+                "id": 38,
+                "title": "Title 2",
+                "desc": "Pichulo",
+                "hasImage": false,
+                "imageRaw": null
+            }
+        ]
+    },
+    {
+        "name": "CERN",
+        "itineraries": [
+            {
+                "id": 14,
+                "name": "Principales líneas de investigación"
+            },
+            {
+                "id": 13,
+                "name": "Historia"
+            },
+            {
+                "id": 16,
+                "name": "Datos adicionales"
+            },
+            {
+                "id": 15,
+                "name": "Futuros proyectos"
+            }
+        ],
+        "contents": [
+            {
+                "id": 28,
+                "title": "¿Qué?",
+                "desc": "La Organización Europea para la Investigación Nuclear (nombre oficial en francés: Organisation européenne pour la recherche nucléaire),1? comúnmente conocida por la sigla CERN (Conseil Européen pour la Recherche Nucléaire",
+                "hasImage": false,
+                "imageRaw": null
+            },
+            {
+                "id": 30,
+                "title": "Historia",
+                "desc": "Fundado en 1954 por 12 países europeos, el CERN es hoy en día un modelo de colaboración científica internacional y uno de los centros de investigación más importantes en el mundo.",
+                "hasImage": false,
+                "imageRaw": null
+            },
+            {
+                "id": 29,
+                "title": "¿Cómo?",
+                "desc": "El CERN se encuentra en Suiza, cerca de Ginebra, y próximo a la frontera con Francia. Cuenta con una serie de aceleradores de partículas entre los que destaca el, ya desmantelado, LEP",
+                "hasImage": false,
+                "imageRaw": null
+            },
+            {
+                "id": 31,
+                "title": "Premios",
+                "desc": "El centro fue premiado en 2013 con el Premio Príncipe de Asturias de Investigación Científica y Técnica junto a Peter Higgs, y François Englert.",
+                "hasImage": false,
+                "imageRaw": null
+            }
+        ]
+    },
+    {
+        "name": "Tim Berners Lee",
+        "itineraries": [
+            {
+                "id": 17,
+                "name": "Biografía"
+            },
+            {
+                "id": 18,
+                "name": "World Wide Web"
+            }
+        ],
+        "contents": [
+            {
+                "id": 32,
+                "title": "¿Qué?",
+                "desc": "Timothy \"Tim\" John Berners-Lee, KBE es un científico de la computación británica, conocido por ser el padre de la World Wide Web",
+                "hasImage": false,
+                "imageRaw": null
+            }
+        ]
+    },
+    {
+        "name": "Año 1989",
+        "itineraries": [
+            {
+                "id": 11,
+                "name": "Cumpleaños de famosos"
+            },
+            {
+                "id": 10,
+                "name": "Eventos"
+            },
+            {
+                "id": 12,
+                "name": "Calendario"
+            }
+        ],
+        "contents": [
+            {
+                "id": 33,
+                "title": "¿Qué?",
+                "desc": "Este año marca un giro en la historia del mundo por las revoluciones que derrocaron a los estados comunistas de Bloque del Este, son conocidos como las Revoluciones de 1989",
+                "hasImage": false,
+                "imageRaw": null
+            }
+        ]
+    },
+    {
+        "name": "Matemáticas",
+        "itineraries": [
+            {
+                "id": 19,
+                "name": "Cálculo diferencial"
+            },
+            {
+                "id": 20,
+                "name": "Algoritmos matemáticos"
+            }
+        ],
+        "contents": [
+            {
+                "id": 34,
+                "title": "Historia",
+                "desc": "Las matemáticas o la matemática1? (del latín mathemat?ca, y este del griego ??????????, derivado de ??????, ‘conocimiento’) es una ciencia formal que, partiendo de axiomas y siguiendo el razonamiento lógico",
+                "hasImage": false,
+                "imageRaw": null
+            },
+            {
+                "id": 35,
+                "title": "Aspectos formales",
+                "desc": "Es muy posible que el arte del cálculo haya sido desarrollado antes incluso que la escritura,14? relacionado fundamentalmente con la contabilidad y la administración de bienes, el comercio, en la agrimensura y, posteriormente, en la astronomía.",
+                "hasImage": false,
+                "imageRaw": null
+            }
+        ]
+    },
+    {
+        "name": "Psicología",
+        "itineraries": [
+            {
+                "id": 23,
+                "name": "Psicometría"
+            },
+            {
+                "id": 24,
+                "name": "Terapia cognitivo conductual"
+            },
+            {
+                "id": 22,
+                "name": "Comportamiento humano"
+            },
+            {
+                "id": 21,
+                "name": "Psicobiología"
+            }
+        ],
+        "contents": []
+    }
+]
+~~~~
+#### URL
+`https://localhost:8443/api/units/{id}`
+##### Notes
+- {id} is where unit id is written. (In this example is 4)
+
+#### Request
+~~~~
+{
+    "name": "Tim Berners Lee",
+    "itineraries": [
+        {
+            "id": 17,
+            "name": "Biografía"
+        },
+        {
+            "id": 18,
+            "name": "World Wide Web"
+        }
+    ],
+    "contents": [
+        {
+            "id": 32,
+            "title": "¿Qué?",
+            "desc": "Timothy \"Tim\" John Berners-Lee, KBE es un científico de la computación británica, conocido por ser el padre de la World Wide Web",
+            "hasImage": false,
+            "imageRaw": null
+        }
+    ]
+}
+~~~~
+
+#### URL
+`https://localhost:8443/api/units/newUnit`
+#### Body
+~~~~
+{
+	"name": "Programación en C"
+}
+~~~~
+#### Request
+~~~~
+{
+    "name": "Programación en C",
+    "itineraries": null,
+    "contents": null
+}
+~~~~
+
+#### URL
+`https://localhost:8443/api/units/{id}/deleteUnit`
+##### Notes
+- {id} is where unit id is written. (In this example is 3)
+
+#### Request
+~~~~
+{
+    "name": "CERN",
+    "itineraries": [
+        {
+            "id": 15,
+            "name": "Futuros proyectos"
+        },
+        {
+            "id": 14,
+            "name": "Principales líneas de investigación"
+        },
+        {
+            "id": 16,
+            "name": "Datos adicionales"
+        },
+        {
+            "id": 13,
+            "name": "Historia"
+        }
+    ],
+    "contents": [
+        {
+            "id": 29,
+            "title": "¿Cómo?",
+            "desc": "El CERN se encuentra en Suiza, cerca de Ginebra, y próximo a la frontera con Francia. Cuenta con una serie de aceleradores de partículas entre los que destaca el, ya desmantelado, LEP",
+            "hasImage": false,
+            "imageRaw": null
+        },
+        {
+            "id": 28,
+            "title": "¿Qué?",
+            "desc": "La Organización Europea para la Investigación Nuclear (nombre oficial en francés: Organisation européenne pour la recherche nucléaire),1? comúnmente conocida por la sigla CERN (Conseil Européen pour la Recherche Nucléaire",
+            "hasImage": false,
+            "imageRaw": null
+        },
+        {
+            "id": 31,
+            "title": "Premios",
+            "desc": "El centro fue premiado en 2013 con el Premio Príncipe de Asturias de Investigación Científica y Técnica junto a Peter Higgs, y François Englert.",
+            "hasImage": false,
+            "imageRaw": null
+        },
+        {
+            "id": 30,
+            "title": "Historia",
+            "desc": "Fundado en 1954 por 12 países europeos, el CERN es hoy en día un modelo de colaboración científica internacional y uno de los centros de investigación más importantes en el mundo.",
+            "hasImage": false,
+            "imageRaw": null
+        }
+    ]
+}
+~~~~
