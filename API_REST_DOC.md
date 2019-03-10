@@ -127,7 +127,7 @@ These are the status codes that are returned by the application in this cases:
 ### URL
 `https://localhost:8443/api/units/{id}/contents`
 ##### Note
-{id} is where unit id is written. (In this example is 3)
+- {id} is where unit id is written. (In this example is 3)
 
 ### Request
 ~~~~
@@ -193,7 +193,7 @@ These are the status codes that are returned by the application in this cases:
 #### URL
 `https://localhost:8443/api/units/{id}/newContent`
 ##### Note
-{id} is where unit id is written. (In this example is 3)
+- {id} is where unit id is written. (In this example is 3)
 #### Body
 ~~~~
 {
@@ -215,8 +215,8 @@ These are the status codes that are returned by the application in this cases:
 #### URL
 `https://localhost:8443/api/units/{id}/contents/{content_id}/deleteContent`
 ##### Notes
-&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;{id} is where unit id is written. (In this example is 3)
-&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;{content_id} is where the content id which is going to be delete is written. (In this example is 28)
+- {id} is where unit id is written. (In this example is 3)
+- {content_id} is where the content id which is going to be delete is written. (In this example is 28)
 
 #### Request
 ~~~~
@@ -230,9 +230,9 @@ These are the status codes that are returned by the application in this cases:
 ~~~~
 ### URL
 `https://localhost:8443/api/units/{id}/contents/{content_id}/uploadImage`
-Notes:
-&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;{id} is where unit id is written. (In this example is 3)
-&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;{content_id} is where the content id which is going to be delete is written. (In this example is 28)
+#### Notes:
+- {id} is where unit id is written. (In this example is 3)
+- {content_id} is where the content id which is going to be delete is written. (In this example is 28)
 
 ### Request
 ~~~~
