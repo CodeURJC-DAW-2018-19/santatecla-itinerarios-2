@@ -92,43 +92,4 @@ Once you have this, and your MySQL server is running, you just have to start the
 The rest of the configuration is all on the application.properties.
 
 # Phase 3: API REST incorporation to the web application and Docker display
-## API Rest documentation
-### Introduction
-These are the status codes that are returned by the application in this cases:
-* Everything is correct: 200 OK
-* Something is created properly: 201 Created
-* User does not have permission to access: 401 Unauthorized
-* Something is not found: 404 Not Found
-### Content
-| Resource | URL | Supported operations |
-|----------|-----|----------------------|
-| Contents list | https://localhost:8443/api/contents | GET 
-| Specific content | https://localhost:8443/api/units/{id}/contents | GET 
-| New content | https://localhost:8443/api/units/{id}/newContent | POST 
-| Delete content | https://localhost:8443/api/units/{id}/contents/{content_id}/deleteContent | DELETE 
-| Upload image | https://localhost:8443/api/units/{id}/contents/{content_id}/uploadImage | POST 
-
-### Itinerary
-| Resource | URL | Supported operations |
-|----------|-----|----------------------|
-| Itinerary list | https://localhost:8443/api/itinerary | GET |
-| Specific itinerary | https://localhost:8443/api/units/{unit_id}/itinerary/{id} | GET |
-| Itineary list from a specific unit | https://localhost:8443/api/units/{unit_id}/itineraries | GET |
-| New itinerary | https://localhost:8443/api/units/{unit_id}/newItinerary | POST |
-| Delete specific itinerary | https://localhost:8443/api/units/{unit_id}/itinerary/{itinerary_id}/deleteItinerary | DELETE 
-
-### Log in & log out
-| Resource | URL | Supported operations |
-|----------|-----|----------------------|
-| Log in | https://localhost:8443/api/logIn | GET |
-| Log out | https://localhost:8443/api/logOut | GET |
-
-### Unit
-| Resource | URL | Supported operations |
-|----------|-----|----------------------|
-| Unit list | https://localhost:8443/api/units | GET |
-| Specific unit | https://localhost:8443/api/units/{id} | GET |
-| New unit | https://localhost:8443/api/units/newUnit | POST |
-| Delete unit | https://localhost:8443/api/units/{id}/deleteUnit | DELETE |
-
-
+To access to the public documentation of each endpoint of the API REST you can go to [API REST DOC](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/API_REST_DOC.md).
