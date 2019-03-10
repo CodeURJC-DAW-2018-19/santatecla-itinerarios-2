@@ -22,9 +22,7 @@ services:
           # Where our data will be persisted
       
       app:
-        build:
-            context: ./
-            dockerfile: Dockerfile
+        image: dawgrupo8/fase3:latest
         restart: always
         links:
             - db_daw_grupo8
