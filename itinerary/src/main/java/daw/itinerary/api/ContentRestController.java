@@ -77,8 +77,8 @@ public class ContentRestController {
 	 * contentService.findOne(content_id).get(); }
 	 */
 
-	@DeleteMapping("/api/units/{id}/deleteContent")
-	public Content deleteContent(@PathVariable("id") long id, @RequestParam("content_id") long content_id) {
+	@DeleteMapping("/api/units/{id}/contents/{content_id}/deleteContent")
+	public Content deleteContent(@PathVariable("id") long id, @PathVariable long content_id) {
 		Content content = contentService.findOne(content_id).get();
 		if (contentService.findOne(content_id).isPresent()) {
 
@@ -88,6 +88,18 @@ public class ContentRestController {
 
 		return content;
 	}
+
+	/*@DeleteMapping("/api/units/{id}/deleteContent")
+	public Content deleteContent(@PathVariable("id") long id, @RequestParam("content_id") long content_id) {
+		Content content = contentService.findOne(content_id).get();
+		if (contentService.findOne(content_id).isPresent()) {
+
+			contentService.delete(content_id);
+			return content;
+		}
+
+		return content;
+	}*/
 
 	@PostMapping("/api/units/{id}/contents/{content_id}/uploadImage")
 	public Content uploadImageToContentArray(@PathVariable("id") long id, @PathVariable("content_id") long content_id,
