@@ -83,7 +83,7 @@ public class ItineraryRestController
 	@PutMapping("/api/units/{id}/itineraries/{itinerary_id}/update")
 	public Itinerary updateItinerary(@PathVariable("itinerary_id") long id, @RequestBody Itinerary itinerary) {
 		Itinerary originalItinerary = itineraryService.findOne(id).get();
-		if(!itinerary.getName().isBlank()) {
+		if(!itinerary.getName().isEmpty()) {
 			originalItinerary.setName(itinerary.getName());
 		}
 		itineraryService.save(originalItinerary);

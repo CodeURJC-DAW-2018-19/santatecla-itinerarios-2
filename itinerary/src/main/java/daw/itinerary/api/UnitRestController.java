@@ -58,7 +58,7 @@ public class UnitRestController {
 	@PutMapping("/api/units/{id}/update")
 	public Unit updateUnit(@PathVariable("id") long id, @RequestBody Unit unit) {
 		Unit originalUnit = unitService.findOne(id).get();
-		if(!unit.getName().isBlank()) {
+		if(!unit.getName().isEmpty()) {
 			originalUnit.setName(unit.getName());
 		}
 		unitService.save(originalUnit);
