@@ -63,6 +63,19 @@ public class ContentRestController {
 		return content;
 	}
 
+	@PutMapping("/api/units/{id}/contents/{content_id}/update")
+	public Content updateContent(@PathVariable("content_id") long contentId, @RequestBody Content content) {
+		Content originalContent = contentService.findOne(contentId).get();
+		if (!content.getTitle().isBlank()) {
+			originalContent.setTitle(content.getTitle());
+		}
+		if (!content.getDesc().isEmpty()) {
+			originalContent.setDesc(content.getDesc());
+		}
+		contentService.save(originalContent);
+		return originalContent;
+	}
+
 	// This method was used when images where stored in file system
 	/*
 	 * @PostMapping("/api/units/{id}/contents/{content_id}/uploadImage") public
@@ -89,26 +102,27 @@ public class ContentRestController {
 		return content;
 	}
 
-	/*@DeleteMapping("/api/units/{id}/deleteContent")
-	public Content deleteContent(@PathVariable("id") long id, @RequestParam("content_id") long content_id) {
-		Content content = contentService.findOne(content_id).get();
-		if (contentService.findOne(content_id).isPresent()) {
-
-			contentService.delete(content_id);
-			return content;
-		}
-
-		return content;
-	}*/
+	/*
+	 * @DeleteMapping("/api/units/{id}/deleteContent") public Content
+	 * deleteContent(@PathVariable("id") long id, @RequestParam("content_id") long
+	 * content_id) { Content content = contentService.findOne(content_id).get(); if
+	 * (contentService.findOne(content_id).isPresent()) {
+	 * 
+	 * contentService.delete(content_id); return content; }
+	 * 
+	 * return content; }
+	 */
 
 	@PostMapping("/api/units/{id}/contents/{content_id}/uploadImage")
 	public Content uploadImageToContentArray(@PathVariable("id") long id, @PathVariable("content_id") long content_id,
 			@RequestParam("file") MultipartFile file) throws IllegalStateException, IOException {
+		Content originalContent = contentService.findOne(content_id).get();
 		if (!file.isEmpty()) {
 			FileInputStream inputStream = (FileInputStream) file.getInputStream();
 			byte[] bytes = file.getBytes();
 			contentService.findOne(content_id).get().setImageRaw(bytes);
 			contentService.findOne(content_id).get().setHasImage(true);
+			contentService.save(originalContent);
 		}
 		return contentService.findOne(content_id).get();
 	}
