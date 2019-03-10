@@ -1,11 +1,11 @@
-## API Rest documentation
-### Introduction
+# API Rest documentation
+## Introduction
 These are the status codes that are returned by the application in this cases:
 * Everything is correct: 200 OK
 * Something is created properly: 201 Created
 * User does not have permission to access: 401 Unauthorized
 * Something is not found: 404 Not Found
-### Content
+## Content
 | Resource | URL | Supported operations |
 |----------|-----|----------------------|
 | Contents list | https://localhost:8443/api/contents | GET 
@@ -14,7 +14,7 @@ These are the status codes that are returned by the application in this cases:
 | Delete content | https://localhost:8443/api/units/{id}/contents/{content_id}/deleteContent | DELETE 
 | Upload image | https://localhost:8443/api/units/{id}/contents/{content_id}/uploadImage | POST 
 
-#### Request examples (JSON)
+### Request examples (JSON)
 #### URL
 `https://localhost:8443/api/contents`
 #### Request
@@ -124,10 +124,115 @@ These are the status codes that are returned by the application in this cases:
 ]
 ~~~~
 
-#### URL
+### URL
 `https://localhost:8443/api/units/{id}/contents`
-Note: {id} is where unit id is written.
+Note: {id} is where unit id is written. (In this example is 3)
+
+### Request
+~~~~
+{
+    "content": [
+        {
+            "id": 28,
+            "title": "¿Qué?",
+            "desc": "La Organización Europea para la Investigación Nuclear (nombre oficial en francés: Organisation européenne pour la recherche nucléaire),1? comúnmente conocida por la sigla CERN (Conseil Européen pour la Recherche Nucléaire",
+            "hasImage": false,
+            "imageRaw": null
+        },
+        {
+            "id": 29,
+            "title": "¿Cómo?",
+            "desc": "El CERN se encuentra en Suiza, cerca de Ginebra, y próximo a la frontera con Francia. Cuenta con una serie de aceleradores de partículas entre los que destaca el, ya desmantelado, LEP",
+            "hasImage": false,
+            "imageRaw": null
+        },
+        {
+            "id": 30,
+            "title": "Historia",
+            "desc": "Fundado en 1954 por 12 países europeos, el CERN es hoy en día un modelo de colaboración científica internacional y uno de los centros de investigación más importantes en el mundo.",
+            "hasImage": false,
+            "imageRaw": null
+        },
+        {
+            "id": 31,
+            "title": "Premios",
+            "desc": "El centro fue premiado en 2013 con el Premio Príncipe de Asturias de Investigación Científica y Técnica junto a Peter Higgs, y François Englert.",
+            "hasImage": false,
+            "imageRaw": null
+        }
+    ],
+    "pageable": {
+        "sort": {
+            "sorted": false,
+            "unsorted": true,
+            "empty": true
+        },
+        "pageSize": 10,
+        "pageNumber": 0,
+        "offset": 0,
+        "unpaged": false,
+        "paged": true
+    },
+    "totalElements": 4,
+    "last": true,
+    "totalPages": 1,
+    "first": true,
+    "sort": {
+        "sorted": false,
+        "unsorted": true,
+        "empty": true
+    },
+    "numberOfElements": 4,
+    "size": 10,
+    "number": 0,
+    "empty": false
+}
+~~~~
+
+#### URL
+`https://localhost:8443/api/units/{id}/newContent`
+Note: {id} is where unit id is written. (In this example is 3)
+#### Body
+~~~~
+{
+	"title": "¿Por qué?"
+	"desc": "Nunca sabremos el porqué."
+}
+~~~~
 #### Request
+~~~~
+{
+    "id": 52,
+    "title": "¿Por qué?",
+    "desc": "Nunca sabremos el porqué.",
+    "hasImage": false,
+    "imageRaw": null
+}
+~~~~
+
+#### URL
+`https://localhost:8443/api/units/{id}/contents/{content_id}/deleteContent`
+Notes:
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;{id} is where unit id is written. (In this example is 3)
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;{content_id} is where the content id which is going to be delete is written. (In this example is 28)
+
+#### Request
+~~~~
+{
+    "id": 28,
+    "title": "¿Qué?",
+    "desc": "La Organización Europea para la Investigación Nuclear (nombre oficial en francés: Organisation européenne pour la recherche nucléaire),1? comúnmente conocida por la sigla CERN (Conseil Européen pour la Recherche Nucléaire",
+    "hasImage": false,
+    "imageRaw": null
+}
+~~~~
+### URL
+`https://localhost:8443/api/units/{id}/contents/{content_id}/uploadImage`
+Notes:
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;{id} is where unit id is written. (In this example is 3)
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;{content_id} is where the content id which is going to be delete is written. (In this example is 28)
+
+### Request
 ~~~~
 ~~~~
 
