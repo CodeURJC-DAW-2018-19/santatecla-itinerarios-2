@@ -92,4 +92,4 @@ Once you have this, and your MySQL server is running, you just have to start the
 The rest of the configuration is all on the application.properties.
 
 # Phase 3: API REST incorporation to the web application and Docker display
-To access to the public documentation of each endpoint of the API REST you can go to [API REST DOC](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/API_REST_DOC.md).
+To access to the public documentation of each API REST endpoint you can go to [API REST DOC](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/API_REST_DOC.md).
