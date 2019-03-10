@@ -124,12 +124,12 @@ These are the status codes that are returned by the application in this cases:
 ]
 ~~~~
 
-### URL
+#### URL
 `https://localhost:8443/api/units/{id}/contents`
 ##### Note
 - {id} is where unit id is written. (In this example is 3)
 
-### Request
+#### Request
 ~~~~
 {
     "content": [
@@ -228,13 +228,13 @@ These are the status codes that are returned by the application in this cases:
     "imageRaw": null
 }
 ~~~~
-### URL
+#### URL
 `https://localhost:8443/api/units/{id}/contents/{content_id}/uploadImage`
-#### Notes:
+##### Notes
 - {id} is where unit id is written. (In this example is 3)
 - {content_id} is where the content id which is going to be delete is written. (In this example is 28)
 
-### Request
+#### Request
 ~~~~
 ~~~~
 
