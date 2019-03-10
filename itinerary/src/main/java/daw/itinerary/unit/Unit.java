@@ -38,7 +38,28 @@ public class Unit {
         return name;
     }
     
-    public void addItinerary(Itinerary itinerary) {
+    
+    public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setItineraries(Set<Itinerary> itineraries) {
+		this.itineraries = itineraries;
+	}
+
+	public void setContents(Set<Content> contents) {
+		this.contents = contents;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public void addItinerary(Itinerary itinerary) {
         if (this.itineraries == null) {
             this.itineraries = new HashSet<>();
         }
