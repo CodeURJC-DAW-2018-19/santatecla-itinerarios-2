@@ -66,7 +66,7 @@ public class ContentRestController {
 	@PutMapping("/api/units/{id}/contents/{content_id}/update")
 	public Content updateContent(@PathVariable("content_id") long contentId, @RequestBody Content content) {
 		Content originalContent = contentService.findOne(contentId).get();
-		if (!content.getTitle().isBlank()) {
+		if (!content.getTitle().isEmpty()) {
 			originalContent.setTitle(content.getTitle());
 		}
 		if (!content.getDesc().isEmpty()) {
