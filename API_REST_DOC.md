@@ -247,6 +247,8 @@ These are the status codes that are returned by the application in this cases:
 | New itinerary | https://localhost:8443/api/units/{unit_id}/newItinerary | POST |
 | Delete specific itinerary | https://localhost:8443/api/units/{unit_id}/itinerary/{itinerary_id}/deleteItinerary | DELETE 
 
+### Request examples (JSON)
+
 #### URL
 `https://localhost:8443/api/itinerary`
 
@@ -395,6 +397,14 @@ These are the status codes that are returned by the application in this cases:
 | Log in | https://localhost:8443/api/logIn | GET |
 | Log out | https://localhost:8443/api/logOut | GET |
 
+### Request examples (JSON)
+#### URL
+`https://localhost:8443/api/logIn`
+#### Request
+~~~~
+
+~~~~
+
 ### Unit
 | Resource | URL | Supported operations |
 |----------|-----|----------------------|
@@ -402,3 +412,5 @@ These are the status codes that are returned by the application in this cases:
 | Specific unit | https://localhost:8443/api/units/{id} | GET |
 | New unit | https://localhost:8443/api/units/newUnit | POST |
 | Delete unit | https://localhost:8443/api/units/{id}/deleteUnit | DELETE |
+
+### Request examples (JSON)
