@@ -1,0 +1,29 @@
+<td-layout [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+    [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '240px' : '100%'" [class]="activeTheme">
+
+    <td-layout-nav [toolbarTitle]="(media.registerQuery('gt-xs') | async) ? 'Library' : ''" navigationRoute="/">
+
+        <div td-toolbar-content layout="row" layout-align="start center" flex>
+            <span flex *ngIf="!searchBox.searchVisible"></span>
+            <td-search-box hide-xs flex #searchBox
+                [ngClass]="{ 'push-left push-right mat-whiteframe-z1 bgc-white tc-black': searchBox.searchVisible }"
+                placeholder="search"></td-search-box>
+            <login></login>
+        </div>
+
+        <div flex layout-gt-sm="row" tdMediaToggle="gt-xs" layout-wrap [mediaClasses]="['push-sm']">
+
+            <div flex-gt-sm="100">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+
+        <td-layout-footer>
+            <div layout="row" layout-align="start center">
+                <span class="mat-caption">Made with <mat-icon class="text-md">favorite</mat-icon> using
+                    <a href="http://getcovalent.com" class="text-nodecoration tc-teal-600">Covalent</a>. CodeURJC</span>
+            </div>
+        </td-layout-footer>
+    </td-layout-nav>
+</td-layout>
+
