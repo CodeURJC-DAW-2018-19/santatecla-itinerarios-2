@@ -5,8 +5,8 @@ import { map, catchError } from 'rxjs/operators'
 
 export interface Unit {
   id?: number;
-  title: string;
-  description: string;
+  name: string;
+  desc: string;
 }
 
 const URL = '/api/units/';

@@ -2,6 +2,7 @@ import { Component, ChangeDetectorRef, AfterViewInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry, MatDialog } from '@angular/material';
 import { TdMediaService, tdRotateAnimation } from '@covalent/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'my-app',
@@ -12,6 +13,7 @@ import { TdMediaService, tdRotateAnimation } from '@covalent/core';
 export class AppComponent implements AfterViewInit {
 
     constructor(
+        private router: Router,
         public media: TdMediaService,
         public dialog: MatDialog,
         private _changeDetectorRef: ChangeDetectorRef,

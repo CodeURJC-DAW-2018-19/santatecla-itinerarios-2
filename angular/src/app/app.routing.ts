@@ -10,8 +10,8 @@ const appRoutes = [
   { path: 'book/new', component: BookFormComponent },
   { path: 'book/:id', component: BookDetailComponent },
   { path: 'book/edit/:id', component: BookFormComponent },
-  { path: '', redirectTo: '/new/units', pathMatch: 'full' },
-  { path: '/new/units', component: UnitListComponent, useAsDefault: true }
+  { path: '', redirectTo: 'new/units', pathMatch: 'full' },
+  { path: 'new/units', component: UnitListComponent, useAsDefault: true }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);
