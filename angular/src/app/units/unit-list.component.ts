@@ -22,6 +22,6 @@ export class UnitListComponent implements OnInit {
   }
 
   newUnit() {
-    this.router.navigate(['/units/new']);
+    this.router.navigate(['new/units/new']);
   }
 }

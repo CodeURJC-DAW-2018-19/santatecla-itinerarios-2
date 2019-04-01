@@ -116,7 +116,7 @@ import { UnitService } from './units/unit.service';
         HttpModule, //Remove when migrated to HttpClient
         routing
     ],
-    declarations: [AppComponent, BookDetailComponent, BookListComponent, BookFormComponent, LoginComponent],
+    declarations: [AppComponent, BookDetailComponent, BookListComponent, BookFormComponent, UnitListComponent, LoginComponent],
     bootstrap: [AppComponent],
     providers: [BookService, LoginService, UnitService]
 })
