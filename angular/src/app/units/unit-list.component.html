@@ -1,0 +1,25 @@
+<mat-card>
+    <mat-card-title>
+        <div layout="row" layout-align="start center">
+            <span flex>Units</span>
+
+        </div>
+    </mat-card-title>
+    <mat-divider></mat-divider>
+
+    <mat-nav-list *ngIf="loginService.isLogged">
+        <a *ngFor='let unit of units' mat-list-item [routerLink]="['/units', unit.id]">
+            {{unit.title}}
+        </a>
+    </mat-nav-list>
+
+    <mat-nav-list *ngIf="!loginService.isLogged">
+        <mat-list-item [ngStyle]="{'cursor':'auto'}" *ngFor='let unit of units'>
+            {{unit.title}}
+        </mat-list-item>
+    </mat-nav-list>
+
+    <button mat-fab  *ngIf="loginService.isLogged"  (click)="newUnit()">
+        <mat-icon>add</mat-icon>
+    </button>
+</mat-card>

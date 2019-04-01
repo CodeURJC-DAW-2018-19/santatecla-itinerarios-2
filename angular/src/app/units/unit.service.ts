@@ -31,7 +31,7 @@ export class UnitService {
       );
   }
 
-  saveunit(unit: Unit) {
+  saveUnit(unit: Unit) {
 
     const body = JSON.stringify(unit);
     const headers = new Headers({

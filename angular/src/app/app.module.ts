@@ -61,6 +61,8 @@ import { BookListComponent } from './book-list.component';
 import { BookFormComponent } from './book-form.component';
 import { LoginComponent } from './login.component';
 import { routing } from './app.routing';
+import { UnitListComponent } from './units/unit-list.component';
+import { UnitService } from './units/unit.service';
 
 @NgModule({
     imports: [
@@ -116,7 +118,7 @@ import { routing } from './app.routing';
     ],
     declarations: [AppComponent, BookDetailComponent, BookListComponent, BookFormComponent, LoginComponent],
     bootstrap: [AppComponent],
-    providers: [BookService, LoginService]
+    providers: [BookService, LoginService, UnitService]
 })
 export class AppModule {
     constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
