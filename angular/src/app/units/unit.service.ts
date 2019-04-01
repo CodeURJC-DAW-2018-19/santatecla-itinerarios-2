@@ -3,19 +3,19 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators'
 
-export interface Book {
+export interface Unit {
   id?: number;
   title: string;
   description: string;
 }
 
-const URL = '/api/books/';
+const URL = '/api/units/';
 @Injectable()
-export class BookService {
+export class UnitService {
 
   constructor(private http: Http) { }
 
-  getBooks() {
+  getUnits() {
     return this.http.get(URL, { withCredentials: true })
       .pipe(
         map(response => response.json()),
@@ -23,7 +23,7 @@ export class BookService {
       );
   }
 
-  getBook(id: number | string) {
+  getUnit(id: number | string) {
     return this.http.get(URL + id, { withCredentials: true })
       .pipe(
           map(response => response.json()),
@@ -31,23 +31,23 @@ export class BookService {
       );
   }
 
-  saveBook(book: Book) {
+  saveunit(unit: Unit) {
 
-    const body = JSON.stringify(book);
+    const body = JSON.stringify(unit);
     const headers = new Headers({
       'Content-Type': 'application/json',
       'X-Requested-With': 'XMLHttpRequest'
     });
     const options = new RequestOptions({ withCredentials: true, headers });
 
-    if (!book.id) {
+    if (!unit.id) {
       return this.http.post(URL, body, options)
         .pipe(
           map(response => response.json()),
           catchError(error => this.handleError(error))
         );
     } else {
-      return this.http.put(URL + book.id, body, options)
+      return this.http.put(URL + unit.id, body, options)
         .pipe(
           map(response => response.json()),
           catchError(error => this.handleError(error)
@@ -55,35 +55,35 @@ export class BookService {
     }
   }
 
-  removeBook(book: Book) {
+  removeUnit(unit: Unit) {
 
     const headers = new Headers({
       'X-Requested-With': 'XMLHttpRequest'
     });
     const options = new RequestOptions({ withCredentials: true, headers });
 
-    return this.http.delete(URL + book.id, options)
+    return this.http.delete(URL + unit.id, options)
       .pipe(
         map(response => undefined),
         catchError(error => this.handleError(error))
       );
   }
 
-  updateBook(book: Book) {
+  /*updateUnit(unit: Unit) {
 
-    const body = JSON.stringify(book);
+    const body = JSON.stringify(unit);
     const headers = new Headers({
       'Content-Type': 'application/json',
       'X-Requested-With': 'XMLHttpRequest'
     });
     const options = new RequestOptions({ withCredentials: true, headers });
 
-    return this.http.put(URL + book.id, body, options)
+    return this.http.put(URL + unit.id, body, options)
       .pipe(
         map(response => response.json()), 
         catchError(error => this.handleError(error)),
       );
-  }
+  }*/
 
   private handleError(error: any) {
     console.error(error);
