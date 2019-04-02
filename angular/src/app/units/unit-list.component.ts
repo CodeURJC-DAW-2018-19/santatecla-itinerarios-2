@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { Unit, UnitService } from './unit.service';
 import { LoginService } from '../login/login.service';
+import {catchError, map} from "rxjs/operators";
 
 @Component({
   templateUrl: 'unit-list.component.html'

@@ -14,7 +14,7 @@
     </mat-nav-list>
 
     <mat-nav-list *ngIf="!loginService.isLogged">
-        <mat-list-item [ngStyle]="{'cursor':'auto'}" *ngFor='let unit of units' (click)="">
+        <mat-list-item [ngStyle]="{'cursor':'auto'}" *ngFor='let unit of units' (click)="getUnit(unit.id)">
             {{unit.name}}
         </mat-list-item>
     </mat-nav-list>

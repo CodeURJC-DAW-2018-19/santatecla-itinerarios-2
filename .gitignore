@@ -5,3 +5,4 @@ itinerary/bin/target/classes/META-INF/MANIFEST.MF
 *.jpg
 *.jar
 .idea
+angular/package-lock.json

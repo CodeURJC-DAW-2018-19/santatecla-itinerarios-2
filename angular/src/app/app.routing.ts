@@ -14,7 +14,7 @@ const appRoutes = [
   { path: '', redirectTo: 'new/units', pathMatch: 'full' },
   { path: 'new/units', component: UnitListComponent, useAsDefault: true },
   { path: 'new/contents', component: ContentListComponent},
-  { path: 'new/units/:id', component: UnitListComponent}
+  { path: 'new/units/:id/contents', component: UnitListComponent}
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

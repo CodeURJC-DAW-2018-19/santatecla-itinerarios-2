@@ -69,6 +69,7 @@ import { ContentListComponent} from "./contents/content-list.component";
 
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { BasicAuthInterceptor } from './interceptors/auth.interceptor';
+import {UnitDetailComponent} from "./units/unit-detail.component";
 
 @NgModule({
     imports: [
@@ -124,7 +125,7 @@ import { BasicAuthInterceptor } from './interceptors/auth.interceptor';
     ],
     declarations: [AppComponent, BookDetailComponent, BookListComponent, BookFormComponent, UnitListComponent, LoginComponent, ContentListComponent],
     bootstrap: [AppComponent],
-    providers: [BookService, LoginService, UnitService,ContentService,
+    providers: [BookService, LoginService, UnitService,ContentService, UnitDetailComponent,
         { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
     ]
