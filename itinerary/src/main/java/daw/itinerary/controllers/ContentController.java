@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Collection;
 import java.util.Optional;
 
 @Controller
@@ -43,7 +44,7 @@ public class ContentController {
 		boolean logged = userComponent.getLoggedUser() != null;
 		model.addAttribute("logged", logged);
 
-		Page<Content> contents = repo.findAllByUnitId(id, page);
+		Collection<Content> contents = repo.findAllByUnitId(id);
 		model.addAttribute("contentsPage", contents);
 
 		Unit unit = unitService.findOne(id).get();
@@ -62,7 +63,7 @@ public class ContentController {
 		boolean logged = userComponent.getLoggedUser() != null;
 		model.addAttribute("logged", logged);
 
-		Page<Content> contents = repo.findAllByUnitId(id, page);
+		Collection<Content> contents = repo.findAllByUnitId(id);
 		model.addAttribute("contentsPage", contents);
 
 		Unit unit = unitService.findOne(id).get();

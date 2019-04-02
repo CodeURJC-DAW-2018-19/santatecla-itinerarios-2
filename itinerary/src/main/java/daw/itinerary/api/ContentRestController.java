@@ -43,10 +43,15 @@ public class ContentRestController {
 	/* Image "downloading" */
 	private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "images");
 
-	@RequestMapping("/api/units/{id}/contents")
+	/*@RequestMapping("/api/units/{id}/contents")
 	@ResponseStatus(HttpStatus.OK)
 	public Page<Content> unitContents(Model model, @PathVariable long id, @PageableDefault(size = 10) Pageable page) {
 		return repo.findAllByUnitId(id, page);
+	}*/
+	@RequestMapping("/api/units/{id}/contents")
+	@ResponseStatus(HttpStatus.OK)
+	public Collection<Content> unitContents(Model model, @PathVariable long id) {
+		return repo.findAllByUnitId(id);
 	}
 
 	@GetMapping("/api/contents")
