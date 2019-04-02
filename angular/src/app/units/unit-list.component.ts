@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Unit, UnitService } from './unit.service';
-import { LoginService } from '../login.service';
+import { LoginService } from '../login/login.service';
 
 @Component({
   templateUrl: 'unit-list.component.html'
