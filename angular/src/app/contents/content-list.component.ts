@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
-import { LoginService } from '../login.service';
+import {LoginService} from '../login.service';
 import {Content, ContentService} from "./content.service";
 
 @Component({
@@ -12,7 +12,8 @@ export class ContentListComponent implements OnInit {
     contents: Content[];
 
     constructor(private router: Router, private service: ContentService,
-                public loginService: LoginService) { }
+                public loginService: LoginService) {
+    }
 
     ngOnInit() {
         this.service.getContents().subscribe(
@@ -21,7 +22,7 @@ export class ContentListComponent implements OnInit {
         );
     }
 
-    newUnit() {
+    newContent() {
         this.router.navigate(['new/contents/new']);
     }
 }
