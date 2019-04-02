@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { JsonpModule, HttpModule } from '@angular/http';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatIconRegistry } from '@angular/material/icon';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -63,6 +63,8 @@ import { LoginComponent } from './login/login.component';
 import { routing } from './app.routing';
 import { UnitListComponent } from './units/unit-list.component';
 import { UnitService } from './units/unit.service';
+import { ErrorInterceptor } from './interceptors/error.interceptor';
+import { BasicAuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
     imports: [
@@ -118,7 +120,10 @@ import { UnitService } from './units/unit.service';
     ],
     declarations: [AppComponent, BookDetailComponent, BookListComponent, BookFormComponent, UnitListComponent, LoginComponent],
     bootstrap: [AppComponent],
-    providers: [BookService, LoginService, UnitService]
+    providers: [BookService, LoginService, UnitService,
+        { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+    ]
 })
 export class AppModule {
     constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
