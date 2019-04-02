@@ -7,6 +7,7 @@ export interface Unit {
   id?: number;
   name: string;
   desc: string;
+
 }
 
 const URL = '/api/units/';
@@ -29,6 +30,13 @@ export class UnitService {
           map(response => response.json()),
           catchError(error => this.handleError(error))
       );
+  }
+  getUnitContents(id: number){
+    return this.http.get(URL + id + "/contents" , {withCredentials: true})
+        .pipe(
+            map(response => response.json()),
+            catchError(error => this.handleError(error))
+        );
   }
 
   saveUnit(unit: Unit) {

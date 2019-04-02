@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { LoginService } from '../login/login.service';
 import {Unit, UnitService} from "./unit.service";
+import {Content} from "../contents/content.service";
 
 @Component({
     templateUrl:"unit-detail.component.html"
@@ -11,15 +12,16 @@ import {Unit, UnitService} from "./unit.service";
 export class UnitDetailComponent {
 
     unit: Unit;
-
+    contents: Content[];
     constructor(private router: Router, activatedRoute: ActivatedRoute, public service: UnitService,
                 public loginService: LoginService) {
 
         const id = activatedRoute.snapshot.params['id'];
-        service.getUnit(id).subscribe(
-            unit => this.unit = unit,
+        service.getUnitContents(id).subscribe(
+            contents => this.contents= contents,
             error => console.error(error)
         );
+
     }
 
     removeUnit() {

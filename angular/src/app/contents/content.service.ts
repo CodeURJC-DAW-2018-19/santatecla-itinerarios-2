@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators'
+import {Unit} from "../units/unit.service";
 
 export interface Content {
     id?: number;
     title: string;
     desc: string;
     hasImage:boolean;
+    unit:Unit;
 }
 
 const URL = '/api/contents/';
@@ -31,6 +33,7 @@ export class ContentService {
                 catchError(error => this.handleError(error))
             );
     }
+
 
     saveBook(content: Content) {
 

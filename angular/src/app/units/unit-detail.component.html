@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<mat-card>
+    <mat-card-title>
+        <div layout="row" layout-align="start center">
+            <span flex>Contenidos</span>
 
-</body>
-</html>
+        </div>
+    </mat-card-title>
+    <mat-divider></mat-divider>
+
+    <mat-nav-list>
+        <a *ngFor='let content of contents' mat-list-item [routerLink]="['/units', content.id, 'contents']" >
+            {{content.title}}
+        </a>
+    </mat-nav-list>
+</mat-card>

@@ -123,7 +123,7 @@ import {UnitDetailComponent} from "./units/unit-detail.component";
         HttpModule, //Remove when migrated to HttpClient
         routing
     ],
-    declarations: [AppComponent, BookDetailComponent, BookListComponent, BookFormComponent, UnitListComponent, LoginComponent, ContentListComponent],
+    declarations: [AppComponent, BookDetailComponent, BookListComponent, BookFormComponent, UnitListComponent, LoginComponent, ContentListComponent, UnitDetailComponent],
     bootstrap: [AppComponent],
     providers: [BookService, LoginService, UnitService,ContentService, UnitDetailComponent,
         { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
