@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Http, RequestOptions, Headers } from '@angular/http';
-import { map } from 'rxjs/operators'
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 const URL = '/api';
 
 export interface User {
     id?: number;
     name: string;
+    passwordHash: string;
     roles: string[];
+    authdata: string;
 }
 
 @Injectable()
@@ -17,71 +18,57 @@ export class LoginService {
     isLogged = false;
     isAdmin = false;
     user: User;
+    auth: string;
 
-    constructor(private http: Http) {
-        this.reqIsLogged();
-    }
-
-    reqIsLogged() {
-
-        const headers = new Headers({
-            'X-Requested-With': 'XMLHttpRequest'
-        });
-
-        const options = new RequestOptions({ withCredentials: true, headers });
-
-        this.http.get(URL + '/logIn', options).subscribe(
-            response => this.processLogInResponse(response),
-            error => {
-                if (error.status !== 401) {
-                    console.error('Error when asking if logged: ' +
-                        JSON.stringify(error));
-                }
-            }
-        );
-    }
-
-    private processLogInResponse(response) {
-        this.isLogged = true;
-        this.user = response.json();
-        this.isAdmin = this.user.roles.indexOf('ROLE_ADMIN') !== -1;
+    constructor(private http: HttpClient) {
+        let user = JSON.parse(localStorage.getItem('currentUser'));
+        if (user) {
+            console.log('Logged user');
+            this.setCurrentUser(user);
+        }
     }
 
     logIn(user: string, pass: string) {
 
-        console.log('user:'+user+' pass:'+pass);
+        let auth = window.btoa(user + ':' + pass);
 
-        const userPass = user + ':' + pass;
-
-        const headers = new Headers({
-            'Authorization': 'Basic ' + utf8_to_b64(userPass),
-            'X-Requested-With': 'XMLHttpRequest'
+        const headers = new HttpHeaders({
+            Authorization: 'Basic ' + auth,
+            'X-Requested-With': 'XMLHttpRequest',
         });
 
-        const options = new RequestOptions({ withCredentials: true, headers });
+        return this.http.get<User>('/api/logIn', { headers })
+            .pipe(map(user => {
 
-        return this.http.get(URL + '/logIn', options).pipe(map(
-            response => {
-                this.processLogInResponse(response);
-                return this.user;
-            }
-        ));
+                if (user) {
+                    this.setCurrentUser(user);
+                    user.authdata = auth;
+                    localStorage.setItem('currentUser', JSON.stringify(user));
+                }
+
+                return user;
+            }));
     }
 
     logOut() {
 
-        return this.http.get(URL + '/logOut', { withCredentials: true }).pipe(map(
-            response => {
-                this.isLogged = false;
-                this.isAdmin = false;
+        return this.http.get(URL + '/logOut').pipe(
+            map(response => {
+                this.removeCurrentUser();
                 return response;
-            }
-        ));
+            }),
+        );
     }
-}
 
-function utf8_to_b64(str) {
-    return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (match, p1) {
-        return String.fromCharCode(<any>'0x' + p1);
-    }));
+    private setCurrentUser(user: User) {
+        this.isLogged = true;
+        this.user = user;
+        this.isAdmin = this.user.roles.indexOf('ROLE_ADMIN') !== -1;
+    }
+
+    removeCurrentUser() {
+        localStorage.removeItem('currentUser');
+        this.isLogged = false;
+        this.isAdmin = false;
+    }
 }
