@@ -4,42 +4,40 @@ import { LoginService } from './login.service';
 import { MatDialog, MatDialogRef } from '@angular/material';
 
 @Component({
-  selector: 'login',
-  templateUrl: './logIn.component.html'
+    selector: 'login',
+    templateUrl: './login.component.html',
 })
 export class LoginComponent {
+    @ViewChild('loginDialog') loginDialog: TemplateRef<any>;
+    dialogRef: MatDialogRef<any, any>;
 
-  @ViewChild('loginDialog') loginDialog: TemplateRef<any>;
-  dialogRef: MatDialogRef<any, any>;
+    constructor(public dialog: MatDialog, private router: Router, public loginService: LoginService) {}
 
-  constructor(public dialog: MatDialog,
-    private loginService: LoginService) { }
+    logIn(event: any, user: string, pass: string) {
+        event.preventDefault();
 
-  logIn(event: any, user: string, pass: string) {
+        this.loginService.logIn(user, pass).subscribe(
+            (u) => {
+                console.log(u);
+                this.dialogRef.close();
+            },
+            (error) => alert('Invalid user or password'),
+        );
+    }
 
-    event.preventDefault();
+    logOut() {
+        this.loginService.logOut().subscribe(
+            (response) => {
+                this.router.navigate(['/']);
+            },
+            (error) => console.log('Error when trying to log out: ' + error),
+        );
+    }
 
-    this.loginService.logIn(user, pass).subscribe(
-      u => {
-        console.log(u);
-        this.dialogRef.close();
-      },
-      error => alert('Invalid user or password')
-    );
-  }
-
-  logOut() {
-    this.loginService.logOut().subscribe(
-      response => { },
-      error => console.log('Error when trying to log out: ' + error)
-    );
-  }
-
-  openLoginDialog() {
-    this.dialogRef = this.dialog.open(this.loginDialog, {
-      width: '50%',
-      height: '50%',
-    });
-  }
-
+    openLoginDialog() {
+        this.dialogRef = this.dialog.open(this.loginDialog, {
+            width: '50%',
+            height: '50%',
+        });
+    }
 }
