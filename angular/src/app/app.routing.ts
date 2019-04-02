@@ -4,6 +4,7 @@ import { BookListComponent } from './book-list.component';
 import { BookDetailComponent } from './book-detail.component';
 import { BookFormComponent } from './book-form.component';
 import { UnitListComponent } from './units/unit-list.component';
+import { ContentListComponent} from "./contents/content-list.component";
 
 const appRoutes = [
   { path: 'books', component: BookListComponent },

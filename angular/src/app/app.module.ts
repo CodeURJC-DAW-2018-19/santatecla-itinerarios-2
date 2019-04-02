@@ -63,6 +63,9 @@ import { LoginComponent } from './login.component';
 import { routing } from './app.routing';
 import { UnitListComponent } from './units/unit-list.component';
 import { UnitService } from './units/unit.service';
+import { ContentService} from "./contents/content.service";
+import { ContentListComponent} from "./contents/content-list.component";
+
 
 @NgModule({
     imports: [
@@ -116,9 +119,9 @@ import { UnitService } from './units/unit.service';
         HttpModule, //Remove when migrated to HttpClient
         routing
     ],
-    declarations: [AppComponent, BookDetailComponent, BookListComponent, BookFormComponent, UnitListComponent, LoginComponent],
+    declarations: [AppComponent, BookDetailComponent, BookListComponent, BookFormComponent, UnitListComponent, LoginComponent, ContentListComponent],
     bootstrap: [AppComponent],
-    providers: [BookService, LoginService, UnitService]
+    providers: [BookService, LoginService, UnitService, ContentService]
 })
 export class AppModule {
     constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
