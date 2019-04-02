@@ -5,7 +5,7 @@ import { MatDialog, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'login',
-  templateUrl: './login.component.html'
+  templateUrl: './logIn.component.html'
 })
 export class LoginComponent {
 
