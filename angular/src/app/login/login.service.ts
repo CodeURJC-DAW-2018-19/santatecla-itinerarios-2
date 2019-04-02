@@ -7,7 +7,6 @@ const URL = '/api';
 export interface User {
     id?: number;
     name: string;
-    passwordHash: string;
     roles: string[];
     authdata: string;
 }
