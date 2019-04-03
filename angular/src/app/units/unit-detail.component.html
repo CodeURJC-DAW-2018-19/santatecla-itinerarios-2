@@ -6,10 +6,8 @@
         </div>
     </mat-card-title>
     <mat-divider></mat-divider>
-
-    <mat-nav-list>
-        <a *ngFor='let content of contents' mat-list-item [routerLink]="['/units', content.id, 'contents']" >
-            {{content.title}}
+        <a *ngFor='let content of contents' mat-list-item  >
+            <mat-card-title style="font-weight: bold">{{content.title}}</mat-card-title>
+            <mat-card-content><p style="font-size: 1.2em">{{content.desc}}</p></mat-card-content>
         </a>
-    </mat-nav-list>
 </mat-card>

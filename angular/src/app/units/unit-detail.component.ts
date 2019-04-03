@@ -21,7 +21,6 @@ export class UnitDetailComponent {
             contents => this.contents= contents,
             error => console.error(error)
         );
-
     }
 
     removeUnit() {

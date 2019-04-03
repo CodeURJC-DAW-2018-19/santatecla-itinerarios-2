@@ -33,7 +33,7 @@ import {
     MatDatepickerModule,
     MatNativeDateModule,
     MatSliderModule,
-    MatAutocompleteModule,
+    MatAutocompleteModule, MatExpansionModule,
 } from '@angular/material';
 
 import {
@@ -121,7 +121,8 @@ import {UnitDetailComponent} from "./units/unit-detail.component";
         NgxChartsModule,
 
         HttpModule, //Remove when migrated to HttpClient
-        routing
+        routing,
+        MatExpansionModule
     ],
     declarations: [AppComponent, BookDetailComponent, BookListComponent, BookFormComponent, UnitListComponent, LoginComponent, ContentListComponent, UnitDetailComponent],
     bootstrap: [AppComponent],
