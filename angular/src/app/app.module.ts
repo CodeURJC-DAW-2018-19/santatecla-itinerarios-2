@@ -69,7 +69,7 @@ import { ContentListComponent} from "./contents/content-list.component";
 
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { BasicAuthInterceptor } from './interceptors/auth.interceptor';
-import {UnitDetailComponent} from "./units/unit-detail.component";
+import {UnitContentsComponent} from "./units/unit-contents.component";
 
 @NgModule({
     imports: [
@@ -124,9 +124,9 @@ import {UnitDetailComponent} from "./units/unit-detail.component";
         routing,
         MatExpansionModule
     ],
-    declarations: [AppComponent, BookDetailComponent, BookListComponent, BookFormComponent, UnitListComponent, LoginComponent, ContentListComponent, UnitDetailComponent],
+    declarations: [AppComponent, BookDetailComponent, BookListComponent, BookFormComponent, UnitListComponent, LoginComponent, ContentListComponent, UnitContentsComponent],
     bootstrap: [AppComponent],
-    providers: [BookService, LoginService, UnitService,ContentService, UnitDetailComponent,
+    providers: [BookService, LoginService, UnitService,ContentService, UnitContentsComponent,
         { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
     ]

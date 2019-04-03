@@ -7,9 +7,9 @@ import {Unit, UnitService} from "./unit.service";
 import {Content} from "../contents/content.service";
 
 @Component({
-    templateUrl:"unit-detail.component.html"
+    templateUrl:"unit-contents.component.html"
 })
-export class UnitDetailComponent {
+export class UnitContentsComponent {
 
     unit: Unit;
     contents: Content[];

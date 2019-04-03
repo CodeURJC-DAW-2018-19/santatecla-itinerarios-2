@@ -4,8 +4,9 @@
             <span flex>Contenidos</span>
 
         </div>
+        <mat-divider></mat-divider>
     </mat-card-title>
-    <mat-divider></mat-divider>
+
         <a *ngFor='let content of contents' mat-list-item  >
             <mat-card-title style="font-weight: bold">{{content.title}}</mat-card-title>
             <mat-card-content><p style="font-size: 1.2em">{{content.desc}}</p></mat-card-content>
