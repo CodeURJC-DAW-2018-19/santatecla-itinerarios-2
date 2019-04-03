@@ -6,16 +6,17 @@ import {LoginService} from "../login/login.service";
 @Component({
     template: `
   <div *ngIf="content">
-  <h2>Content "{{content.title}}"</h2>
-  <div>
-    <p>{{content.desc}}</p>
+  <h2> Editar contenido "{{content.title}}"</h2>
+      <form class="example-form" style="display: flex; flex-direction: column; width: 50%" >
+          <mat-form-field>
+              <input matInput placeholder="Titulo" value="{{content.title}}">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+              <textarea matInput placeholder="Descripcion" value="{{content.desc}}" style="height: 5em"></textarea>
+          </mat-form-field>
+      </form>
   </div>
-  <p>
-      <button >Remove</button>
-      <button >Edit</button>
-      <br>
-  </p>
-  </div>`
+    <button mat-raised-button color="warn">Guardar</button>`
 })
 
 export class ContentEdit {
