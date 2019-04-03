@@ -58,6 +58,10 @@ public class ContentRestController {
 	public Collection<Content> getAllContents() {
 		return contentService.findAll();
 	}
+	@GetMapping("/api/contents/{id}")
+	public Content getContent(@PathVariable long id) {
+		return contentService.findOne(id).get();
+	}
 
 	@PostMapping("/api/units/{id}/newContent")
 	@ResponseStatus(HttpStatus.CREATED)
@@ -68,7 +72,7 @@ public class ContentRestController {
 		return content;
 	}
 
-	@PutMapping("/api/units/{id}/contents/{content_id}/update")
+	@PutMapping("/api/units/{id}/contents/{content_id}")
 	public Content updateContent(@PathVariable("content_id") long contentId, @RequestBody Content content) {
 		Content originalContent = contentService.findOne(contentId).get();
 		if (!content.getTitle().isEmpty()) {
