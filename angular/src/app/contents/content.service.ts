@@ -10,6 +10,7 @@ export interface Content {
     desc: string;
     hasImage:boolean;
     unit:Unit;
+    imageRaw: Blob;
 }
 
 const URL = '/api/contents/';
