@@ -32,9 +32,11 @@ export class UnitContentsComponent {
             );
         }
     }
-
     editUnit() {
         this.router.navigate(['/unit/edit', this.unit.id]);
+    }
+    editContent(id: number){
+        this.router.navigate([this.router.url, 'edit', id])
     }
     gotoUnits() {
         this.router.navigate(['/units']);
