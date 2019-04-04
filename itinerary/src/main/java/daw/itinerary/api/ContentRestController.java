@@ -84,6 +84,19 @@ public class ContentRestController {
 		contentService.save(originalContent);
 		return originalContent;
 	}
+	
+	@PutMapping("/api/contents/{content_id}")
+	public Content updateContentAngular(@PathVariable("content_id") long contentId, @RequestBody Content content) {
+		Content originalContent = contentService.findOne(contentId).get();
+		if (!content.getTitle().isEmpty()) {
+			originalContent.setTitle(content.getTitle());
+		}
+		if (!content.getDesc().isEmpty()) {
+			originalContent.setDesc(content.getDesc());
+		}
+		contentService.save(originalContent);
+		return originalContent;
+	}
 
 	// This method was used when images where stored in file system
 	/*
