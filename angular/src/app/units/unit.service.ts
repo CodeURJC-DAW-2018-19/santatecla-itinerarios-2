@@ -39,6 +39,14 @@ export class UnitService {
         );
   }
 
+  getUnitItineraries(id: number){
+    return this.http.get(URL + id + "/itineraries" , {withCredentials: true})
+        .pipe(
+            map(response => response.json()),
+            catchError(error => this.handleError(error))
+        );
+  }
+
   saveUnit(unit: Unit) {
 
     const body = JSON.stringify(unit);
