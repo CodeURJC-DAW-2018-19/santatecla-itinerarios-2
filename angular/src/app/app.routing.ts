@@ -21,6 +21,7 @@ const appRoutes = [
   { path: 'new/units/:id/contents', component: UnitContentsComponent},
   { path: 'new/units/:id/contents/edit/:id', component: ContentEdit},
   { path: 'new/itinerary', component: ItineraryComponent},
+  { path: 'new/units/:id/itineraries', component: UnitItinerariesComponent}
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);
