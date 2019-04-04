@@ -1,0 +1,13 @@
+<mat-card>
+    <mat-card-title>
+        <div layout="row" layout-align="start center">
+            <span flex>Itineraries</span>
+        </div>
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-nav-list *ngIf="loginService.isLogged">
+        <a *ngFor='let itinerary of Itineraries' mat-list-item [routerLink]="['/units', unit.id, Itineraries]">
+            {{itinerary.name}}
+        </a>
+    </mat-nav-list>
+</mat-card>
