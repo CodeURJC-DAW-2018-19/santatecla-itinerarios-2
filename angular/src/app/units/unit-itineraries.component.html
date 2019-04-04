@@ -1,0 +1,11 @@
+<mat-card>
+    <mat-card-title>
+        <div layout="row" layout-align="start center">
+            <span flex>Itinerarios</span>
+        </div>
+        <mat-divider></mat-divider>
+    </mat-card-title>
+        <a *ngFor='let itinerary of itineraries' mat-list-item>
+            <mat-card-content><p style="font-size: 1.2em">{{itinerary.name}}</p></mat-card-content>
+        </a>
+</mat-card>
