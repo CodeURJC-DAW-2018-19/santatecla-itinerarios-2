@@ -30,7 +30,7 @@ public class LoginRestController {
 		} else {
 			User loggedUser = userComponent.getLoggedUser();
 			log.info("Logged as " + loggedUser.getName());
-			return new ResponseEntity<>(HttpStatus.OK);
+			return new ResponseEntity<>(loggedUser,HttpStatus.OK);
 		}
 	}
 

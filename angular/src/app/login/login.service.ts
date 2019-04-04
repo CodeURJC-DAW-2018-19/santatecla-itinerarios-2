@@ -7,6 +7,7 @@ const URL = '/api';
 export interface User {
     id?: number;
     name: string;
+    passwordHash: string;
     roles: string[];
     authdata: string;
 }
@@ -35,16 +36,14 @@ export class LoginService {
             Authorization: 'Basic ' + auth,
             'X-Requested-With': 'XMLHttpRequest',
         });
-
         return this.http.get<User>('/api/logIn', { headers })
             .pipe(map(user => {
-
                 if (user) {
+                    console.log(user);
                     this.setCurrentUser(user);
                     user.authdata = auth;
                     localStorage.setItem('currentUser', JSON.stringify(user));
                 }
-
                 return user;
             }));
     }
