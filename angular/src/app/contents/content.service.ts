@@ -36,8 +36,7 @@ export class ContentService {
     }
 
 
-    saveBook(content: Content) {
-
+    editContent(content: Content) {
         const body = JSON.stringify(content);
         const headers = new Headers({
             'Content-Type': 'application/json',
@@ -46,7 +45,7 @@ export class ContentService {
         const options = new RequestOptions({ withCredentials: true, headers });
 
         if (!content.id) {
-            return this.http.post(URL, body, options)
+            return this.http.post(URL + content.id, body, options)
                 .pipe(
                     map(response => response.json()),
                     catchError(error => this.handleError(error))

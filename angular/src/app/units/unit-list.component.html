@@ -8,7 +8,7 @@
     <mat-divider></mat-divider>
 
     <mat-nav-list *ngIf="loginService.isLogged">
-        <a *ngFor='let unit of units' mat-list-item [routerLink]="['/units', unit.id, 'contents']" >
+        <a *ngFor='let unit of units' mat-list-item [routerLink]="['/new/units', unit.id, 'contents']" >
             {{unit.name}}
         </a>
     </mat-nav-list>
