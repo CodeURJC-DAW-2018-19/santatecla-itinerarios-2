@@ -10,23 +10,28 @@
 
     <mat-divider></mat-divider>
 
-    <div>
-        <mat-form-field>
-            <select matNativeControl>
-                <option value="viewUnit">Unidad</option>
-            </select>
-        </mat-form-field>
+    <div class="margins">
+        <div>
+            <mat-form-field>
+                <select matNativeControl>
+                    <option value="viewUnit">Unidad</option>
+                </select>
+            </mat-form-field>
 
-        <mat-form-field>
-            <select matNativeControl>
-                <option value="viewFicha">ficha</option>
-            </select>
-        </mat-form-field>
-    </div>
+            <mat-form-field>
+                <select matNativeControl>
+                    <option value="viewFicha">ficha</option>
+                </select>
+            </mat-form-field>
+        </div>
 
-    <!-- html view -->
-    <div>
-        
+        <!-- html view -->
+        <div>
+            <fieldset>
+                <legend>HTML</legend>
+                <p>What the fuck?</p>
+            </fieldset>
+        </div>
     </div>
 
     <mat-divider></mat-divider>
@@ -42,24 +47,26 @@
 
     <mat-divider></mat-divider>
 
-    <div>
-        <mat-form-field>
-            <select matNativeControl>
-                <option value="itineraryUnit">Unidad</option>
-            </select>
-        </mat-form-field>
+    <div class="margins">
+        <div>
+            <mat-form-field>
+                <select matNativeControl>
+                    <option value="itineraryUnit">Unidad</option>
+                </select>
+            </mat-form-field>
 
-        <mat-form-field>
-            <select matNativeControl>
-                <option value="itineraryItinerary">Itinerario</option>
-            </select>
-        </mat-form-field>
-    </div>
+            <mat-form-field>
+                <select matNativeControl>
+                    <option value="itineraryItinerary">Itinerario</option>
+                </select>
+            </mat-form-field>
+        </div>
 
-    <div>
-        <mat-radio-group aria-label="Select an option">
-            <mat-radio-button value="radioView" checked>Vista</mat-radio-button>
-            <mat-radio-button value="radioItinerary">Itinerario</mat-radio-button>
-        </mat-radio-group>
+        <div class="rightPosition">
+            <mat-radio-group>
+                <mat-radio-button value="radioView" checked>Vista</mat-radio-button>
+                <mat-radio-button value="radioItinerary">Itinerario</mat-radio-button>
+            </mat-radio-group>
+        </div>
     </div>
 </mat-card>
