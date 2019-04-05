@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {Content, ContentService} from "./content.service";
 import {LoginService} from "../login/login.service";
@@ -6,6 +6,7 @@ import {Headers, RequestOptions} from "@angular/http";
 import {catchError, map} from "rxjs/operators";
 import {Book} from "../book.service";
 import {HttpClient} from "@angular/common/http";
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
     templateUrl:"content-edit.html"
@@ -14,11 +15,14 @@ import {HttpClient} from "@angular/common/http";
 export class ContentEdit {
     selectedFile: File = null;
     content: Content;
-    constructor(private http: HttpClient, private router: Router, activatedRoute: ActivatedRoute, public service: ContentService,
+
+    constructor(private http: HttpClient, private router: Router, public activatedRoute: ActivatedRoute, public service: ContentService, public sanitizer:DomSanitizer,
                 public loginService: LoginService) {
 
-        const id = activatedRoute.snapshot.params['id'];
-        service.getContent(id).subscribe(
+    }
+    ngOnInit(){
+        const idd = this.activatedRoute.snapshot.params['id'];
+        this.service.getContent(idd).subscribe(
             content => this.content= content,
             error => console.error(error)
         );
@@ -27,22 +31,21 @@ export class ContentEdit {
     saveContent() {
         this.service.editContent(this.content).subscribe(
             content => { },
-            error => console.error('Error creating new book: ' + error)
+            error => console.error('Error creating new content: ' + error)
         );
+        window.history.back();
     }
     saveImage(){
-        /*this.service.editImage(this.content).subscribe(
-            content => { },
-            error => console.error('Error creating new book: ' + error)
-        );
-        window.history.back();*/
-        const fd = new FormData();
-        fd.append('file',this.selectedFile);
-        this.http.post("/api/contents/" + this.content.id + "/img", fd)
-            .subscribe(res => {
-                console.log(res);
-                window.history.back();
-            })
+            const fd = new FormData();
+            fd.append('file', this.selectedFile);
+            this.http.post("/api/contents/" + this.content.id + "/img", fd)
+                .subscribe(res => {
+                    console.log(res);
+                    this.ngOnInit();
+                })
+    }
+    addImage(){
+
     }
 
     onfFileSelected(event){
