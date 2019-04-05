@@ -96,6 +96,13 @@ export class ContentService {
             );
     }
 
+    deleteContent(id:number){
+            return this.http.delete(URL + id).
+                pipe(
+                map(response => undefined),
+                catchError(error => this.handleError(error))
+            )
+    }
     updateContent(content: Content) {
 
         const body = JSON.stringify(content);

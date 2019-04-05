@@ -20,10 +20,14 @@
 
         </div>
         <button mat-raised-button color="warn" (click)="saveContent()">Guardar contenido</button>
+        <button mat-raised-button color="warn" (click)="removeContent()" style="margin: 10px">
+            Borrar este contenido
+        </button>
         <div *ngIf="!content.hasImage">
-            <button mat-raised-button color="warn" (click)="imageChanger.click();addImage()" style="margin-top: 1em">Añadir imagen</button>
+            <button mat-raised-button color="warn" (click)="imageChanger.click()" style="margin-top: 1em">Añadir imagen</button>
         </div>
     </div>
+
 
     <div *ngIf="content.hasImage" style="float: right; margin-right: 12.5%; margin-top: 2%">
         <img id="imagen" (click)="imageChanger.click()" src="data:image/JPEG;base64,{{content.imageRaw}}"

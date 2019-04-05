@@ -44,8 +44,14 @@ export class ContentEdit {
                     this.ngOnInit();
                 })
     }
-    addImage(){
-
+    removeContent(){
+        const okResponse = window.confirm('Do you want to remove this content?');
+        if (okResponse) {
+            this.service.deleteContent(this.content.id).subscribe(
+                _ => this.router.navigate(['/new/units']),
+                error => console.error(error)
+            );
+        }
     }
 
     onfFileSelected(event){

@@ -4,7 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { LoginService } from '../login/login.service';
 import {Unit, UnitService} from "./unit.service";
-import {Content} from "../contents/content.service";
+import {Content, ContentService} from "../contents/content.service";
+import {id} from "@swimlane/ngx-charts/release/utils";
 
 @Component({
     templateUrl:"unit-contents.component.html"
@@ -23,15 +24,6 @@ export class UnitContentsComponent {
         );
     }
 
-    removeUnit() {
-        const okResponse = window.confirm('Do you want to remove this book?');
-        if (okResponse) {
-            this.service.removeUnit(this.unit).subscribe(
-                _ => this.router.navigate(['/books']),
-                error => console.error(error)
-            );
-        }
-    }
     editUnit() {
         this.router.navigate(['/unit/edit', this.unit.id]);
     }
@@ -41,4 +33,5 @@ export class UnitContentsComponent {
     gotoUnits() {
         this.router.navigate(['/units']);
     }
+
 }
