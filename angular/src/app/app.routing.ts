@@ -2,7 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { BookListComponent } from './book-list.component';
 import { BookDetailComponent } from './book-detail.component';
-import { BookFormComponent } from './book-form.component';
+import { UnitFormComponent } from './units/unit-form.component';
 import { UnitListComponent } from './units/unit-list.component';
 import { ContentListComponent} from "./contents/content-list.component";
 import {UnitContentsComponent} from "./units/unit-contents.component";
@@ -17,6 +17,7 @@ const appRoutes = [
   { path: 'book/edit/:id', component: BookFormComponent },*/
   { path: '', redirectTo: 'new/units', pathMatch: 'full' },
   { path: 'new/units', component: UnitListComponent, useAsDefault: true },
+  { path: 'new/units/new', component: UnitFormComponent },
   { path: 'new/contents', component: ContentListComponent},
   { path: 'new/units/:id/contents', component: UnitContentsComponent},
   { path: 'new/units/:id/contents/edit/:id', component: ContentEdit},
