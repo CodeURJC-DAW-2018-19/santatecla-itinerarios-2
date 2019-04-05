@@ -148,5 +148,19 @@ public class ContentRestController {
 		}
 		return contentService.findOne(content_id).get();
 	}
+	
+	@PostMapping("/api/contents/{content_id}/img")
+	public Content uploadImageToContentArray(@PathVariable("content_id") long content_id,
+			@RequestParam("file") MultipartFile file) throws IllegalStateException, IOException {
+		Content originalContent = contentService.findOne(content_id).get();
+		if (!file.isEmpty()) {
+			FileInputStream inputStream = (FileInputStream) file.getInputStream();
+			byte[] bytes = file.getBytes();
+			contentService.findOne(content_id).get().setImageRaw(bytes);
+			contentService.findOne(content_id).get().setHasImage(true);
+			contentService.save(originalContent);
+		}
+		return contentService.findOne(content_id).get();
+	}
 
 }
