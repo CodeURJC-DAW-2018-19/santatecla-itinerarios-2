@@ -2,7 +2,10 @@
     <mat-card-title>
         <div layout="row" layout-align="start center">
             <span flex>Unidades</span>
-
+            <!--<span flex *ngIf="!searchBox.searchVisible"></span>
+            <td-search-box hide-xs flex #searchBox
+                [ngClass]="{ 'push-left push-right mat-whiteframe-z1 bgc-white tc-black': searchBox.searchVisible }"
+                placeholder="search"></td-search-box>-->
         </div>
     </mat-card-title>
     <mat-divider></mat-divider>
@@ -14,12 +17,12 @@
     </mat-nav-list>
 
     <mat-nav-list *ngIf="!loginService.isLogged">
-        <a *ngFor='let unit of units' mat-list-item [routerLink]="['/new/units', unit.id, 'contents']" >
+        <a *ngFor='let unit of units' mat-list-item >
             {{unit.name}}
         </a>
     </mat-nav-list>
 
-    <button mat-fab  *ngIf="loginService.isLogged"  (click)="newUnit()">
+    <button mat-fab  *ngIf="loginService.isAdmin"  (click)="newUnit()">
         <mat-icon>add</mat-icon>
     </button>
 </mat-card>

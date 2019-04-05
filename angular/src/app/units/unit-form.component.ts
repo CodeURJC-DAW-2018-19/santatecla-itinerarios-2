@@ -5,7 +5,7 @@ import { Unit, UnitService } from './unit.service';
 @Component({
   template: `
   <div *ngIf="unit">
-  <h2>Unidad "{{unit.name}}"</h2>
+  <h2>Crear una nueva Unidad</h2>
   <div *ngIf="unit.id">
     <label>Id: </label>{{unit.id}}
   </div>

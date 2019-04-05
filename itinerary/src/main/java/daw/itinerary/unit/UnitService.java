@@ -23,6 +23,10 @@ public class UnitService {
 		return repository.findAll();
 	}
 
+	public List<Unit> findByName(String name) {
+		return repository.findByNameContaining(name);
+	}
+
 	public void save(Unit unit) {
 		repository.save(unit);
 	}

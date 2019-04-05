@@ -31,6 +31,11 @@ public class UnitRestController {
 	public Collection<Unit> index(Model model) {
 		return unitService.findAll();
 	}
+
+	@RequestMapping("/api/units/search/{name}")
+	public Collection<Unit> searchUnits(@PathVariable String name) {
+		return unitService.findByName(name);
+	}
 	
 	@GetMapping("/api/units/{id}")
 	public Unit getUnit(@PathVariable long id) {
