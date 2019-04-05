@@ -1,11 +1,65 @@
+<!--
+    Missing CSS styles. Is not done yet
+-->
 <mat-card>
     <mat-card-title>
         <div layout="row" layout-align="start center">
-            <span flex>Itinerarios</span>
+            <span flex>Vista</span>
         </div>
-        <mat-divider></mat-divider>
     </mat-card-title>
-        <a *ngFor='let itinerary of itineraries' mat-list-item>
-            <mat-card-content><p style="font-size: 1.2em">{{itinerary.name}}</p></mat-card-content>
-        </a>
+
+    <mat-divider></mat-divider>
+
+    <div>
+        <mat-form-field>
+            <select matNativeControl>
+                <option value="viewUnit">Unidad</option>
+            </select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <select matNativeControl>
+                <option value="viewFicha">ficha</option>
+            </select>
+        </mat-form-field>
+    </div>
+
+    <!-- html view -->
+    <div>
+        
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <!--
+        "Itinerario" section
+    -->
+    <mat-card-title>
+        <div layout="row" layout-align="start center">
+            <span flex>Itinerario</span>
+        </div>
+    </mat-card-title>
+
+    <mat-divider></mat-divider>
+
+    <div>
+        <mat-form-field>
+            <select matNativeControl>
+                <option value="itineraryUnit">Unidad</option>
+            </select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <select matNativeControl>
+                <option value="itineraryItinerary">Itinerario</option>
+            </select>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="radioView" checked>Vista</mat-radio-button>
+            <mat-radio-button value="radioItinerary">Itinerario</mat-radio-button>
+        </mat-radio-group>
+    </div>
 </mat-card>
