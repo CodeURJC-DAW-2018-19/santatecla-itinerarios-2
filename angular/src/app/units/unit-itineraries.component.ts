@@ -7,7 +7,8 @@ import {Unit, UnitService} from "./unit.service";
 import { Itinerary } from '../itinerary/itinerary.service';
 
 @Component({
-    templateUrl:"unit-itineraries.component.html"
+    templateUrl:"unit-itineraries.component.html",
+    styleUrls: ['unit-itineraries.component.css']
 })
 export class UnitItinerariesComponent {
 
