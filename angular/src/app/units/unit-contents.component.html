@@ -12,7 +12,7 @@
             <mat-card-title style="font-weight: bold">{{content.title}}</mat-card-title>
             <mat-card-content><p style="font-size: 1.2em">{{content.desc}}</p></mat-card-content>
             <a *ngIf="content.hasImage">
-                <img src="data:image/JPEG;base64,{{content.imageRaw}}"style="width: 13em; height: 12em;">
+                <img src="data:image/JPEG;base64,{{content.imageRaw}}"style="width: 28em; height: 25em; border: solid black">
             </a>
             <div style="margin: 1em" >
             <button mat-raised-button color="warn" (click)="editContent(content.id)" style="margin-bottom: 5px">KATS</button>
