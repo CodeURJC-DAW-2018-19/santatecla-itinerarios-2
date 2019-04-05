@@ -112,8 +112,19 @@ public class ContentRestController {
 	 * contentService.findOne(content_id).get(); }
 	 */
 
-	@DeleteMapping("/api/units/{id}/contents/{content_id}/deleteContent")
+	/*@DeleteMapping("/api/units/{id}/contents/{content_id}/deleteContent")
 	public Content deleteContent(@PathVariable("id") long id, @PathVariable long content_id) {
+		Content content = contentService.findOne(content_id).get();
+		if (contentService.findOne(content_id).isPresent()) {
+
+			contentService.delete(content_id);
+			return content;
+		}
+
+		return content;
+	}*/
+	@DeleteMapping("/api/contents/{content_id}")
+	public Content deleteContent(@PathVariable long content_id) {
 		Content content = contentService.findOne(content_id).get();
 		if (contentService.findOne(content_id).isPresent()) {
 
