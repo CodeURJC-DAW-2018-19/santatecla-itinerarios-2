@@ -1,5 +1,5 @@
 <mat-card>
-    <mat-card-title>
+    <mat-card-title style="text-align: center; font-size: 2em;font-weight: bolder">
         <div layout="row" layout-align="start center">
             <span flex>Contenidos</span>
 
@@ -7,14 +7,17 @@
         <mat-divider></mat-divider>
     </mat-card-title>
 
-        <a *ngFor='let content of contents' mat-list-item  >
+        <a *ngFor='let content of contents' mat-list-item style="width: 45%">
+            <mat-card style="text-align: center">
             <mat-card-title style="font-weight: bold">{{content.title}}</mat-card-title>
             <mat-card-content><p style="font-size: 1.2em">{{content.desc}}</p></mat-card-content>
             <a *ngIf="content.hasImage">
-                <img src="data:image/JPEG;base64,{{content.imageRaw}}">
+                <img src="data:image/JPEG;base64,{{content.imageRaw}}"style="width: 13em; height: 12em;">
             </a>
             <div style="margin: 1em" >
             <button mat-raised-button color="warn" (click)="editContent(content.id)" style="margin-bottom: 5px">KATS</button>
             </div>
+            </mat-card>
         </a>
+
 </mat-card>
