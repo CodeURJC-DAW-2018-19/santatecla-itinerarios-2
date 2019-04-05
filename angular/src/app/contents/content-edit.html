@@ -1,17 +1,21 @@
 <div *ngIf="content">
-    <div class="example-form" style="display: flex; flex-direction: column; width: 50%" >
-    <h2> Editar contenido "{{content.title}}"</h2>
     <div *ngIf="content.hasImage" style="float: right; margin-right: 12.5%">
-        <img src="data:image/JPEG;base64,{{content.imageRaw}}">
+        <img id="imagen" src="data:image/JPEG;base64,{{content.imageRaw}}" style="width: 25em; height: 20em">
     </div>
+    <div class="example-form" style="display: flex; flex-direction: column; width: 50%">
+        <h2> Editar contenido "{{content.title}}"</h2>
+
         <mat-form-field>
             <input [(ngModel)]="content.title" matInput placeholder="Título" value="{{content.title}}">
         </mat-form-field>
         <mat-form-field class="example-full-width">
-            <textarea [(ngModel)]="content.desc" matInput placeholder="Descripción" value="{{content.desc}}" style="height: 5em"></textarea>
+            <textarea maxlength="255" [(ngModel)]="content.desc" matInput
+                      placeholder="Descripción (255 caracteres máx.)" value="{{content.desc}}"
+                      style="height: 3em"></textarea>
         </mat-form-field>
-        <input type="file" name="file" accept=".png, .jpg" class="btn btn-default custom"/>
-        <button mat-raised-button color="warn" (click)="saveContent()">Guardar</button>
+        <input style="display: none;" type="file" #file accept=".png, .jpg" (change)="onfFileSelected($event); "/>
     </div>
+    <button style="margin: 10px;" mat-raised-button color="warn" (click)="file.click()">Seleccionar imagen</button>
+    <button mat-raised-button color="warn" (click)="saveContent(); saveImage()">Guardar</button>
 </div>
 

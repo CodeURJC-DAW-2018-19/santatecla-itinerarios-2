@@ -12,7 +12,7 @@ import {HttpClient} from "@angular/common/http";
 })
 
 export class ContentEdit {
-
+    selectedFile: File = null;
     content: Content;
     constructor(private http: HttpClient, private router: Router, activatedRoute: ActivatedRoute, public service: ContentService,
                 public loginService: LoginService) {
@@ -29,9 +29,26 @@ export class ContentEdit {
             content => { },
             error => console.error('Error creating new book: ' + error)
         );
-        window.history.back();
+    }
+    saveImage(){
+        /*this.service.editImage(this.content).subscribe(
+            content => { },
+            error => console.error('Error creating new book: ' + error)
+        );
+        window.history.back();*/
+        const fd = new FormData();
+        fd.append('file',this.selectedFile);
+        this.http.post("/api/contents/" + this.content.id + "/img", fd)
+            .subscribe(res => {
+                console.log(res);
+                window.history.back();
+            })
     }
 
+    onfFileSelected(event){
+        console.log(event);
+        this.selectedFile = <File>event.target.files[0];
+    }
    /* removeBook() {
         const okResponse = window.confirm('Do you want to remove this book?');
         if (okResponse) {

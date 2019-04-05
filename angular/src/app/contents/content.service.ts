@@ -58,6 +58,29 @@ export class ContentService {
                     ));
         }
     }
+    editImage(content: Content) {
+        const body = JSON.stringify(content);
+        const headers = new Headers({
+            'Content-Type': 'multipart/form-data',
+            'X-Requested-With': 'XMLHttpRequest'
+        });
+
+        const options = new RequestOptions({ withCredentials: true, headers });
+
+        if (content.id) {
+            return this.http.post(URL + content.id + "/img", body, options)
+                .pipe(
+                    map(response => response.json()),
+                    catchError(error => this.handleError(error))
+                );
+        } else {
+            return this.http.put(URL + content.id + "/img", body, options)
+                .pipe(
+                    map(response => response.json()),
+                    catchError(error => this.handleError(error)
+                    ));
+        }
+    }
 
     removeContent(content: Content) {
 
