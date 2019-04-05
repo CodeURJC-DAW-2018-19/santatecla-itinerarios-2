@@ -62,6 +62,7 @@ import { BookFormComponent } from './book-form.component';
 import { LoginComponent } from './login/login.component';
 import { routing } from './app.routing';
 import { UnitListComponent } from './units/unit-list.component';
+import { UnitFormComponent } from './units/unit-form.component';
 import { UnitService } from './units/unit.service';
 
 import { ContentService} from "./contents/content.service";
@@ -127,7 +128,7 @@ import { UnitItinerariesComponent } from './units/unit-itineraries.component';
         routing,
         MatExpansionModule
     ],
-    declarations: [AppComponent, BookDetailComponent, BookListComponent, BookFormComponent, UnitListComponent, LoginComponent, ContentListComponent, UnitContentsComponent,ContentEdit, ItineraryComponent, UnitItinerariesComponent],
+    declarations: [AppComponent, BookDetailComponent, BookListComponent, BookFormComponent, UnitFormComponent, UnitListComponent, LoginComponent, ContentListComponent, UnitContentsComponent,ContentEdit, ItineraryComponent, UnitItinerariesComponent],
     bootstrap: [AppComponent],
     providers: [BookService, LoginService, UnitService,ContentService, UnitContentsComponent, ContentEdit, ItineraryComponent, UnitItinerariesComponent,
         { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },

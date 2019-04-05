@@ -6,8 +6,6 @@ import { map, catchError } from 'rxjs/operators'
 export interface Unit {
   id?: number;
   name: string;
-  desc: string;
-
 }
 
 const URL = '/api/units/';
@@ -57,13 +55,13 @@ export class UnitService {
     const options = new RequestOptions({ withCredentials: true, headers });
 
     if (!unit.id) {
-      return this.http.post(URL, body, options)
+      return this.http.post(URL + 'newUnit', body, options)
         .pipe(
           map(response => response.json()),
           catchError(error => this.handleError(error))
         );
     } else {
-      return this.http.put(URL + unit.id, body, options)
+      return this.http.put(URL + unit.id + '/update', body, options)
         .pipe(
           map(response => response.json()),
           catchError(error => this.handleError(error)
@@ -78,14 +76,14 @@ export class UnitService {
     });
     const options = new RequestOptions({ withCredentials: true, headers });
 
-    return this.http.delete(URL + unit.id, options)
+    return this.http.delete(URL + unit.id + '/deleteUnit', options)
       .pipe(
         map(response => undefined),
         catchError(error => this.handleError(error))
       );
   }
 
-  /*updateUnit(unit: Unit) {
+  updateUnit(unit: Unit) {
 
     const body = JSON.stringify(unit);
     const headers = new Headers({
@@ -99,7 +97,7 @@ export class UnitService {
         map(response => response.json()), 
         catchError(error => this.handleError(error)),
       );
-  }*/
+  }
 
   private handleError(error: any) {
     console.error(error);
