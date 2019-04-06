@@ -9,27 +9,37 @@ import {HttpClient} from "@angular/common/http";
 import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
-    templateUrl:"content-edit.html"
+    templateUrl:"content-edit.html",
+    styleUrls: ['../contents/contents-style.css']
 })
 
 export class ContentEdit {
     selectedFile: File = null;
     content: Content;
 
-    constructor(private http: HttpClient, private router: Router, public activatedRoute: ActivatedRoute, public service: ContentService, public sanitizer:DomSanitizer,
+    constructor(private http: HttpClient, private router: Router, public activatedRoute: ActivatedRoute, public service: ContentService,
                 public loginService: LoginService) {
 
     }
     ngOnInit(){
-        const idd = this.activatedRoute.snapshot.params['id'];
-        this.service.getContent(idd).subscribe(
-            content => this.content= content,
-            error => console.error(error)
-        );
+            const id = this.activatedRoute.snapshot.params['id'];
+        if(id) {
+            this.service.getContent(id).subscribe(
+                content => this.content = content,
+                error => console.error(error)
+            );
+        }
+        else {
+            this.content = {
+                title: '',
+                desc: '',
+                hasImage: false
+            }
+        }
     }
 
     saveContent() {
-        this.service.editContent(this.content).subscribe(
+        this.service.updateContent(this.content).subscribe(
             content => { },
             error => console.error('Error creating new content: ' + error)
         );
@@ -47,8 +57,9 @@ export class ContentEdit {
     removeContent(){
         const okResponse = window.confirm('Do you want to remove this content?');
         if (okResponse) {
+            let uId = this.activatedRoute.snapshot.params['uId'];
             this.service.deleteContent(this.content.id).subscribe(
-                _ => this.router.navigate(['/new/units']),
+                _ => this.router.navigate(['/new/units/' + uId + '/contents']),
                 error => console.error(error)
             );
         }

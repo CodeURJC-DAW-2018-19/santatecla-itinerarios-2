@@ -9,8 +9,7 @@ export interface Content {
     title: string;
     desc: string;
     hasImage:boolean;
-    unit:Unit;
-    imageRaw: Blob;
+    imageRaw?: Blob;
 }
 
 const URL = '/api/contents/';
@@ -36,7 +35,7 @@ export class ContentService {
     }
 
 
-    editContent(content: Content) {
+    updateContent(content: Content) {
         const body = JSON.stringify(content);
         const headers = new Headers({
             'Content-Type': 'application/json',
@@ -58,42 +57,14 @@ export class ContentService {
                     ));
         }
     }
-    editImage(content: Content) {
+    addContent(content:Content, id:number){
         const body = JSON.stringify(content);
         const headers = new Headers({
-            'Content-Type': 'multipart/form-data',
-            'X-Requested-With': 'XMLHttpRequest'
-        });
-
-        const options = new RequestOptions({ withCredentials: true, headers });
-
-        if (content.id) {
-            return this.http.post(URL + content.id + "/img", body, options)
-                .pipe(
-                    map(response => response.json()),
-                    catchError(error => this.handleError(error))
-                );
-        } else {
-            return this.http.put(URL + content.id + "/img", body, options)
-                .pipe(
-                    map(response => response.json()),
-                    catchError(error => this.handleError(error)
-                    ));
-        }
-    }
-
-    removeContent(content: Content) {
-
-        const headers = new Headers({
+            'Content-Type': 'application/json',
             'X-Requested-With': 'XMLHttpRequest'
         });
         const options = new RequestOptions({ withCredentials: true, headers });
-
-        return this.http.delete(URL + content.id, options)
-            .pipe(
-                map(response => undefined),
-                catchError(error => this.handleError(error))
-            );
+        return this.http.post("/api/units/" + id + "/newContent",body,options);
     }
 
     deleteContent(id:number){
@@ -102,21 +73,6 @@ export class ContentService {
                 map(response => undefined),
                 catchError(error => this.handleError(error))
             )
-    }
-    updateContent(content: Content) {
-
-        const body = JSON.stringify(content);
-        const headers = new Headers({
-            'Content-Type': 'application/json',
-            'X-Requested-With': 'XMLHttpRequest'
-        });
-        const options = new RequestOptions({ withCredentials: true, headers });
-
-        return this.http.put(URL + content.id, body, options)
-            .pipe(
-                map(response => response.json()),
-                catchError(error => this.handleError(error)),
-            );
     }
 
     private handleError(error: any) {
