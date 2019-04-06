@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from '../login/login.service';
 import {Unit, UnitService} from "./unit.service";
 import { Itinerary } from '../itinerary/itinerary.service';
+import { Content } from '../contents/content.service';
 
 @Component({
     templateUrl:"unit-itineraries.component.html",
@@ -14,8 +15,9 @@ export class UnitItinerariesComponent {
 
     unit: Unit;
     itineraries: Itinerary[];
+    contents: Content[];
+
     constructor(
-        private router: Router,
         activatedRoute: ActivatedRoute,
         public service: UnitService,
         public loginService: LoginService) {
@@ -27,6 +29,10 @@ export class UnitItinerariesComponent {
         );
         service.getUnitItineraries(id).subscribe(
             itineraries => this.itineraries = itineraries,
+            error => console.error(error)
+        );
+        service.getUnitContents(id).subscribe(
+            contents => this.contents = contents,
             error => console.error(error)
         );
     }

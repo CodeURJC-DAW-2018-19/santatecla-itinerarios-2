@@ -19,7 +19,9 @@
             <mat-form-field>
                 <mat-label>Ficha</mat-label>
                 <select matNativeControl>
-                    <option value="viewFicha">ficha</option>
+                    <option *ngFor='let content of contents' value="content.title">
+                        {{content.title}}
+                    </option>
                 </select>
             </mat-form-field>
         </div>
@@ -27,18 +29,17 @@
         <!-- html view -->
         <div class="htmlView">
             <fieldset class="htmlViewContent">
-                <legend>HTML</legend>
-                <p>What the hell?</p>
-                <p>What the hell?</p>
-                <p>What the hell?</p>
-                <p>What the hell?</p>
-                <p>What the hell?</p>
-                <p>What the hell?</p>
+                <legend id="htmlLabel">HTML</legend>
+                <h3 id="unithtmltitle">Unidad (ID {{unit.id}})</h3>
+                &nbsp;&nbsp;&nbsp;&nbsp;<b>Nombre</b><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{unit.name}}<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<b>Contenidos</b>
+                <div *ngFor='let content of contents'>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- {{content.title}}
+                </div>
             </fieldset>
         </div>
     </div>
-
-    <mat-divider></mat-divider>
 
     <!--
         "Itinerario" section

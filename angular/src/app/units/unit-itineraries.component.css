@@ -16,7 +16,7 @@
 }
 
 .selectBoxesPosition {
-    width: 50%;
+    width: 45%;
     float: left;
 }
 
@@ -25,14 +25,31 @@ mat-form-field {
 }
 
 .htmlView {
-    width: 50%;
+    width: 55%;
     float: right;
+}
+
+#htmlLabel {
+    border-color: gray;
+    border-style: solid;
+    border-width: 1px;
+    background-color: white;
 }
 
 .htmlViewContent {
     overflow: scroll;
+    min-height: 12em;
     max-height: 12em;
+    background-color: lightyellow;
 }
+
+#unithtmltitle{
+    margin: 0em;
+}
+
+/*.itinerariosfknsdlf{
+    display: inline-block;
+}*/
 
 mat-radio-button {
     margin-right: 1em;
