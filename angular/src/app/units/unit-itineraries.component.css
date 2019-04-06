@@ -1,11 +1,37 @@
 .margins {
     margin-left: 2em;
     padding-right: 2em;
+}
+
+.viewSection{
+    overflow: hidden;
+    margin-top: 1em;
+    margin-left: 2em;
+    height: 14em;
+    padding-right: 2em;
+}
+
+.itinerarySection{
     padding-bottom: 2em;
+}
+
+.selectBoxesPosition{
+    width: 50%;
+    float: left;
 }
 
 mat-form-field {
     margin-right: 2em;
+}
+
+.htmlView{
+    width: 50%;
+    float: right;
+}
+
+.htmlViewContent{
+    overflow: scroll;
+    max-height: 12em;
 }
 
 mat-radio-button {
