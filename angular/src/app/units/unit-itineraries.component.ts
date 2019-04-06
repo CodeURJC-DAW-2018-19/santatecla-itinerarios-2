@@ -21,6 +21,10 @@ export class UnitItinerariesComponent {
         public loginService: LoginService) {
 
         const id = activatedRoute.snapshot.params['id'];
+        service.getUnit(id).subscribe(
+            unit => this.unit = unit,
+            error => console.error(error)
+        );
         service.getUnitItineraries(id).subscribe(
             itineraries => this.itineraries = itineraries,
             error => console.error(error)

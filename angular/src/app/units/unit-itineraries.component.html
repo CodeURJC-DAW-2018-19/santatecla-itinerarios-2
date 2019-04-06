@@ -11,7 +11,7 @@
         <div class="selectBoxesPosition">
             <mat-form-field>
                 <select matNativeControl>
-                    <option value="viewUnit">Unidad</option>
+                    <option value="unit.name">{{unit.name}}</option>
                 </select>
             </mat-form-field>
 
@@ -53,13 +53,15 @@
         <div>
             <mat-form-field>
                 <select matNativeControl>
-                    <option value="itineraryUnit">Unidad</option>
+                    <option value="unit.name">{{unit.name}}</option>
                 </select>
             </mat-form-field>
 
             <mat-form-field>
                 <select matNativeControl>
-                    <option value="itineraryItinerary">Itinerario</option>
+                    <option *ngFor='let itinerary of itineraries' value="itinerary.name">
+                        {{itinerary.name}}
+                    </option>
                 </select>
             </mat-form-field>
         </div>
