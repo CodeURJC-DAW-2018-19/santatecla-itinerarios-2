@@ -20,10 +20,9 @@ public class RestSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 		http.antMatcher("/api/**");
 
-
 		// Public pages
-		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/units").permitAll();
 		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/logIn").permitAll();
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/units").permitAll();
 		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/logOut").permitAll();
 
 		// Private page
@@ -44,18 +43,6 @@ public class RestSecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/units/{id}/deleteContent").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/units/{unit_id}/itinerary/{itinerary_id}/deleteItinerary").hasRole("ADMIN");
 
-		// Login form
-		http.formLogin().loginPage("/api/logIn");
-		http.formLogin().usernameParameter("username");
-		http.formLogin().passwordParameter("password");
-		http.formLogin().defaultSuccessUrl("/api/units");
-		http.formLogin().failureUrl("/error");
-		
-		// Logout
-        http.logout().logoutUrl("/api/logOut");
-        http.logout().logoutSuccessUrl("/api/units");
-
-
 		// Disable CSRF protection
 		http.csrf().disable();
 
@@ -63,8 +50,7 @@ public class RestSecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.httpBasic();
 
 		// Do not redirect when logout
-		http.logout().logoutSuccessHandler((rq, rs, a) -> {
-		});
+		http.logout().logoutSuccessHandler((rq, rs, a) -> { });
 	}
 
 	@Override
