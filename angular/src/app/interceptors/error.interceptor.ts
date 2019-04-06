@@ -14,8 +14,9 @@ export class ErrorInterceptor implements HttpInterceptor {
             
             if (err.status === 401) {
                 // auto logout if 401 response returned from api
+                console.log('ACCESO DENEGADO');
                 this.loginService.removeCurrentUser();
-                //location.reload(true);
+                // location.reload(true);
             }
             
             return throwError(err);
