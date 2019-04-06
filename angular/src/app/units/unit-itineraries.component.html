@@ -10,12 +10,14 @@
     <div class="margins viewSection">
         <div class="selectBoxesPosition">
             <mat-form-field>
+                <mat-label>Unidad</mat-label>
                 <select matNativeControl>
                     <option value="unit.name">{{unit.name}}</option>
                 </select>
             </mat-form-field>
 
             <mat-form-field>
+                <mat-label>Ficha</mat-label>
                 <select matNativeControl>
                     <option value="viewFicha">ficha</option>
                 </select>
@@ -52,12 +54,14 @@
     <div class="margins itinerarySection">
         <div>
             <mat-form-field>
+                <mat-label>Unidad</mat-label>
                 <select matNativeControl>
                     <option value="unit.name">{{unit.name}}</option>
                 </select>
             </mat-form-field>
 
             <mat-form-field>
+                <mat-label>Itinerario</mat-label>
                 <select matNativeControl>
                     <option *ngFor='let itinerary of itineraries' value="itinerary.name">
                         {{itinerary.name}}
