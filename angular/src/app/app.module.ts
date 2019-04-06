@@ -55,7 +55,7 @@ import {
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { DomSanitizer } from '@angular/platform-browser';
 import { BookService } from './book.service';
-import { LoginService } from './login/login.service';
+import { LoginService } from './auth/login.service';
 import { BookDetailComponent } from './book-detail.component';
 import { BookListComponent } from './book-list.component';
 import { BookFormComponent } from './book-form.component';
@@ -68,12 +68,13 @@ import { UnitService } from './units/unit.service';
 import { ContentService} from "./contents/content.service";
 import { ContentListComponent} from "./contents/content-list.component";
 
-import { ErrorInterceptor } from './interceptors/error.interceptor';
-import { BasicAuthInterceptor } from './interceptors/auth.interceptor';
+import { ErrorInterceptor } from './auth/error.interceptor';
+import { BasicAuthInterceptor } from './auth/auth.interceptor';
 import { UnitContentsComponent } from "./units/unit-contents.component";
 import { ContentEdit } from "./contents/content-edit";
 import { ItineraryComponent } from './itinerary/itinerary.component';
 import { UnitItinerariesComponent } from './units/unit-itineraries.component';
+import { ItineraryService } from './itinerary/itinerary.service';
 
 @NgModule({
     imports: [
@@ -131,7 +132,7 @@ import { UnitItinerariesComponent } from './units/unit-itineraries.component';
     declarations: [AppComponent, BookDetailComponent, BookListComponent, BookFormComponent, UnitFormComponent, UnitListComponent, LoginComponent, ContentListComponent, 
         UnitContentsComponent,ContentEdit, ItineraryComponent, UnitItinerariesComponent, LoginComponent],
     bootstrap: [AppComponent],
-    providers: [BookService, LoginService, UnitService,ContentService, UnitContentsComponent, ContentEdit, ItineraryComponent, UnitItinerariesComponent,
+    providers: [BookService, LoginService, UnitService, ContentService, ItineraryService,
         { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
     ]
