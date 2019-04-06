@@ -3,7 +3,21 @@
     padding-right: 2em;
 }
 
+.viewSection{
+    overflow: hidden;
+    margin-top: 1em;
+    margin-left: 2em;
+    height: 14em;
+    padding-right: 2em;
+}
+
+.itinerarySection{
     padding-bottom: 2em;
+}
+
+.selectBoxesPosition{
+    width: 50%;
+    float: left;
 }
 
 mat-form-field {
