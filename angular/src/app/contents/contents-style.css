@@ -1,0 +1,31 @@
+.bigTitle {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+#contentImg {
+    idth: 28em;
+    height: 25em;
+    border: solid black;
+}
+
+.text-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    float: left;
+}
+
+textarea {
+    height: 3.5em;
+}
+
+#imgPreview {
+    width: 20em;
+    height: 15em;
+    border: solid black;
+}
+.hidan {
+    display: none;
+}
