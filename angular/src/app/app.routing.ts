@@ -9,6 +9,7 @@ import {UnitContentsComponent} from "./units/unit-contents.component";
 import {ContentEdit} from "./contents/content-edit";
 import { ItineraryComponent } from './itinerary/itinerary.component';
 import { UnitItinerariesComponent } from './units/unit-itineraries.component';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes = [
   /*{ path: 'books', component: BookListComponent },
@@ -16,6 +17,7 @@ const appRoutes = [
   { path: 'book/:id', component: BookDetailComponent },
   { path: 'book/edit/:id', component: BookFormComponent },*/
   { path: '', redirectTo: 'new/units', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent},
   { path: 'new/units', component: UnitListComponent, useAsDefault: true },
   { path: 'new/units/new', component: UnitFormComponent },
   { path: 'new/contents', component: ContentListComponent},
