@@ -3,6 +3,7 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators'
 import {Unit} from "../units/unit.service";
+import { LoginService } from '../auth/login.service';
 
 export interface Content {
     id?: number;
@@ -17,7 +18,7 @@ const URL = '/api/contents/';
 @Injectable()
 export class ContentService {
 
-    constructor(private http: Http) { }
+    constructor(private http: Http, private loginService: LoginService) { }
 
     getContents() {
         return this.http.get(URL, { withCredentials: true })
