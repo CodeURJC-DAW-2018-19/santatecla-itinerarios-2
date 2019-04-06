@@ -1,25 +1,27 @@
-import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions } from '@angular/http';
-import { Observable } from 'rxjs';
-import { map, catchError } from 'rxjs/operators'
+import {Injectable} from '@angular/core';
+import {Http, Headers, RequestOptions} from '@angular/http';
+import {Observable} from 'rxjs';
+import {map, catchError} from 'rxjs/operators'
 import {Unit} from "../units/unit.service";
 
 export interface Content {
     id?: number;
     title: string;
     desc: string;
-    hasImage:boolean;
+    hasImage: boolean;
     imageRaw?: Blob;
 }
 
 const URL = '/api/contents/';
+
 @Injectable()
 export class ContentService {
 
-    constructor(private http: Http) { }
+    constructor(private http: Http) {
+    }
 
     getContents() {
-        return this.http.get(URL, { withCredentials: true })
+        return this.http.get(URL, {withCredentials: true})
             .pipe(
                 map(response => response.json()),
                 catchError(error => this.handleError(error))
@@ -27,7 +29,7 @@ export class ContentService {
     }
 
     getContent(id: number | string) {
-        return this.http.get(URL + id, { withCredentials: true })
+        return this.http.get(URL + id, {withCredentials: true})
             .pipe(
                 map(response => response.json()),
                 catchError(error => this.handleError(error))
@@ -41,7 +43,7 @@ export class ContentService {
             'Content-Type': 'application/json',
             'X-Requested-With': 'XMLHttpRequest'
         });
-        const options = new RequestOptions({ withCredentials: true, headers });
+        const options = new RequestOptions({withCredentials: true, headers});
 
         if (!content.id) {
             return this.http.post(URL + content.id, body, options)
@@ -57,22 +59,22 @@ export class ContentService {
                     ));
         }
     }
-    addContent(content:Content, id:number){
+
+    addContent(content: Content, id: number) {
         const body = JSON.stringify(content);
         const headers = new Headers({
             'Content-Type': 'application/json',
             'X-Requested-With': 'XMLHttpRequest'
         });
-        const options = new RequestOptions({ withCredentials: true, headers });
-        return this.http.post("/api/units/" + id + "/newContent",body,options);
+        const options = new RequestOptions({withCredentials: true, headers});
+        return this.http.post("/api/units/" + id + "/newContent", body, options);
     }
 
-    deleteContent(id:number){
-            return this.http.delete(URL + id).
-                pipe(
-                map(response => undefined),
-                catchError(error => this.handleError(error))
-            )
+    deleteContent(id: number) {
+        return this.http.delete(URL + id).pipe(
+            map(response => undefined),
+            catchError(error => this.handleError(error))
+        )
     }
 
     private handleError(error: any) {
