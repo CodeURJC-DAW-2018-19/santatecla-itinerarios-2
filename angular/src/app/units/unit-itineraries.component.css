@@ -1,11 +1,23 @@
 .margins {
     margin-left: 2em;
     padding-right: 2em;
+}
+
     padding-bottom: 2em;
 }
 
 mat-form-field {
     margin-right: 2em;
+}
+
+.htmlView{
+    width: 50%;
+    float: right;
+}
+
+.htmlViewContent{
+    overflow: scroll;
+    max-height: 12em;
 }
 
 mat-radio-button {
