@@ -8,13 +8,14 @@ import {Content, ContentService} from "../contents/content.service";
 import {id} from "@swimlane/ngx-charts/release/utils";
 
 @Component({
-    templateUrl:"unit-contents.component.html"
+    templateUrl:"unit-contents.component.html",
+    styleUrls: ['../contents/contents-style.css']
 })
 export class UnitContentsComponent {
 
     unit: Unit;
     contents: Content[];
-    constructor(private router: Router, activatedRoute: ActivatedRoute, public service: UnitService,
+    constructor(private router: Router, private activatedRoute: ActivatedRoute, public service: UnitService,
                 public loginService: LoginService) {
 
         const id = activatedRoute.snapshot.params['id'];
@@ -23,7 +24,10 @@ export class UnitContentsComponent {
             error => console.error(error)
         );
     }
-
+    addContent(){
+        let id = this.activatedRoute.snapshot.params['id'];
+        this.router.navigate(['new/units/' + id + '/addContent'])
+    }
     editUnit() {
         this.router.navigate(['/unit/edit', this.unit.id]);
     }

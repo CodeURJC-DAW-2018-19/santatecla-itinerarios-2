@@ -1,5 +1,5 @@
 <mat-card>
-    <mat-card-title style="text-align: center; font-size: 2em;font-weight: bolder">
+    <mat-card-title class="bigTitle">
         <div layout="row" layout-align="start center">
             <span flex>Contenidos</span>
 
@@ -12,8 +12,7 @@
             <mat-card-title style="font-weight: bold">{{content.title}}</mat-card-title>
             <mat-card-content><p style="font-size: 1.2em">{{content.desc}}</p></mat-card-content>
             <a *ngIf="content.hasImage">
-                <img src="data:image/JPEG;base64,{{content.imageRaw}}"
-                     style="width: 28em; height: 25em; border: solid black">
+                <img src="data:image/JPEG;base64,{{content.imageRaw}}" id="contentImg">
             </a>
             <div style="margin: 1em">
                 <button mat-raised-button color="warn" (click)="editContent(content.id)" style="margin: 10px">
@@ -22,5 +21,9 @@
             </div>
         </mat-card>
     </a>
-
+    <div style="text-align: center">
+    <button mat-fab *ngIf="loginService.isAdmin" (click)="addContent()">
+        <mat-icon>add</mat-icon>
+    </button>
+    </div>
 </mat-card>
