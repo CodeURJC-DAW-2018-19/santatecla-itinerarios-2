@@ -20,7 +20,7 @@
                 <img src="data:image/JPEG;base64,{{content.imageRaw}}" id="contentImg">
             </a>
             <div style="margin: 1em">
-                <button mat-raised-button color="warn" (click)="editContent(content.id)" style="margin: 10px">
+                <button  *ngIf="loginService.isAdmin" mat-raised-button color="warn" (click)="editContent(content.id)" style="margin: 10px">
                     Editar contenido
                 </button>
             </div>
