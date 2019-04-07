@@ -1,5 +1,5 @@
-import { Component , OnInit} from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Content, ContentService} from "./content.service";
 import {LoginService} from "../auth/login.service";
 import {Headers, RequestOptions} from "@angular/http";
@@ -9,65 +9,72 @@ import {HttpClient} from "@angular/common/http";
 import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
-    templateUrl:"content-edit.html"
+    templateUrl: "content-edit.html",
+    styleUrls: ['../contents/contents-style.css']
 })
 
 export class ContentEdit {
     selectedFile: File = null;
     content: Content;
 
-    constructor(private http: HttpClient, private router: Router, public activatedRoute: ActivatedRoute, public service: ContentService, public sanitizer:DomSanitizer,
+    constructor(private http: HttpClient, private router: Router, public activatedRoute: ActivatedRoute, public service: ContentService,
                 public loginService: LoginService) {
 
     }
-    ngOnInit(){
-        const idd = this.activatedRoute.snapshot.params['id'];
-        this.service.getContent(idd).subscribe(
-            content => this.content= content,
+
+    ngOnInit() {
+        const id = this.activatedRoute.snapshot.params['id'];
+        this.service.getContent(id).subscribe(
+            content => this.content = content,
             error => console.error(error)
         );
     }
 
     saveContent() {
-        this.service.editContent(this.content).subscribe(
-            content => { },
+        this.service.updateContent(this.content).subscribe(
+            content => {
+            },
             error => console.error('Error creating new content: ' + error)
         );
         window.history.back();
     }
-    saveImage(){
-            const fd = new FormData();
-            fd.append('file', this.selectedFile);
-            this.http.post("/api/contents/" + this.content.id + "/img", fd)
-                .subscribe(res => {
-                    console.log(res);
-                    this.ngOnInit();
-                })
+
+    saveImage() {
+        const fd = new FormData();
+        fd.append('file', this.selectedFile);
+        this.http.post("/api/contents/" + this.content.id + "/img", fd)
+            .subscribe(res => {
+                console.log(res);
+                this.ngOnInit();
+            })
     }
-    removeContent(){
+
+    removeContent() {
         const okResponse = window.confirm('Do you want to remove this content?');
         if (okResponse) {
+            let uId = this.activatedRoute.snapshot.params['uId'];
             this.service.deleteContent(this.content.id).subscribe(
-                _ => this.router.navigate(['/new/units']),
+                _ => this.router.navigate(['/new/units/' + uId + '/contents']),
                 error => console.error(error)
             );
         }
     }
 
-    onfFileSelected(event){
+    onfFileSelected(event) {
         console.log(event);
         this.selectedFile = <File>event.target.files[0];
     }
-   /* removeBook() {
-        const okResponse = window.confirm('Do you want to remove this book?');
-        if (okResponse) {
-            this.service.removeBook(this.book).subscribe(
-                _ => this.router.navigate(['/books']),
-                error => console.error(error)
-            );
-        }
-    }
-*/
+
+    /* removeBook() {
+         const okResponse = window.confirm('Do you want to remove this book?');
+         if (okResponse) {
+             this.service.removeBook(this.book).subscribe(
+                 _ => this.router.navigate(['/books']),
+                 error => console.error(error)
+             );
+         }
+     }
+ */
 
     /* gotoBooks() {
         this.router.navigate(['/books']);

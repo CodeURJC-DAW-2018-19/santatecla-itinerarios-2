@@ -26,14 +26,14 @@ public class RestSecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/logOut").permitAll();
 
 		// Private page
-		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/units/{id}/**").hasAnyRole("USER", "ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/contents").hasAnyRole("USER", "ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/units/{id}/**").permitAll();
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/contents").permitAll();
 		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/itinerary").hasAnyRole("USER", "ADMIN");
 		
-		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/units/newUnit").hasRole("ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/units/{id}/newContent").hasRole("ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/units/{id}/contents/{content_id}/uploadImage").hasRole("ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/units/{unit_id}/newItinerary").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/units/newUnit").permitAll();
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/units/{id}/newContent").permitAll();
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/units/{id}/contents/{content_id}/uploadImage").permitAll(); //hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/units/{unit_id}/newItinerary").permitAll(); //hasRole("ADMIN");
 		
 		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api/units/{id}/contents/{content_id}/update").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api/units/{id}/itineraries/{itinerary_id}/update").hasRole("ADMIN");

@@ -75,6 +75,7 @@ import { ContentEdit } from "./contents/content-edit";
 import { ItineraryComponent } from './itinerary/itinerary.component';
 import { UnitItinerariesComponent } from './units/unit-itineraries.component';
 import { ItineraryService } from './itinerary/itinerary.service';
+import { ContentAdd } from './contents/content-add';
 
 @NgModule({
     imports: [
@@ -129,10 +130,10 @@ import { ItineraryService } from './itinerary/itinerary.service';
         routing,
         MatExpansionModule
     ],
-    declarations: [AppComponent, BookDetailComponent, BookListComponent, BookFormComponent, UnitFormComponent, UnitListComponent, LoginComponent, ContentListComponent, 
-        UnitContentsComponent,ContentEdit, ItineraryComponent, UnitItinerariesComponent, LoginComponent],
+    declarations: [AppComponent, BookDetailComponent, BookListComponent, BookFormComponent, UnitFormComponent, UnitListComponent, LoginComponent,
+        ContentListComponent, UnitContentsComponent,ContentEdit, ItineraryComponent, UnitItinerariesComponent, ContentAdd],
     bootstrap: [AppComponent],
-    providers: [BookService, LoginService, UnitService, ContentService, ItineraryService,
+    providers: [BookService, LoginService, UnitService,ContentService, ItineraryService,
         { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
     ]

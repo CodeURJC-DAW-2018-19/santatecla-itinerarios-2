@@ -1,5 +1,10 @@
+<ul id="tabs">
+    <li><a class="tab" [routerLink]="['/new/units', unit.id, 'contents']">Contenidos</a></li>
+    <li><a class="tab" [routerLink]="['/new/units', unit.id, 'itineraries']">Itinerarios</a></li>
+</ul>
+
 <mat-card>
-    <mat-card-title style="text-align: center; font-size: 2em;font-weight: bolder">
+    <mat-card-title class="bigTitle">
         <div layout="row" layout-align="start center">
             <span flex>Contenidos</span>
 
@@ -7,20 +12,25 @@
         <mat-divider></mat-divider>
     </mat-card-title>
 
-    <a *ngFor='let content of contents' mat-list-item style="width: 45%">
-        <mat-card style="text-align: center">
+    <a *ngFor='let content of contents; let i=index' mat-list-item style="width: 45%">
+        <mat-card *ngIf="i<page" style="text-align: center">
             <mat-card-title style="font-weight: bold">{{content.title}}</mat-card-title>
             <mat-card-content><p style="font-size: 1.2em">{{content.desc}}</p></mat-card-content>
             <a *ngIf="content.hasImage">
-                <img src="data:image/JPEG;base64,{{content.imageRaw}}"
-                     style="width: 28em; height: 25em; border: solid black">
+                <img src="data:image/JPEG;base64,{{content.imageRaw}}" id="contentImg">
             </a>
             <div style="margin: 1em">
-                <button mat-raised-button color="warn" (click)="editContent(content.id)" style="margin: 10px">
+                <button  *ngIf="loginService.isAdmin" mat-raised-button color="warn" (click)="editContent(content.id)" style="margin: 10px">
                     Editar contenido
                 </button>
             </div>
         </mat-card>
     </a>
-
+    <div style="text-align: center">
+        <button mat-fab *ngIf="loginService.isAdmin" (click)="addContent()">
+            <mat-icon>add</mat-icon>
+        </button>
+        <button *ngIf="contents.length>page" mat-raised-button color="warn" (click)="nextPage()">Cargar más</button>
+        <button *ngIf="page>5" mat-raised-button color="warn" (click)="previousPage()">Cargar menos</button>
+    </div>
 </mat-card>

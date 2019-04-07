@@ -9,6 +9,7 @@ import {UnitContentsComponent} from "./units/unit-contents.component";
 import {ContentEdit} from "./contents/content-edit";
 import { ItineraryComponent } from './itinerary/itinerary.component';
 import { UnitItinerariesComponent } from './units/unit-itineraries.component';
+import {ContentAdd} from "./contents/content-add";
 
 const appRoutes = [
   /*{ path: 'books', component: BookListComponent },
@@ -20,9 +21,10 @@ const appRoutes = [
   { path: 'new/units/new', component: UnitFormComponent },
   { path: 'new/contents', component: ContentListComponent},
   { path: 'new/units/:id/contents', component: UnitContentsComponent},
-  { path: 'new/units/:id/contents/edit/:id', component: ContentEdit},
+  { path: 'new/units/:uId/contents/edit/:id', component: ContentEdit},
   { path: 'new/itinerary', component: ItineraryComponent},
-  { path: 'new/units/:id/itineraries', component: UnitItinerariesComponent}
+  { path: 'new/units/:id/itineraries', component: UnitItinerariesComponent},
+  { path: 'new/units/:id/addContent', component: ContentAdd}
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions } from '@angular/http';
-import { Observable } from 'rxjs';
-import { map, catchError } from 'rxjs/operators'
+import {Injectable} from '@angular/core';
+import {Http, Headers, RequestOptions} from '@angular/http';
+import {Observable} from 'rxjs';
+import {map, catchError} from 'rxjs/operators'
 import {Unit} from "../units/unit.service";
 import { LoginService } from '../auth/login.service';
 
@@ -9,19 +9,19 @@ export interface Content {
     id?: number;
     title: string;
     desc: string;
-    hasImage:boolean;
-    unit:Unit;
-    imageRaw: Blob;
+    hasImage: boolean;
+    imageRaw?: Blob;
 }
 
 const URL = '/api/contents/';
+
 @Injectable()
 export class ContentService {
 
     constructor(private http: Http, private loginService: LoginService) { }
 
     getContents() {
-        return this.http.get(URL, { withCredentials: true })
+        return this.http.get(URL, {withCredentials: true})
             .pipe(
                 map(response => response.json()),
                 catchError(error => this.handleError(error))
@@ -29,7 +29,7 @@ export class ContentService {
     }
 
     getContent(id: number | string) {
-        return this.http.get(URL + id, { withCredentials: true })
+        return this.http.get(URL + id, {withCredentials: true})
             .pipe(
                 map(response => response.json()),
                 catchError(error => this.handleError(error))
@@ -37,13 +37,13 @@ export class ContentService {
     }
 
 
-    editContent(content: Content) {
+    updateContent(content: Content) {
         const body = JSON.stringify(content);
         const headers = new Headers({
             'Content-Type': 'application/json',
             'X-Requested-With': 'XMLHttpRequest'
         });
-        const options = new RequestOptions({ withCredentials: true, headers });
+        const options = new RequestOptions({withCredentials: true, headers});
 
         if (!content.id) {
             return this.http.post(URL + content.id, body, options)
@@ -59,65 +59,22 @@ export class ContentService {
                     ));
         }
     }
-    editImage(content: Content) {
-        const body = JSON.stringify(content);
-        const headers = new Headers({
-            'Content-Type': 'multipart/form-data',
-            'X-Requested-With': 'XMLHttpRequest'
-        });
 
-        const options = new RequestOptions({ withCredentials: true, headers });
-
-        if (content.id) {
-            return this.http.post(URL + content.id + "/img", body, options)
-                .pipe(
-                    map(response => response.json()),
-                    catchError(error => this.handleError(error))
-                );
-        } else {
-            return this.http.put(URL + content.id + "/img", body, options)
-                .pipe(
-                    map(response => response.json()),
-                    catchError(error => this.handleError(error)
-                    ));
-        }
-    }
-
-    removeContent(content: Content) {
-
-        const headers = new Headers({
-            'X-Requested-With': 'XMLHttpRequest'
-        });
-        const options = new RequestOptions({ withCredentials: true, headers });
-
-        return this.http.delete(URL + content.id, options)
-            .pipe(
-                map(response => undefined),
-                catchError(error => this.handleError(error))
-            );
-    }
-
-    deleteContent(id:number){
-            return this.http.delete(URL + id).
-                pipe(
-                map(response => undefined),
-                catchError(error => this.handleError(error))
-            )
-    }
-    updateContent(content: Content) {
-
+    addContent(content: Content, id: number) {
         const body = JSON.stringify(content);
         const headers = new Headers({
             'Content-Type': 'application/json',
             'X-Requested-With': 'XMLHttpRequest'
         });
-        const options = new RequestOptions({ withCredentials: true, headers });
+        const options = new RequestOptions({withCredentials: true, headers});
+        return this.http.post("/api/units/" + id + "/newContent", body, options);
+    }
 
-        return this.http.put(URL + content.id, body, options)
-            .pipe(
-                map(response => response.json()),
-                catchError(error => this.handleError(error)),
-            );
+    deleteContent(id: number) {
+        return this.http.delete(URL + id).pipe(
+            map(response => undefined),
+            catchError(error => this.handleError(error))
+        )
     }
 
     private handleError(error: any) {

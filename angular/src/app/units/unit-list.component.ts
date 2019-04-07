@@ -1,28 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 import { Unit, UnitService } from './unit.service';
 import { LoginService } from '../auth/login.service';
 import {catchError, map} from "rxjs/operators";
 
 @Component({
-  templateUrl: 'unit-list.component.html'
+    templateUrl: 'unit-list.component.html'
 })
 export class UnitListComponent implements OnInit {
 
-  units: Unit[];
+    units: Unit[];
 
-  constructor(private router: Router, private service: UnitService,
-    public loginService: LoginService) { }
+    constructor(private router: Router, private service: UnitService,
+                public loginService: LoginService) {
+    }
 
-  ngOnInit() {
-    this.service.getUnits().subscribe(
-      units => this.units = units,
-      error => console.log(error)
-    );
-  }
+    ngOnInit() {
+        this.service.getUnits().subscribe(
+            units => this.units = units,
+            error => console.log(error)
+        );
+    }
 
-  newUnit() {
-    this.router.navigate(['new/units/new']);
-  }
+    newUnit() {
+        this.router.navigate(['new/units/new']);
+    }
 }
