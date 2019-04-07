@@ -6,3 +6,4 @@ itinerary/bin/target/classes/META-INF/MANIFEST.MF
 *.jar
 .idea
 angular/package-lock.json
+docker/app/itinerary-0.0.1-SNAPSHOT.jar
