@@ -137,8 +137,4 @@ You can start working on your proyect and launch the angular app using *ng serve
 ## Angular application Showcase Video.
 Leave us a like and suscribe to our channel. :sunglasses: <br/>
 
-<!-- blank line -->
-<figure class="video_container">
-  <iframe src="https://www.youtube.com/embed/8JuyRMZLzpY" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
-<!-- blank line -->
+[![Our video vanished lol](http://img.youtube.com/vi/8JuyRMZLzpY&t/0.jpg)](https://www.youtube.com/watch?v=8JuyRMZLzpY&t=3s "Phase 4 Video")
