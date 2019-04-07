@@ -40,7 +40,7 @@ mat-form-field {
     overflow: scroll;
     min-height: 12em;
     max-height: 12em;
-    background-color: lightyellow;
+    background-color: rgb(250, 250, 200);
 }
 
 #unithtmltitle {
@@ -49,6 +49,19 @@ mat-form-field {
 
 mat-radio-button {
     margin-right: 1em;
+}
+
+#itineraryBoxDiv{
+    background-color: rgb(250, 250, 200);
+    padding-bottom: 0.2em;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+#itineraryBox {
+    display: inline-block;
+    width: 20em;
+    padding: 1em;
 }
 
 .rightPosition {
