@@ -26,6 +26,11 @@ textarea {
     height: 15em;
     border: solid black;
 }
+
 .hidan {
     display: none;
+}
+
+button {
+    margin: 10px;
 }

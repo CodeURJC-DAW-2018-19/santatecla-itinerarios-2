@@ -12,8 +12,8 @@
         <mat-divider></mat-divider>
     </mat-card-title>
 
-    <a *ngFor='let content of contents' mat-list-item style="width: 45%">
-        <mat-card style="text-align: center">
+    <a *ngFor='let content of contents; let i=index' mat-list-item style="width: 45%">
+        <mat-card *ngIf="i<page" style="text-align: center">
             <mat-card-title style="font-weight: bold">{{content.title}}</mat-card-title>
             <mat-card-content><p style="font-size: 1.2em">{{content.desc}}</p></mat-card-content>
             <a *ngIf="content.hasImage">
@@ -30,5 +30,7 @@
         <button mat-fab *ngIf="loginService.isAdmin" (click)="addContent()">
             <mat-icon>add</mat-icon>
         </button>
+        <button *ngIf="contents.length>page" mat-raised-button color="warn" (click)="nextPage()">Cargar más</button>
+        <button *ngIf="page>5" mat-raised-button color="warn" (click)="previousPage()">Cargar menos</button>
     </div>
 </mat-card>

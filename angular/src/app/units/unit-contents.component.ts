@@ -15,6 +15,7 @@ export class UnitContentsComponent {
 
     unit: Unit;
     contents: Content[];
+    page:number =5;
 
     constructor(private router: Router, private activatedRoute: ActivatedRoute, public service: UnitService,
                 public loginService: LoginService) {
@@ -48,4 +49,10 @@ export class UnitContentsComponent {
         this.router.navigate(['/units']);
     }
 
+    nextPage(){
+        this.page+=5;
+    }
+    previousPage(){
+        this.page-=5;
+    }
 }
