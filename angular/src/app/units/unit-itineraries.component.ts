@@ -9,7 +9,7 @@ import { Content } from '../contents/content.service';
 
 @Component({
     templateUrl: "unit-itineraries.component.html",
-    styleUrls: ['unit-itineraries.component.css']
+    styleUrls: ['unit-itineraries.component.css', 'tabs.css']
 })
 export class UnitItinerariesComponent {
 
