@@ -43,13 +43,9 @@ mat-form-field {
     background-color: lightyellow;
 }
 
-#unithtmltitle{
+#unithtmltitle {
     margin: 0em;
 }
-
-/*.itinerariosfknsdlf{
-    display: inline-block;
-}*/
 
 mat-radio-button {
     margin-right: 1em;
