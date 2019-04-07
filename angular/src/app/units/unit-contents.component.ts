@@ -9,7 +9,7 @@ import {id} from "@swimlane/ngx-charts/release/utils";
 
 @Component({
     templateUrl: "unit-contents.component.html",
-    styleUrls: ['../contents/contents-style.css']
+    styleUrls: ['../contents/contents-style.css', 'tabs.css']
 })
 export class UnitContentsComponent {
 
@@ -22,6 +22,11 @@ export class UnitContentsComponent {
         const id = activatedRoute.snapshot.params['id'];
         service.getUnitContents(id).subscribe(
             contents => this.contents = contents,
+            error => console.error(error)
+        );
+        // Need it for tabs
+        service.getUnit(id).subscribe(
+            unit => this.unit = unit,
             error => console.error(error)
         );
     }
