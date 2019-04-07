@@ -1,7 +1,7 @@
 <mat-card>
     <mat-card-title>
         <div layout="row" layout-align="start center">
-            <span flex>Unidades</span>
+            <span flex style="font-weight: bolder; font-size: 1.2em"> Unidades</span>
             <!--<span flex *ngIf="!searchBox.searchVisible"></span>
             <td-search-box hide-xs flex #searchBox
                 [ngClass]="{ 'push-left push-right mat-whiteframe-z1 bgc-white tc-black': searchBox.searchVisible }"
@@ -12,7 +12,7 @@
 
     <mat-nav-list *ngIf="loginService.isLogged">
         <a *ngFor='let unit of units' mat-list-item [routerLink]="['/new/units', unit.id, 'contents']" >
-            {{unit.name}}
+            <p style="font-weight: bold">{{unit.name}}</p>
         </a>
     </mat-nav-list>
 
