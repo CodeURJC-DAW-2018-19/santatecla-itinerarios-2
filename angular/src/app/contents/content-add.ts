@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Content, ContentService} from "./content.service";
-import {LoginService} from "../login/login.service";
+import {LoginService} from "../auth/login.service";
 import {Headers, RequestOptions} from "@angular/http";
 import {catchError, map} from "rxjs/operators";
 import {Book} from "../book.service";

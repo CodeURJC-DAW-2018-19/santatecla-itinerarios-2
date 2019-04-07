@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators'
+import { LoginService } from './auth/login.service';
 
 export interface Book {
   id?: number;
@@ -13,7 +14,7 @@ const URL = '/api/books/';
 @Injectable()
 export class BookService {
 
-  constructor(private http: Http) { }
+  constructor(private http: Http, private loginService: LoginService) { }
 
   getBooks() {
     return this.http.get(URL, { withCredentials: true })

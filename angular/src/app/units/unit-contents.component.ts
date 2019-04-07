@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 
 
-import {LoginService} from '../login/login.service';
+import { LoginService } from '../auth/login.service';
 import {Unit, UnitService} from "./unit.service";
 import {Content, ContentService} from "../contents/content.service";
 import {id} from "@swimlane/ngx-charts/release/utils";
