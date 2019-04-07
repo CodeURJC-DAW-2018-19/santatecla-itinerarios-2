@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Book, BookService } from './book.service';
-import { LoginService } from './login/login.service';
+import { LoginService } from './auth/login.service';
 
 @Component({
     template: `

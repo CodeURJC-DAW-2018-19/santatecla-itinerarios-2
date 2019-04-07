@@ -3,6 +3,7 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators'
 import {Unit} from "../units/unit.service";
+import { LoginService } from '../auth/login.service';
 
 export interface Itinerary {
   id?: number;
@@ -14,7 +15,7 @@ const URL = '/api/itinerary/';
 @Injectable()
 export class ItineraryService {
 
-  constructor(private http: Http) { }
+  constructor(private http: Http, private loginService: LoginService) { }
 
   getItineraries() {
     return this.http.get(URL, { withCredentials: true })
