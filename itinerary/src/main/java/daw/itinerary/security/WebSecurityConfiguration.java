@@ -20,7 +20,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers("/login").permitAll();
 		http.authorizeRequests().antMatchers("/logout").permitAll();
 		http.authorizeRequests().antMatchers("/css/**", "/js/**", "/material-dashboard-html-v2.1.1/**").permitAll();
-
+		http.authorizeRequests().antMatchers("/new/**").permitAll();
+		
 		// Private pages (all other pages)
 		http.authorizeRequests().antMatchers("/units/{id}/contents").hasAnyRole("USER", "ADMIN");
 		http.authorizeRequests().antMatchers("/units/{unit_id}/itinerary/{id}").hasAnyRole("USER", "ADMIN");
