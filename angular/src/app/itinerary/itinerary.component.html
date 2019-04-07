@@ -6,7 +6,7 @@
     </mat-card-title>
     <mat-divider></mat-divider>
     <mat-nav-list *ngIf="loginService.isLogged">
-        <a *ngFor='let itinerary of Itineraries' mat-list-item [routerLink]="['/units', unit.id, Itineraries]">
+        <a *ngFor='let itinerary of itineraries' mat-list-item [routerLink]="['/units', itinerary.unit.id, itineraries]">
             {{itinerary.name}}
         </a>
     </mat-nav-list>

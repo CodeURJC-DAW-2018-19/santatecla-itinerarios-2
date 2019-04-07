@@ -54,11 +54,7 @@ import {
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { DomSanitizer } from '@angular/platform-browser';
-import { BookService } from './book.service';
 import { LoginService } from './auth/login.service';
-import { BookDetailComponent } from './book-detail.component';
-import { BookListComponent } from './book-list.component';
-import { BookFormComponent } from './book-form.component';
 import { LoginComponent } from './login/login.component';
 import { routing } from './app.routing';
 import { UnitListComponent } from './units/unit-list.component';
@@ -66,7 +62,6 @@ import { UnitFormComponent } from './units/unit-form.component';
 import { UnitService } from './units/unit.service';
 
 import { ContentService} from "./contents/content.service";
-import { ContentListComponent} from "./contents/content-list.component";
 
 import { ErrorInterceptor } from './auth/error.interceptor';
 import { BasicAuthInterceptor } from './auth/auth.interceptor';
@@ -130,10 +125,10 @@ import { ContentAdd } from './contents/content-add';
         routing,
         MatExpansionModule
     ],
-    declarations: [AppComponent, BookDetailComponent, BookListComponent, BookFormComponent, UnitFormComponent, UnitListComponent, LoginComponent,
-        ContentListComponent, UnitContentsComponent,ContentEdit, ItineraryComponent, UnitItinerariesComponent, ContentAdd],
+    declarations: [AppComponent, UnitFormComponent, UnitListComponent, LoginComponent,
+        UnitContentsComponent,ContentEdit, ItineraryComponent, UnitItinerariesComponent, ContentAdd],
     bootstrap: [AppComponent],
-    providers: [BookService, LoginService, UnitService,ContentService, ItineraryService,
+    providers: [LoginService, UnitService,ContentService, ItineraryService,
         { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
     ]

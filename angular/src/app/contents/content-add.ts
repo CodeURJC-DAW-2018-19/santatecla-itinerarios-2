@@ -2,12 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Content, ContentService} from "./content.service";
 import {LoginService} from "../auth/login.service";
-import {Headers, RequestOptions} from "@angular/http";
-import {catchError, map} from "rxjs/operators";
-import {Book} from "../book.service";
 import {HttpClient} from "@angular/common/http";
-import {DomSanitizer} from "@angular/platform-browser";
-import {Unit, UnitService} from "../units/unit.service";
+import {UnitService} from "../units/unit.service";
 
 
 @Component({

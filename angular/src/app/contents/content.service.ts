@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {Http, Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs';
 import {map, catchError} from 'rxjs/operators'
-import {Unit} from "../units/unit.service";
 import { LoginService } from '../auth/login.service';
 
 export interface Content {

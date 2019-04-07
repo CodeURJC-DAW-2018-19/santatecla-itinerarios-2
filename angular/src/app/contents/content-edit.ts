@@ -2,11 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Content, ContentService} from "./content.service";
 import {LoginService} from "../auth/login.service";
-import {Headers, RequestOptions} from "@angular/http";
-import {catchError, map} from "rxjs/operators";
-import {Book} from "../book.service";
 import {HttpClient} from "@angular/common/http";
-import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
     templateUrl: "content-edit.html",
@@ -65,18 +61,4 @@ export class ContentEdit {
         this.selectedFile = <File>event.target.files[0];
     }
 
-    /* removeBook() {
-         const okResponse = window.confirm('Do you want to remove this book?');
-         if (okResponse) {
-             this.service.removeBook(this.book).subscribe(
-                 _ => this.router.navigate(['/books']),
-                 error => console.error(error)
-             );
-         }
-     }
- */
-
-    /* gotoBooks() {
-        this.router.navigate(['/books']);
-    }*/
 }
