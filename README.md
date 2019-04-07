@@ -139,7 +139,7 @@ Leave us a like and suscribe to our channel. :sunglasses: <br/>
 
 [![Our video vanished lol](http://img.youtube.com/vi/8JuyRMZLzpY/0.jpg)](http://www.youtube.com/watch?v=8JuyRMZLzpY "Phase 4 Video")
 
-## Class and templates Diagram
+## Class diagram
 
 We created a class diagram showcasing all the classes from our application, as requested. Different types of classes have a color of their own. The color code is:
 
