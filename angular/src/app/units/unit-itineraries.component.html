@@ -4,7 +4,7 @@
 </ul>
 
 <!--
-        "Vista" section
+    "Vista" section
 -->
 <mat-card>
     <mat-card-title>
@@ -79,11 +79,20 @@
             </mat-form-field>
         </div>
 
-        <div class="rightPosition">
+        <div id="itineraryBoxDiv">
+            <mat-card id="itineraryBox" *ngFor='let itinerary of itineraries'>
+                <b>{{unit.name}}</b><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<b>Itinerario</b><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID: {{itinerary.id}}<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nombre: {{itinerary.name}}
+            </mat-card>
+        </div>
+
+        <!--div class="rightPosition">
             <mat-radio-group>
                 <mat-radio-button value="radioView" checked>Vista</mat-radio-button>
                 <mat-radio-button value="radioItinerary">Itinerario</mat-radio-button>
             </mat-radio-group>
-        </div>
+        </div-->
     </div>
 </mat-card>
