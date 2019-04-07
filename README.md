@@ -123,3 +123,12 @@ Yellow - Templates,
 Orange - Object.
 
 ![Class diagram.](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/classdiagPhase3.png "Class diagram")
+
+
+# Phase 4: Web implementation with SPA Architecture.
+
+## Setting up the Dev Workspace
+
+First, we need to install Node.js, we can download it [from here](https://nodejs.org/es/download/) or using your favorite CLI.
+Then, open up CLI and install Angular using the command *npm install -g angular.cli* .
+After doing these, we must navigate to our Angular project folder (in our case, we should use *cd angular* inside our main repo) and then install all the modules required using *npm install*. You can start working on your proyect and launch the angular app using *ng serve* or the script npm start, in our case.
