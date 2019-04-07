@@ -61,6 +61,8 @@ mat-radio-button {
 #itineraryBox {
     display: inline-block;
     width: 20em;
+    overflow: hidden;
+    white-space: pre-line;
     padding: 1em;
 }
 
