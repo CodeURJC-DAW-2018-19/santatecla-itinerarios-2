@@ -132,9 +132,27 @@ Orange - Object.
 First, we need to install Node.js, we can download it [from here](https://nodejs.org/es/download/) or using your favorite CLI.<br/>
 Then, open up CLI and install Angular using the command *npm install -g angular.cli* .<br/>
 After doing this, we must navigate to our Angular project folder (in our case, we should use *cd angular* inside our main repo) and then install all the modules required using *npm install*.<br/>
-You can start working on your proyect and launch the angular app using *ng serve* or the script npm start, in our case.
+You can start working on your proyect and launch the angular app using *ng serve* or the script npm start, in our case. We don't need to say that it's necessary that our backend must be initialized to start making petitions.
 
 ## Angular application Showcase Video.
 Leave us a like and suscribe to our channel. :sunglasses: <br/>
 
 [![Our video vanished lol](http://img.youtube.com/vi/8JuyRMZLzpY/0.jpg)](http://www.youtube.com/watch?v=8JuyRMZLzpY "Phase 4 Video")
+
+## Class and templates Diagram
+
+We created a class diagram showcasing all the classes from our application, as requested. Different types of classes have a color of their own. The color code is:
+
+Purple - Repositories,
+Blue - Entities,
+Pink - Services,
+Gray - Standard class,
+Dark green - Components,
+Gradient pink - Configurations,
+Red - Controllers,
+Yellow - Templates,
+Green - Services,
+Darker blue - Angular components/html,
+Dark gray - Interceptors.
+
+![Class diagram.](https://github.com/CodeURJC-DAW-2018-19/santatecla-itinerarios-2/blob/master/Screenshots/classdiagPhase4.png "Class diagram")
