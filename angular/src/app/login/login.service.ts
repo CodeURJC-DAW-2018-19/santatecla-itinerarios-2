@@ -39,6 +39,7 @@ export class LoginService {
         return this.http.get<User>('/api/logIn', { headers })
             .pipe(map(user => {
                 if (user) {
+                    console.log(user);
                     this.setCurrentUser(user);
                     user.authdata = auth;
                     localStorage.setItem('currentUser', JSON.stringify(user));

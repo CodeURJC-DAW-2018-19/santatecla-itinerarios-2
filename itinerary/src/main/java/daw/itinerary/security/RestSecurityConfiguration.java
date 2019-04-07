@@ -20,20 +20,21 @@ public class RestSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 		http.antMatcher("/api/**");
 
+
 		// Public pages
-		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/logIn").permitAll();
 		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/units").permitAll();
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/logIn").permitAll();
 		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/logOut").permitAll();
 
 		// Private page
-		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/units/{id}/**").hasAnyRole("USER", "ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/contents").hasAnyRole("USER", "ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/units/{id}/**").permitAll();
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/contents").permitAll();
 		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/itinerary").hasAnyRole("USER", "ADMIN");
 		
-		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/units/newUnit").hasRole("ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/units/{id}/newContent").hasRole("ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/units/{id}/contents/{content_id}/uploadImage").hasRole("ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/units/{unit_id}/newItinerary").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/units/newUnit").permitAll();
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/units/{id}/newContent").permitAll();
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/units/{id}/contents/{content_id}/uploadImage").permitAll(); //hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/units/{unit_id}/newItinerary").permitAll(); //hasRole("ADMIN");
 		
 		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api/units/{id}/contents/{content_id}/update").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/api/units/{id}/itineraries/{itinerary_id}/update").hasRole("ADMIN");
@@ -43,6 +44,17 @@ public class RestSecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/units/{id}/deleteContent").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/api/units/{unit_id}/itinerary/{itinerary_id}/deleteItinerary").hasRole("ADMIN");
 
+		// Login form
+		http.formLogin().loginPage("/api/logIn");
+		http.formLogin().usernameParameter("username");
+		http.formLogin().passwordParameter("password");
+		http.formLogin().defaultSuccessUrl("/api/units");
+		http.formLogin().failureUrl("/error");
+		
+		// Logout
+        http.logout().logoutUrl("/api/logOut");
+        http.logout().logoutSuccessUrl("/api/units");
+
 		// Disable CSRF protection
 		http.csrf().disable();
 
@@ -50,7 +62,8 @@ public class RestSecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.httpBasic();
 
 		// Do not redirect when logout
-		http.logout().logoutSuccessHandler((rq, rs, a) -> { });
+		http.logout().logoutSuccessHandler((rq, rs, a) -> {
+		});
 	}
 
 	@Override

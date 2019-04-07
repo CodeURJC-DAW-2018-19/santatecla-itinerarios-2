@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
-import { Unit, UnitService } from './unit.service';
-import { LoginService } from '../auth/login.service';
+import {Unit, UnitService} from './unit.service';
+import {LoginService} from '../login/login.service';
 import {catchError, map} from "rxjs/operators";
 
 @Component({

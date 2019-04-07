@@ -1,8 +1,7 @@
-import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions } from '@angular/http';
-import { Observable } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
-import { LoginService } from '../auth/login.service';
+import {Injectable} from '@angular/core';
+import {Http, Headers, RequestOptions} from '@angular/http';
+import {Observable} from 'rxjs';
+import {map, catchError} from 'rxjs/operators'
 
 export interface Unit {
     id?: number;
@@ -14,7 +13,7 @@ const URL = '/api/units/';
 @Injectable()
 export class UnitService {
 
-    constructor(private http: Http, private loginService: LoginService) {
+    constructor(private http: Http) {
     }
 
     getUnits() {

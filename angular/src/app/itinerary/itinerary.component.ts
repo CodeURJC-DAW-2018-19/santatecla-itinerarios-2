@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { LoginService } from '../auth/login.service';
+import { LoginService } from '../login/login.service';
 import { Itinerary, ItineraryService } from './itinerary.service';
 
 @Component({
