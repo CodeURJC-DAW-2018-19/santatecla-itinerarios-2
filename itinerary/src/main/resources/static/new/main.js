@@ -4960,31 +4960,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 /* harmony import */ var _covalent_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @covalent/core */ "./node_modules/@covalent/core/fesm5/covalent-core.js");
 /* harmony import */ var _swimlane_ngx_charts__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @swimlane/ngx-charts */ "./node_modules/@swimlane/ngx-charts/release/esm.js");
-/* harmony import */ var _book_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./book.service */ "./src/app/book.service.ts");
-/* harmony import */ var _auth_login_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./auth/login.service */ "./src/app/auth/login.service.ts");
-/* harmony import */ var _book_detail_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./book-detail.component */ "./src/app/book-detail.component.ts");
-/* harmony import */ var _book_list_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./book-list.component */ "./src/app/book-list.component.ts");
-/* harmony import */ var _book_form_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./book-form.component */ "./src/app/book-form.component.ts");
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-/* harmony import */ var _app_routing__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./app.routing */ "./src/app/app.routing.ts");
-/* harmony import */ var _units_unit_list_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./units/unit-list.component */ "./src/app/units/unit-list.component.ts");
-/* harmony import */ var _units_unit_form_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./units/unit-form.component */ "./src/app/units/unit-form.component.ts");
-/* harmony import */ var _units_unit_service__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./units/unit.service */ "./src/app/units/unit.service.ts");
-/* harmony import */ var _contents_content_service__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./contents/content.service */ "./src/app/contents/content.service.ts");
-/* harmony import */ var _contents_content_list_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./contents/content-list.component */ "./src/app/contents/content-list.component.ts");
-/* harmony import */ var _auth_error_interceptor__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./auth/error.interceptor */ "./src/app/auth/error.interceptor.ts");
-/* harmony import */ var _auth_auth_interceptor__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./auth/auth.interceptor */ "./src/app/auth/auth.interceptor.ts");
-/* harmony import */ var _units_unit_contents_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./units/unit-contents.component */ "./src/app/units/unit-contents.component.ts");
-/* harmony import */ var _contents_content_edit__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./contents/content-edit */ "./src/app/contents/content-edit.ts");
-/* harmony import */ var _itinerary_itinerary_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./itinerary/itinerary.component */ "./src/app/itinerary/itinerary.component.ts");
-/* harmony import */ var _units_unit_itineraries_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./units/unit-itineraries.component */ "./src/app/units/unit-itineraries.component.ts");
-/* harmony import */ var _itinerary_itinerary_service__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./itinerary/itinerary.service */ "./src/app/itinerary/itinerary.service.ts");
-/* harmony import */ var _contents_content_add__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./contents/content-add */ "./src/app/contents/content-add.ts");
-
-
-
-
-
+/* harmony import */ var _auth_login_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./auth/login.service */ "./src/app/auth/login.service.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _app_routing__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./app.routing */ "./src/app/app.routing.ts");
+/* harmony import */ var _units_unit_list_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./units/unit-list.component */ "./src/app/units/unit-list.component.ts");
+/* harmony import */ var _units_unit_form_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./units/unit-form.component */ "./src/app/units/unit-form.component.ts");
+/* harmony import */ var _units_unit_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./units/unit.service */ "./src/app/units/unit.service.ts");
+/* harmony import */ var _contents_content_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./contents/content.service */ "./src/app/contents/content.service.ts");
+/* harmony import */ var _auth_error_interceptor__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./auth/error.interceptor */ "./src/app/auth/error.interceptor.ts");
+/* harmony import */ var _auth_auth_interceptor__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./auth/auth.interceptor */ "./src/app/auth/auth.interceptor.ts");
+/* harmony import */ var _units_unit_contents_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./units/unit-contents.component */ "./src/app/units/unit-contents.component.ts");
+/* harmony import */ var _contents_content_edit__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./contents/content-edit */ "./src/app/contents/content-edit.ts");
+/* harmony import */ var _itinerary_itinerary_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./itinerary/itinerary.component */ "./src/app/itinerary/itinerary.component.ts");
+/* harmony import */ var _units_unit_itineraries_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./units/unit-itineraries.component */ "./src/app/units/unit-itineraries.component.ts");
+/* harmony import */ var _itinerary_itinerary_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./itinerary/itinerary.service */ "./src/app/itinerary/itinerary.service.ts");
+/* harmony import */ var _contents_content_add__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./contents/content-add */ "./src/app/contents/content-add.ts");
 
 
 
@@ -5070,15 +5060,15 @@ var AppModule = /** @class */ (function () {
                 /** Additional **/
                 _swimlane_ngx_charts__WEBPACK_IMPORTED_MODULE_12__["NgxChartsModule"],
                 _angular_http__WEBPACK_IMPORTED_MODULE_4__["HttpModule"],
-                _app_routing__WEBPACK_IMPORTED_MODULE_19__["routing"],
+                _app_routing__WEBPACK_IMPORTED_MODULE_15__["routing"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatExpansionModule"]
             ],
-            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"], _book_detail_component__WEBPACK_IMPORTED_MODULE_15__["BookDetailComponent"], _book_list_component__WEBPACK_IMPORTED_MODULE_16__["BookListComponent"], _book_form_component__WEBPACK_IMPORTED_MODULE_17__["BookFormComponent"], _units_unit_form_component__WEBPACK_IMPORTED_MODULE_21__["UnitFormComponent"], _units_unit_list_component__WEBPACK_IMPORTED_MODULE_20__["UnitListComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_18__["LoginComponent"],
-                _contents_content_list_component__WEBPACK_IMPORTED_MODULE_24__["ContentListComponent"], _units_unit_contents_component__WEBPACK_IMPORTED_MODULE_27__["UnitContentsComponent"], _contents_content_edit__WEBPACK_IMPORTED_MODULE_28__["ContentEdit"], _itinerary_itinerary_component__WEBPACK_IMPORTED_MODULE_29__["ItineraryComponent"], _units_unit_itineraries_component__WEBPACK_IMPORTED_MODULE_30__["UnitItinerariesComponent"], _contents_content_add__WEBPACK_IMPORTED_MODULE_32__["ContentAdd"]],
+            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"], _units_unit_form_component__WEBPACK_IMPORTED_MODULE_17__["UnitFormComponent"], _units_unit_list_component__WEBPACK_IMPORTED_MODULE_16__["UnitListComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_14__["LoginComponent"],
+                _units_unit_contents_component__WEBPACK_IMPORTED_MODULE_22__["UnitContentsComponent"], _contents_content_edit__WEBPACK_IMPORTED_MODULE_23__["ContentEdit"], _itinerary_itinerary_component__WEBPACK_IMPORTED_MODULE_24__["ItineraryComponent"], _units_unit_itineraries_component__WEBPACK_IMPORTED_MODULE_25__["UnitItinerariesComponent"], _contents_content_add__WEBPACK_IMPORTED_MODULE_27__["ContentAdd"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]],
-            providers: [_book_service__WEBPACK_IMPORTED_MODULE_13__["BookService"], _auth_login_service__WEBPACK_IMPORTED_MODULE_14__["LoginService"], _units_unit_service__WEBPACK_IMPORTED_MODULE_22__["UnitService"], _contents_content_service__WEBPACK_IMPORTED_MODULE_23__["ContentService"], _itinerary_itinerary_service__WEBPACK_IMPORTED_MODULE_31__["ItineraryService"],
-                { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HTTP_INTERCEPTORS"], useClass: _auth_auth_interceptor__WEBPACK_IMPORTED_MODULE_26__["BasicAuthInterceptor"], multi: true },
-                { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HTTP_INTERCEPTORS"], useClass: _auth_error_interceptor__WEBPACK_IMPORTED_MODULE_25__["ErrorInterceptor"], multi: true }
+            providers: [_auth_login_service__WEBPACK_IMPORTED_MODULE_13__["LoginService"], _units_unit_service__WEBPACK_IMPORTED_MODULE_18__["UnitService"], _contents_content_service__WEBPACK_IMPORTED_MODULE_19__["ContentService"], _itinerary_itinerary_service__WEBPACK_IMPORTED_MODULE_26__["ItineraryService"],
+                { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HTTP_INTERCEPTORS"], useClass: _auth_auth_interceptor__WEBPACK_IMPORTED_MODULE_21__["BasicAuthInterceptor"], multi: true },
+                { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HTTP_INTERCEPTORS"], useClass: _auth_error_interceptor__WEBPACK_IMPORTED_MODULE_20__["ErrorInterceptor"], multi: true }
             ]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_icon__WEBPACK_IMPORTED_MODULE_6__["MatIconRegistry"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"]])
@@ -5103,13 +5093,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _units_unit_form_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./units/unit-form.component */ "./src/app/units/unit-form.component.ts");
 /* harmony import */ var _units_unit_list_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./units/unit-list.component */ "./src/app/units/unit-list.component.ts");
-/* harmony import */ var _contents_content_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./contents/content-list.component */ "./src/app/contents/content-list.component.ts");
-/* harmony import */ var _units_unit_contents_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./units/unit-contents.component */ "./src/app/units/unit-contents.component.ts");
-/* harmony import */ var _contents_content_edit__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./contents/content-edit */ "./src/app/contents/content-edit.ts");
-/* harmony import */ var _itinerary_itinerary_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./itinerary/itinerary.component */ "./src/app/itinerary/itinerary.component.ts");
-/* harmony import */ var _units_unit_itineraries_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./units/unit-itineraries.component */ "./src/app/units/unit-itineraries.component.ts");
-/* harmony import */ var _contents_content_add__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./contents/content-add */ "./src/app/contents/content-add.ts");
-
+/* harmony import */ var _units_unit_contents_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./units/unit-contents.component */ "./src/app/units/unit-contents.component.ts");
+/* harmony import */ var _contents_content_edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./contents/content-edit */ "./src/app/contents/content-edit.ts");
+/* harmony import */ var _itinerary_itinerary_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./itinerary/itinerary.component */ "./src/app/itinerary/itinerary.component.ts");
+/* harmony import */ var _units_unit_itineraries_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./units/unit-itineraries.component */ "./src/app/units/unit-itineraries.component.ts");
+/* harmony import */ var _contents_content_add__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./contents/content-add */ "./src/app/contents/content-add.ts");
 
 
 
@@ -5119,19 +5107,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var appRoutes = [
-    /*{ path: 'books', component: BookListComponent },
-    { path: 'book/new', component: BookFormComponent },
-    { path: 'book/:id', component: BookDetailComponent },
-    { path: 'book/edit/:id', component: BookFormComponent },*/
     { path: '', redirectTo: 'new/units', pathMatch: 'full' },
     { path: 'new/units', component: _units_unit_list_component__WEBPACK_IMPORTED_MODULE_2__["UnitListComponent"], useAsDefault: true },
     { path: 'new/units/new', component: _units_unit_form_component__WEBPACK_IMPORTED_MODULE_1__["UnitFormComponent"] },
-    { path: 'new/contents', component: _contents_content_list_component__WEBPACK_IMPORTED_MODULE_3__["ContentListComponent"] },
-    { path: 'new/units/:id/contents', component: _units_unit_contents_component__WEBPACK_IMPORTED_MODULE_4__["UnitContentsComponent"] },
-    { path: 'new/units/:uId/contents/edit/:id', component: _contents_content_edit__WEBPACK_IMPORTED_MODULE_5__["ContentEdit"] },
-    { path: 'new/itinerary', component: _itinerary_itinerary_component__WEBPACK_IMPORTED_MODULE_6__["ItineraryComponent"] },
-    { path: 'new/units/:id/itineraries', component: _units_unit_itineraries_component__WEBPACK_IMPORTED_MODULE_7__["UnitItinerariesComponent"] },
-    { path: 'new/units/:id/addContent', component: _contents_content_add__WEBPACK_IMPORTED_MODULE_8__["ContentAdd"] }
+    { path: 'new/units/:id/contents', component: _units_unit_contents_component__WEBPACK_IMPORTED_MODULE_3__["UnitContentsComponent"] },
+    { path: 'new/units/:uId/contents/edit/:id', component: _contents_content_edit__WEBPACK_IMPORTED_MODULE_4__["ContentEdit"] },
+    { path: 'new/itinerary', component: _itinerary_itinerary_component__WEBPACK_IMPORTED_MODULE_5__["ItineraryComponent"] },
+    { path: 'new/units/:id/itineraries', component: _units_unit_itineraries_component__WEBPACK_IMPORTED_MODULE_6__["UnitItinerariesComponent"] },
+    { path: 'new/units/:id/addContent', component: _contents_content_add__WEBPACK_IMPORTED_MODULE_7__["ContentAdd"] }
 ];
 var routing = _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(appRoutes);
 
@@ -5294,265 +5277,6 @@ var LoginService = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], LoginService);
     return LoginService;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/book-detail.component.ts":
-/*!******************************************!*\
-  !*** ./src/app/book-detail.component.ts ***!
-  \******************************************/
-/*! exports provided: BookDetailComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookDetailComponent", function() { return BookDetailComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _book_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./book.service */ "./src/app/book.service.ts");
-/* harmony import */ var _auth_login_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./auth/login.service */ "./src/app/auth/login.service.ts");
-
-
-
-
-
-var BookDetailComponent = /** @class */ (function () {
-    function BookDetailComponent(router, activatedRoute, service, loginService) {
-        var _this = this;
-        this.router = router;
-        this.service = service;
-        this.loginService = loginService;
-        var id = activatedRoute.snapshot.params['id'];
-        service.getBook(id).subscribe(function (book) { return _this.book = book; }, function (error) { return console.error(error); });
-    }
-    BookDetailComponent.prototype.removeBook = function () {
-        var _this = this;
-        var okResponse = window.confirm('Do you want to remove this book?');
-        if (okResponse) {
-            this.service.removeBook(this.book).subscribe(function (_) { return _this.router.navigate(['/books']); }, function (error) { return console.error(error); });
-        }
-    };
-    BookDetailComponent.prototype.editBook = function () {
-        this.router.navigate(['/book/edit', this.book.id]);
-    };
-    BookDetailComponent.prototype.gotoBooks = function () {
-        this.router.navigate(['/books']);
-    };
-    BookDetailComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            template: "\n  <div *ngIf=\"book\">\n  <h2>Book \"{{book.title}}\"</h2>\n  <div>\n    <p>{{book.description}}</p>\n  </div>\n  <p>\n    <button *ngIf=\"loginService.isLogged && loginService.isAdmin\" (click)=\"removeBook()\">Remove</button>\n    <button *ngIf=\"loginService.isLogged\" (click)=\"editBook()\">Edit</button>\n    <br>\n    <button (click)=\"gotoBooks()\">All Books</button>\n  </p>\n  </div>"
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _book_service__WEBPACK_IMPORTED_MODULE_3__["BookService"],
-            _auth_login_service__WEBPACK_IMPORTED_MODULE_4__["LoginService"]])
-    ], BookDetailComponent);
-    return BookDetailComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/book-form.component.ts":
-/*!****************************************!*\
-  !*** ./src/app/book-form.component.ts ***!
-  \****************************************/
-/*! exports provided: BookFormComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookFormComponent", function() { return BookFormComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _book_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./book.service */ "./src/app/book.service.ts");
-
-
-
-
-var BookFormComponent = /** @class */ (function () {
-    function BookFormComponent(_router, activatedRoute, service) {
-        var _this = this;
-        this._router = _router;
-        this.service = service;
-        var id = activatedRoute.snapshot.params['id'];
-        if (id) {
-            service.getBook(id).subscribe(function (book) { return _this.book = book; }, function (error) { return console.error(error); });
-            this.newBook = false;
-        }
-        else {
-            this.book = { title: '', description: '' };
-            this.newBook = true;
-        }
-    }
-    BookFormComponent.prototype.cancel = function () {
-        window.history.back();
-    };
-    BookFormComponent.prototype.save = function () {
-        this.service.saveBook(this.book).subscribe(function (book) { }, function (error) { return console.error('Error creating new book: ' + error); });
-        window.history.back();
-    };
-    BookFormComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            template: "\n  <div *ngIf=\"book\">\n  <h2>Book \"{{book.title}}\"</h2>\n  <div *ngIf=\"book.id\">\n    <label>Id: </label>{{book.id}}\n  </div>\n  <div>\n    <label>Title: </label>\n    <input [(ngModel)]=\"book.title\" placeholder=\"title\"/>\n  </div>\n  <div>\n    <label>Abstract: </label>\n    <textarea [(ngModel)]=\"book.description\" placeholder=\"description\"></textarea>\n  </div>\n  <p>\n    <button (click)=\"cancel()\">Cancel</button>\n    <button (click)=\"save()\">Save</button>\n  </p>\n  </div>"
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _book_service__WEBPACK_IMPORTED_MODULE_3__["BookService"]])
-    ], BookFormComponent);
-    return BookFormComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/book-list.component.html":
-/*!******************************************!*\
-  !*** ./src/app/book-list.component.html ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<mat-card>\r\n    <mat-card-title>\r\n        <div layout=\"row\" layout-align=\"start center\">\r\n            <span flex>Books</span>\r\n\r\n        </div>\r\n    </mat-card-title>\r\n    <mat-divider></mat-divider>\r\n\r\n    <mat-nav-list *ngIf=\"loginService.isLogged\">\r\n        <a *ngFor='let book of books' mat-list-item [routerLink]=\"['/book', book.id]\">\r\n            {{book.title}}\r\n        </a>\r\n    </mat-nav-list>\r\n\r\n    <mat-nav-list *ngIf=\"!loginService.isLogged\">\r\n        <mat-list-item [ngStyle]=\"{'cursor':'auto'}\" *ngFor='let book of books'>\r\n            {{book.title}}\r\n        </mat-list-item>\r\n    </mat-nav-list>\r\n\r\n    <button mat-fab  *ngIf=\"loginService.isLogged\"  (click)=\"newBook()\">\r\n        <mat-icon>add</mat-icon>\r\n    </button>\r\n</mat-card>"
-
-/***/ }),
-
-/***/ "./src/app/book-list.component.ts":
-/*!****************************************!*\
-  !*** ./src/app/book-list.component.ts ***!
-  \****************************************/
-/*! exports provided: BookListComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookListComponent", function() { return BookListComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _book_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./book.service */ "./src/app/book.service.ts");
-/* harmony import */ var _auth_login_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./auth/login.service */ "./src/app/auth/login.service.ts");
-
-
-
-
-
-var BookListComponent = /** @class */ (function () {
-    function BookListComponent(router, service, loginService) {
-        this.router = router;
-        this.service = service;
-        this.loginService = loginService;
-    }
-    BookListComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.service.getBooks().subscribe(function (books) { return _this.books = books; }, function (error) { return console.log(error); });
-    };
-    BookListComponent.prototype.newBook = function () {
-        this.router.navigate(['/book/new']);
-    };
-    BookListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            template: __webpack_require__(/*! ./book-list.component.html */ "./src/app/book-list.component.html")
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _book_service__WEBPACK_IMPORTED_MODULE_3__["BookService"],
-            _auth_login_service__WEBPACK_IMPORTED_MODULE_4__["LoginService"]])
-    ], BookListComponent);
-    return BookListComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/book.service.ts":
-/*!*********************************!*\
-  !*** ./src/app/book.service.ts ***!
-  \*********************************/
-/*! exports provided: BookService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookService", function() { return BookService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _auth_login_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./auth/login.service */ "./src/app/auth/login.service.ts");
-
-
-
-
-
-
-var URL = '/api/books/';
-var BookService = /** @class */ (function () {
-    function BookService(http, loginService) {
-        this.http = http;
-        this.loginService = loginService;
-    }
-    BookService.prototype.getBooks = function () {
-        var _this = this;
-        return this.http.get(URL, { withCredentials: true })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (response) { return response.json(); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(function (error) { return _this.handleError(error); }));
-    };
-    BookService.prototype.getBook = function (id) {
-        var _this = this;
-        return this.http.get(URL + id, { withCredentials: true })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (response) { return response.json(); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(function (error) { return _this.handleError(error); }));
-    };
-    BookService.prototype.saveBook = function (book) {
-        var _this = this;
-        var body = JSON.stringify(book);
-        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_2__["Headers"]({
-            'Content-Type': 'application/json',
-            'X-Requested-With': 'XMLHttpRequest'
-        });
-        var options = new _angular_http__WEBPACK_IMPORTED_MODULE_2__["RequestOptions"]({ withCredentials: true, headers: headers });
-        if (!book.id) {
-            return this.http.post(URL, body, options)
-                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (response) { return response.json(); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(function (error) { return _this.handleError(error); }));
-        }
-        else {
-            return this.http.put(URL + book.id, body, options)
-                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (response) { return response.json(); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(function (error) { return _this.handleError(error); }));
-        }
-    };
-    BookService.prototype.removeBook = function (book) {
-        var _this = this;
-        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_2__["Headers"]({
-            'X-Requested-With': 'XMLHttpRequest'
-        });
-        var options = new _angular_http__WEBPACK_IMPORTED_MODULE_2__["RequestOptions"]({ withCredentials: true, headers: headers });
-        return this.http.delete(URL + book.id, options)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (response) { return undefined; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(function (error) { return _this.handleError(error); }));
-    };
-    BookService.prototype.updateBook = function (book) {
-        var _this = this;
-        var body = JSON.stringify(book);
-        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_2__["Headers"]({
-            'Content-Type': 'application/json',
-            'X-Requested-With': 'XMLHttpRequest'
-        });
-        var options = new _angular_http__WEBPACK_IMPORTED_MODULE_2__["RequestOptions"]({ withCredentials: true, headers: headers });
-        return this.http.put(URL + book.id, body, options)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (response) { return response.json(); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(function (error) { return _this.handleError(error); }));
-    };
-    BookService.prototype.handleError = function (error) {
-        console.error(error);
-        return rxjs__WEBPACK_IMPORTED_MODULE_3__["Observable"].throw('Server error (' + error.status + '): ' + error.text());
-    };
-    BookService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_2__["Http"], _auth_login_service__WEBPACK_IMPORTED_MODULE_5__["LoginService"]])
-    ], BookService);
-    return BookService;
 }());
 
 
@@ -5729,64 +5453,6 @@ var ContentEdit = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/contents/content-list.component.html":
-/*!******************************************************!*\
-  !*** ./src/app/contents/content-list.component.html ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<mat-card>\r\n    <mat-card-title>\r\n        <div layout=\"row\" layout-align=\"start center\">\r\n            <span flex>Contents</span>\r\n\r\n        </div>\r\n    </mat-card-title>\r\n    <mat-divider></mat-divider>\r\n\r\n    <mat-nav-list *ngIf=\"loginService.isLogged\">\r\n        <a *ngFor='let content of contents' mat-list-item [routerLink]=\"['/contents', content.id]\">\r\n            {{content.title}}\r\n        </a>\r\n    </mat-nav-list>\r\n\r\n    <mat-nav-list *ngIf=\"!loginService.isLogged\">\r\n        <mat-list-item [ngStyle]=\"{'cursor':'auto'}\" *ngFor='let content of contents'>\r\n            {{content.title}}\r\n        </mat-list-item>\r\n    </mat-nav-list>\r\n\r\n    <button mat-fab  *ngIf=\"loginService.isLogged\"  (click)=\"newContent()\">\r\n        <mat-icon>add</mat-icon>\r\n    </button>\r\n</mat-card>"
-
-/***/ }),
-
-/***/ "./src/app/contents/content-list.component.ts":
-/*!****************************************************!*\
-  !*** ./src/app/contents/content-list.component.ts ***!
-  \****************************************************/
-/*! exports provided: ContentListComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContentListComponent", function() { return ContentListComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _auth_login_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../auth/login.service */ "./src/app/auth/login.service.ts");
-/* harmony import */ var _content_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./content.service */ "./src/app/contents/content.service.ts");
-
-
-
-
-
-var ContentListComponent = /** @class */ (function () {
-    function ContentListComponent(router, service, loginService) {
-        this.router = router;
-        this.service = service;
-        this.loginService = loginService;
-    }
-    ContentListComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.service.getContents().subscribe(function (contents) { return _this.contents = contents; }, function (error) { return console.log(error); });
-    };
-    ContentListComponent.prototype.newContent = function () {
-        this.router.navigate(['new/contents/new']);
-    };
-    ContentListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            template: __webpack_require__(/*! ./content-list.component.html */ "./src/app/contents/content-list.component.html")
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _content_service__WEBPACK_IMPORTED_MODULE_4__["ContentService"],
-            _auth_login_service__WEBPACK_IMPORTED_MODULE_3__["LoginService"]])
-    ], ContentListComponent);
-    return ContentListComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/contents/content.service.ts":
 /*!*********************************************!*\
   !*** ./src/app/contents/content.service.ts ***!
@@ -5888,7 +5554,7 @@ module.exports = ".bigTitle {\r\n    text-align: center;\r\n    font-size: 2em;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-card>\r\n    <mat-card-title>\r\n        <div layout=\"row\" layout-align=\"start center\">\r\n            <span flex>Itineraries</span>\r\n        </div>\r\n    </mat-card-title>\r\n    <mat-divider></mat-divider>\r\n    <mat-nav-list *ngIf=\"loginService.isLogged\">\r\n        <a *ngFor='let itinerary of Itineraries' mat-list-item [routerLink]=\"['/units', unit.id, Itineraries]\">\r\n            {{itinerary.name}}\r\n        </a>\r\n    </mat-nav-list>\r\n</mat-card>"
+module.exports = "<mat-card>\r\n    <mat-card-title>\r\n        <div layout=\"row\" layout-align=\"start center\">\r\n            <span flex>Itineraries</span>\r\n        </div>\r\n    </mat-card-title>\r\n    <mat-divider></mat-divider>\r\n    <mat-nav-list *ngIf=\"loginService.isLogged\">\r\n        <a *ngFor='let itinerary of itineraries' mat-list-item [routerLink]=\"['/units', itinerary.unit.id, itineraries]\">\r\n            {{itinerary.name}}\r\n        </a>\r\n    </mat-nav-list>\r\n</mat-card>"
 
 /***/ }),
 
@@ -6081,7 +5747,7 @@ module.exports = "#tabs {\r\n    list-style-type: none;\r\n    margin: 0;\r\n   
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul id=\"tabs\">\r\n    <li><a class=\"tab\" [routerLink]=\"['/new/units', unit.id, 'contents']\">Contenidos</a></li>\r\n    <li><a class=\"tab\" [routerLink]=\"['/new/units', unit.id, 'itineraries']\">Itinerarios</a></li>\r\n</ul>\r\n\r\n<mat-card>\r\n    <mat-card-title class=\"bigTitle\">\r\n        <div layout=\"row\" layout-align=\"start center\">\r\n            <span flex>Contenidos</span>\r\n\r\n        </div>\r\n        <mat-divider></mat-divider>\r\n    </mat-card-title>\r\n\r\n    <a *ngFor='let content of contents; let i=index' mat-list-item style=\"width: 45%\">\r\n        <mat-card *ngIf=\"i<page\" style=\"text-align: center\">\r\n            <mat-card-title style=\"font-weight: bold\">{{content.title}}</mat-card-title>\r\n            <mat-card-content><p style=\"font-size: 1.2em\">{{content.desc}}</p></mat-card-content>\r\n            <a *ngIf=\"content.hasImage\">\r\n                <img src=\"data:image/JPEG;base64,{{content.imageRaw}}\" id=\"contentImg\">\r\n            </a>\r\n            <div style=\"margin: 1em\">\r\n                <button  *ngIf=\"loginService.isAdmin\" mat-raised-button color=\"warn\" (click)=\"editContent(content.id)\" style=\"margin: 10px\">\r\n                    Editar contenido\r\n                </button>\r\n            </div>\r\n        </mat-card>\r\n    </a>\r\n    <div style=\"text-align: center\">\r\n        <button mat-fab *ngIf=\"loginService.isAdmin\" (click)=\"addContent()\">\r\n            <mat-icon>add</mat-icon>\r\n        </button>\r\n        <button *ngIf=\"contents.length>page\" mat-raised-button color=\"warn\" (click)=\"nextPage()\">Cargar más</button>\r\n        <button *ngIf=\"page>5\" mat-raised-button color=\"warn\" (click)=\"previousPage()\">Cargar menos</button>\r\n    </div>\r\n</mat-card>\r\n"
+module.exports = "<ul id=\"tabs\">\r\n    <li><a class=\"tab\" [routerLink]=\"['/new/units', unit.id, 'contents']\">Contenidos</a></li>\r\n    <li><a class=\"tab\" [routerLink]=\"['/new/units', unit.id, 'itineraries']\">Itinerarios</a></li>\r\n</ul>\r\n\r\n<mat-card>\r\n    <mat-card-title class=\"bigTitle\">\r\n        <div layout=\"row\" layout-align=\"start center\">\r\n            <span flex>Contenidos de {{unit.name}}</span>\r\n\r\n        </div>\r\n        <mat-divider></mat-divider>\r\n    </mat-card-title>\r\n\r\n    <a *ngFor='let content of contents; let i=index' mat-list-item style=\"width: 45%\">\r\n        <mat-card *ngIf=\"i<page\" style=\"text-align: center\">\r\n            <mat-card-title style=\"font-weight: bold\">{{content.title}}</mat-card-title>\r\n            <mat-card-content><p style=\"font-size: 1.2em\">{{content.desc}}</p></mat-card-content>\r\n            <a *ngIf=\"content.hasImage\">\r\n                <img src=\"data:image/JPEG;base64,{{content.imageRaw}}\" id=\"contentImg\">\r\n            </a>\r\n            <div style=\"margin: 1em\">\r\n                <button  *ngIf=\"loginService.isAdmin\" mat-raised-button color=\"warn\" (click)=\"editContent(content.id)\" style=\"margin: 10px\">\r\n                    Editar contenido\r\n                </button>\r\n            </div>\r\n        </mat-card>\r\n    </a>\r\n    <div style=\"text-align: center\">\r\n        <button mat-fab *ngIf=\"loginService.isAdmin\" (click)=\"addContent()\">\r\n            <mat-icon>add</mat-icon>\r\n        </button>\r\n        <button *ngIf=\"contents.length>page\" mat-raised-button color=\"warn\" (click)=\"nextPage()\">Cargar más</button>\r\n        <button *ngIf=\"page>5\" mat-raised-button color=\"warn\" (click)=\"previousPage()\">Cargar menos</button>\r\n    </div>\r\n</mat-card>\r\n"
 
 /***/ }),
 
@@ -6215,7 +5881,7 @@ var UnitFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".margins {\r\n    margin-top: 1em;\r\n    margin-left: 2em;\r\n    padding-right: 2em;\r\n}\r\n\r\n.viewSection {\r\n    overflow: hidden;\r\n    margin-left: 2em;\r\n    height: 14em;\r\n    padding-right: 2em;\r\n}\r\n\r\n.itinerarySection {\r\n    padding-bottom: 2em;\r\n}\r\n\r\n.selectBoxesPosition {\r\n    width: 45%;\r\n    float: left;\r\n}\r\n\r\nmat-form-field {\r\n    margin-right: 2em;\r\n}\r\n\r\n.htmlView {\r\n    width: 55%;\r\n    float: right;\r\n}\r\n\r\n#htmlLabel {\r\n    border-color: gray;\r\n    border-style: solid;\r\n    border-width: 1px;\r\n    background-color: white;\r\n}\r\n\r\n.htmlViewContent {\r\n    overflow: scroll;\r\n    min-height: 12em;\r\n    max-height: 12em;\r\n    background-color: rgb(250, 250, 200);\r\n}\r\n\r\n#unithtmltitle {\r\n    margin: 0em;\r\n}\r\n\r\nmat-radio-button {\r\n    margin-right: 1em;\r\n}\r\n\r\n#itineraryBoxDiv{\r\n    background-color: rgb(250, 250, 200);\r\n    padding-bottom: 0.2em;\r\n    overflow-x: auto;\r\n    white-space: nowrap;\r\n}\r\n\r\n#itineraryBox {\r\n    display: inline-block;\r\n    width: 20em;\r\n    padding: 1em;\r\n}\r\n\r\n.rightPosition {\r\n    float: right;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdW5pdHMvdW5pdC1pdGluZXJhcmllcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZUFBZTtJQUNmLGdCQUFnQjtJQUNoQixrQkFBa0I7QUFDdEI7O0FBRUE7SUFDSSxnQkFBZ0I7SUFDaEIsZ0JBQWdCO0lBQ2hCLFlBQVk7SUFDWixrQkFBa0I7QUFDdEI7O0FBRUE7SUFDSSxtQkFBbUI7QUFDdkI7O0FBRUE7SUFDSSxVQUFVO0lBQ1YsV0FBVztBQUNmOztBQUVBO0lBQ0ksaUJBQWlCO0FBQ3JCOztBQUVBO0lBQ0ksVUFBVTtJQUNWLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxrQkFBa0I7SUFDbEIsbUJBQW1CO0lBQ25CLGlCQUFpQjtJQUNqQix1QkFBdUI7QUFDM0I7O0FBRUE7SUFDSSxnQkFBZ0I7SUFDaEIsZ0JBQWdCO0lBQ2hCLGdCQUFnQjtJQUNoQixvQ0FBb0M7QUFDeEM7O0FBRUE7SUFDSSxXQUFXO0FBQ2Y7O0FBRUE7SUFDSSxpQkFBaUI7QUFDckI7O0FBRUE7SUFDSSxvQ0FBb0M7SUFDcEMscUJBQXFCO0lBQ3JCLGdCQUFnQjtJQUNoQixtQkFBbUI7QUFDdkI7O0FBRUE7SUFDSSxxQkFBcUI7SUFDckIsV0FBVztJQUNYLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxZQUFZO0FBQ2hCIiwiZmlsZSI6InNyYy9hcHAvdW5pdHMvdW5pdC1pdGluZXJhcmllcy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1hcmdpbnMge1xyXG4gICAgbWFyZ2luLXRvcDogMWVtO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDJlbTtcclxuICAgIHBhZGRpbmctcmlnaHQ6IDJlbTtcclxufVxyXG5cclxuLnZpZXdTZWN0aW9uIHtcclxuICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgICBtYXJnaW4tbGVmdDogMmVtO1xyXG4gICAgaGVpZ2h0OiAxNGVtO1xyXG4gICAgcGFkZGluZy1yaWdodDogMmVtO1xyXG59XHJcblxyXG4uaXRpbmVyYXJ5U2VjdGlvbiB7XHJcbiAgICBwYWRkaW5nLWJvdHRvbTogMmVtO1xyXG59XHJcblxyXG4uc2VsZWN0Qm94ZXNQb3NpdGlvbiB7XHJcbiAgICB3aWR0aDogNDUlO1xyXG4gICAgZmxvYXQ6IGxlZnQ7XHJcbn1cclxuXHJcbm1hdC1mb3JtLWZpZWxkIHtcclxuICAgIG1hcmdpbi1yaWdodDogMmVtO1xyXG59XHJcblxyXG4uaHRtbFZpZXcge1xyXG4gICAgd2lkdGg6IDU1JTtcclxuICAgIGZsb2F0OiByaWdodDtcclxufVxyXG5cclxuI2h0bWxMYWJlbCB7XHJcbiAgICBib3JkZXItY29sb3I6IGdyYXk7XHJcbiAgICBib3JkZXItc3R5bGU6IHNvbGlkO1xyXG4gICAgYm9yZGVyLXdpZHRoOiAxcHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxuLmh0bWxWaWV3Q29udGVudCB7XHJcbiAgICBvdmVyZmxvdzogc2Nyb2xsO1xyXG4gICAgbWluLWhlaWdodDogMTJlbTtcclxuICAgIG1heC1oZWlnaHQ6IDEyZW07XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjUwLCAyNTAsIDIwMCk7XHJcbn1cclxuXHJcbiN1bml0aHRtbHRpdGxlIHtcclxuICAgIG1hcmdpbjogMGVtO1xyXG59XHJcblxyXG5tYXQtcmFkaW8tYnV0dG9uIHtcclxuICAgIG1hcmdpbi1yaWdodDogMWVtO1xyXG59XHJcblxyXG4jaXRpbmVyYXJ5Qm94RGl2e1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDI1MCwgMjUwLCAyMDApO1xyXG4gICAgcGFkZGluZy1ib3R0b206IDAuMmVtO1xyXG4gICAgb3ZlcmZsb3cteDogYXV0bztcclxuICAgIHdoaXRlLXNwYWNlOiBub3dyYXA7XHJcbn1cclxuXHJcbiNpdGluZXJhcnlCb3gge1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgd2lkdGg6IDIwZW07XHJcbiAgICBwYWRkaW5nOiAxZW07XHJcbn1cclxuXHJcbi5yaWdodFBvc2l0aW9uIHtcclxuICAgIGZsb2F0OiByaWdodDtcclxufSJdfQ== */"
+module.exports = ".margins {\r\n    margin-top: 1em;\r\n    margin-left: 2em;\r\n    padding-right: 2em;\r\n}\r\n\r\n.viewSection {\r\n    overflow: hidden;\r\n    margin-left: 2em;\r\n    height: 14em;\r\n    padding-right: 2em;\r\n}\r\n\r\n.itinerarySection {\r\n    padding-bottom: 2em;\r\n}\r\n\r\n.selectBoxesPosition {\r\n    width: 45%;\r\n    float: left;\r\n}\r\n\r\nmat-form-field {\r\n    margin-right: 2em;\r\n}\r\n\r\n.htmlView {\r\n    width: 55%;\r\n    float: right;\r\n}\r\n\r\n#htmlLabel {\r\n    border-color: gray;\r\n    border-style: solid;\r\n    border-width: 1px;\r\n    background-color: white;\r\n}\r\n\r\n.htmlViewContent {\r\n    overflow: scroll;\r\n    min-height: 12em;\r\n    max-height: 12em;\r\n    background-color: rgb(250, 250, 200);\r\n}\r\n\r\n#unithtmltitle {\r\n    margin: 0em;\r\n}\r\n\r\nmat-radio-button {\r\n    margin-right: 1em;\r\n}\r\n\r\n#itineraryBoxDiv{\r\n    background-color: rgb(250, 250, 200);\r\n    padding-bottom: 0.2em;\r\n    overflow-x: auto;\r\n    white-space: nowrap;\r\n}\r\n\r\n#itineraryBox {\r\n    display: inline-block;\r\n    width: 20em;\r\n    overflow: hidden;\r\n    white-space: pre-line;\r\n    padding: 1em;\r\n}\r\n\r\n.rightPosition {\r\n    float: right;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdW5pdHMvdW5pdC1pdGluZXJhcmllcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZUFBZTtJQUNmLGdCQUFnQjtJQUNoQixrQkFBa0I7QUFDdEI7O0FBRUE7SUFDSSxnQkFBZ0I7SUFDaEIsZ0JBQWdCO0lBQ2hCLFlBQVk7SUFDWixrQkFBa0I7QUFDdEI7O0FBRUE7SUFDSSxtQkFBbUI7QUFDdkI7O0FBRUE7SUFDSSxVQUFVO0lBQ1YsV0FBVztBQUNmOztBQUVBO0lBQ0ksaUJBQWlCO0FBQ3JCOztBQUVBO0lBQ0ksVUFBVTtJQUNWLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxrQkFBa0I7SUFDbEIsbUJBQW1CO0lBQ25CLGlCQUFpQjtJQUNqQix1QkFBdUI7QUFDM0I7O0FBRUE7SUFDSSxnQkFBZ0I7SUFDaEIsZ0JBQWdCO0lBQ2hCLGdCQUFnQjtJQUNoQixvQ0FBb0M7QUFDeEM7O0FBRUE7SUFDSSxXQUFXO0FBQ2Y7O0FBRUE7SUFDSSxpQkFBaUI7QUFDckI7O0FBRUE7SUFDSSxvQ0FBb0M7SUFDcEMscUJBQXFCO0lBQ3JCLGdCQUFnQjtJQUNoQixtQkFBbUI7QUFDdkI7O0FBRUE7SUFDSSxxQkFBcUI7SUFDckIsV0FBVztJQUNYLGdCQUFnQjtJQUNoQixxQkFBcUI7SUFDckIsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLFlBQVk7QUFDaEIiLCJmaWxlIjoic3JjL2FwcC91bml0cy91bml0LWl0aW5lcmFyaWVzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubWFyZ2lucyB7XHJcbiAgICBtYXJnaW4tdG9wOiAxZW07XHJcbiAgICBtYXJnaW4tbGVmdDogMmVtO1xyXG4gICAgcGFkZGluZy1yaWdodDogMmVtO1xyXG59XHJcblxyXG4udmlld1NlY3Rpb24ge1xyXG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgIG1hcmdpbi1sZWZ0OiAyZW07XHJcbiAgICBoZWlnaHQ6IDE0ZW07XHJcbiAgICBwYWRkaW5nLXJpZ2h0OiAyZW07XHJcbn1cclxuXHJcbi5pdGluZXJhcnlTZWN0aW9uIHtcclxuICAgIHBhZGRpbmctYm90dG9tOiAyZW07XHJcbn1cclxuXHJcbi5zZWxlY3RCb3hlc1Bvc2l0aW9uIHtcclxuICAgIHdpZHRoOiA0NSU7XHJcbiAgICBmbG9hdDogbGVmdDtcclxufVxyXG5cclxubWF0LWZvcm0tZmllbGQge1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAyZW07XHJcbn1cclxuXHJcbi5odG1sVmlldyB7XHJcbiAgICB3aWR0aDogNTUlO1xyXG4gICAgZmxvYXQ6IHJpZ2h0O1xyXG59XHJcblxyXG4jaHRtbExhYmVsIHtcclxuICAgIGJvcmRlci1jb2xvcjogZ3JheTtcclxuICAgIGJvcmRlci1zdHlsZTogc29saWQ7XHJcbiAgICBib3JkZXItd2lkdGg6IDFweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG59XHJcblxyXG4uaHRtbFZpZXdDb250ZW50IHtcclxuICAgIG92ZXJmbG93OiBzY3JvbGw7XHJcbiAgICBtaW4taGVpZ2h0OiAxMmVtO1xyXG4gICAgbWF4LWhlaWdodDogMTJlbTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYigyNTAsIDI1MCwgMjAwKTtcclxufVxyXG5cclxuI3VuaXRodG1sdGl0bGUge1xyXG4gICAgbWFyZ2luOiAwZW07XHJcbn1cclxuXHJcbm1hdC1yYWRpby1idXR0b24ge1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAxZW07XHJcbn1cclxuXHJcbiNpdGluZXJhcnlCb3hEaXZ7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjUwLCAyNTAsIDIwMCk7XHJcbiAgICBwYWRkaW5nLWJvdHRvbTogMC4yZW07XHJcbiAgICBvdmVyZmxvdy14OiBhdXRvO1xyXG4gICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcclxufVxyXG5cclxuI2l0aW5lcmFyeUJveCB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICB3aWR0aDogMjBlbTtcclxuICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgICB3aGl0ZS1zcGFjZTogcHJlLWxpbmU7XHJcbiAgICBwYWRkaW5nOiAxZW07XHJcbn1cclxuXHJcbi5yaWdodFBvc2l0aW9uIHtcclxuICAgIGZsb2F0OiByaWdodDtcclxufSJdfQ== */"
 
 /***/ }),
 
@@ -6283,7 +5949,7 @@ var UnitItinerariesComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-card>\r\n    <mat-card-title>\r\n        <div layout=\"row\" layout-align=\"start center\">\r\n            <span flex>Unidades</span>\r\n            <!--<span flex *ngIf=\"!searchBox.searchVisible\"></span>\r\n            <td-search-box hide-xs flex #searchBox\r\n                [ngClass]=\"{ 'push-left push-right mat-whiteframe-z1 bgc-white tc-black': searchBox.searchVisible }\"\r\n                placeholder=\"search\"></td-search-box>-->\r\n        </div>\r\n    </mat-card-title>\r\n    <mat-divider></mat-divider>\r\n\r\n    <mat-nav-list *ngIf=\"loginService.isLogged\">\r\n        <a *ngFor='let unit of units' mat-list-item [routerLink]=\"['/new/units', unit.id, 'contents']\" >\r\n            {{unit.name}}\r\n        </a>\r\n    </mat-nav-list>\r\n\r\n    <mat-nav-list *ngIf=\"!loginService.isLogged\">\r\n        <a *ngFor='let unit of units' mat-list-item >\r\n            {{unit.name}}\r\n        </a>\r\n    </mat-nav-list>\r\n\r\n    <button mat-fab *ngIf=\"loginService.isAdmin\" (click)=\"newUnit()\">\r\n        <mat-icon>add</mat-icon>\r\n    </button>\r\n</mat-card>"
+module.exports = "<mat-card>\r\n    <mat-card-title>\r\n        <div layout=\"row\" layout-align=\"start center\">\r\n            <span flex style=\"font-weight: bolder; font-size: 1.2em\"> Unidades</span>\r\n            <!--<span flex *ngIf=\"!searchBox.searchVisible\"></span>\r\n            <td-search-box hide-xs flex #searchBox\r\n                [ngClass]=\"{ 'push-left push-right mat-whiteframe-z1 bgc-white tc-black': searchBox.searchVisible }\"\r\n                placeholder=\"search\"></td-search-box>-->\r\n        </div>\r\n    </mat-card-title>\r\n    <mat-divider></mat-divider>\r\n\r\n    <mat-nav-list *ngIf=\"loginService.isLogged\">\r\n        <a *ngFor='let unit of units' mat-list-item [routerLink]=\"['/new/units', unit.id, 'contents']\" >\r\n            <p style=\"font-weight: bold\">{{unit.name}}</p>\r\n        </a>\r\n    </mat-nav-list>\r\n\r\n    <mat-nav-list *ngIf=\"!loginService.isLogged\">\r\n        <a *ngFor='let unit of units' mat-list-item >\r\n            {{unit.name}}\r\n        </a>\r\n    </mat-nav-list>\r\n\r\n    <button mat-fab *ngIf=\"loginService.isAdmin\" (click)=\"newUnit()\">\r\n        <mat-icon>add</mat-icon>\r\n    </button>\r\n</mat-card>"
 
 /***/ }),
 
